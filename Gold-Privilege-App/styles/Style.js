@@ -36,7 +36,7 @@ export const Colors = {
 
 const {primary, primaryHover, backgroundColor, homeHeaderBg, 
     cardsBg, cardsBorder, white, black, inputBg, 
-    inputBorderFocus, inputPlaceholder, success, danger, darkBlue} = Colors;
+    inputBorderFocus, inputPlaceholder, success, danger, darkBlue, onBordingText} = Colors;
     
 
     export const GetStartedContainer = styled.View`
@@ -52,7 +52,7 @@ export const OnboardingTextContainer = styled.View`
 export const OnboardingTextTitle = styled.Text`
     fontSize: 15px;
     fontWeight: 600;
-    color: ${onBordingTitle};
+    color: ${onBordingText};
 `;
 export const OnboardingTextDesc = styled.Text`
     fontSize: 13px;
