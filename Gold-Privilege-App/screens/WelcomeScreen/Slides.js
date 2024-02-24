@@ -4,9 +4,11 @@ import { View, Text, Dimensions, Image } from 'react-native';
 
 
 import { 
+    OnboardTextContent,
+    OnboardingContainer,
     OnboardingTextContainer, 
     OnboardingTextDesc, 
-    OnboardingTextTitle 
+    OnboardingTextTitle,
 
 } from '../../styles/Style';
 
@@ -14,13 +16,15 @@ const { width } = Dimensions.get('window');
 
 const Slide = ({ item }) => {
   return (
-    <View style={{ alignItems: 'center' }}>
-      <Image source={item.welcomeImage} style={{ height: 250, resizeMode: 'contain', width }} />
-      <OnboardingTextContainer>
-        <OnboardingTextTitle>{item.title}</OnboardingTextTitle>
-        <OnboardingTextDesc>{item.description}</OnboardingTextDesc>
-      </OnboardingTextContainer>
-    </View>
+    <OnboardingContainer >
+      <Image source={item.welcomeImage} style={{ height: '100%', resizeMode: 'cover', width }} />
+       <OnboardTextContent>
+            <OnboardingTextContainer>
+                <OnboardingTextTitle>{item.title}</OnboardingTextTitle>
+                <OnboardingTextDesc>{item.description}</OnboardingTextDesc>
+            </OnboardingTextContainer>
+        </OnboardTextContent>
+    </OnboardingContainer>
   );
 };
 

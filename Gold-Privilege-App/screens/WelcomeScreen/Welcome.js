@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, FlatList, Dimensions, Image} from 'react-native'
+import { View, Text, FlatList, Dimensions, Image, TouchableWithoutFeedback, TouchableOpacity} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from "expo-status-bar";
 import Slide from './Slides';
@@ -8,6 +8,12 @@ import Slide from './Slides';
 import 
 { 
   Colors,
+ 
+  OnboardingButtonContainer,
+  FullAuthBtn,
+  AuthButtonText,
+  OnboardContent,
+  BorderAuthBtn
 
 } from '../../styles/Style';
 
@@ -17,38 +23,50 @@ const WelcomeSlides = [
 {
   id: 1,
   welcomeImage: require('../../assets/images/welcom1.jpg'),
-  title: "Heading Title",
-  description: "bottm text"
+  title: "Lorem Ipsum is simply dummy text of the.",
+  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 },
 {
   id: 2,
   welcomeImage: require('../../assets/images/welcom2.jpg'),
-  title: "Heading Title",
-  description: "bottm text"
+  title: "Lorem Ipsum is simply dummy text of the.",
+   description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+
 },
 {
   id: 3,
   welcomeImage: require('../../assets/images/welcom3.jpg'),
-  title: "Heading Title",
-  description: "bottm text"
+  title: "Lorem Ipsum is simply dummy text of the.",
+   description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+
 },
 ]
 
 
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
   return (
-    <SafeAreaView style={ {flex: 1}}>
+    <SafeAreaView style={ {flex: 1, backgroundColor: Colors.cardsBg}}>
       <StatusBar backgroundColor={Colors.primary}/>
 
           <FlatList
+            horizontal 
+            pagingEnabled
             data={WelcomeSlides}
-              // contentContainerStyle={{ height: height * 0.75}} 
               showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => <Slide item={item} />}
-            keyExtractor={item => item.id.toString()}
           />
-     
+        <OnboardContent>
+      
+        <OnboardingButtonContainer>
+                <FullAuthBtn>
+                    <AuthButtonText>Get Started</AuthButtonText>
+                </FullAuthBtn>
+                <BorderAuthBtn>
+                    <AuthButtonText>Login</AuthButtonText>
+                </BorderAuthBtn>
+        </OnboardingButtonContainer>
+      </OnboardContent>
     </SafeAreaView>
   )
 }

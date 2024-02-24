@@ -18,7 +18,7 @@ const windowHeight = Dimensions.get('window').height;
 //  -------- colors--------
 
 export const Colors = {
-    primary: "#1350E8",
+    primary: "#e5ad04",
     primaryHover: "#144FE1",
     backgroundColor: "#020817",
     homeHeaderBg: "#102249",
@@ -39,22 +39,62 @@ const {primary, primaryHover, backgroundColor, homeHeaderBg,
     inputBorderFocus, inputPlaceholder, success, danger, darkBlue, onBordingText} = Colors;
     
 
-    export const GetStartedContainer = styled.View`
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding-top: 30px;
-    padding-bottom: 50px;
-  `;
   
+export const OnboardingContainer = styled.View`
+`;
+export const OnboardContent = styled.View`
+    position: absolute;
+    bottom: 50px;
+    padding: 20px;
+    width: 100%;
+`;
+export const OnboardTextContent = styled.View`
+    position: absolute;
+    bottom: 180px;
+    padding: 20px;
+    width: 100%;
+`;
 export const OnboardingTextContainer = styled.View`
+   
+ 
 `;
 export const OnboardingTextTitle = styled.Text`
-    fontSize: 15px;
+    fontSize: 35px;
     fontWeight: 600;
     color: ${onBordingText};
+    width: 80%;
 `;
 export const OnboardingTextDesc = styled.Text`
-    fontSize: 13px;
+    fontSize: 20px;
     color: ${onBordingText};
+`;
+
+export const OnboardingButtonContainer = styled.View`
+    gap: 10px;
+    paddingTop: 20px;
+   
+`;
+export const FullAuthBtn = styled.View`
+    background: ${primary};
+    padding: 8px;
+    width: 100%;
+    height: 50px;
+    borderRadius: 8px;
+    justifyContent: center;
+
+`;
+export const BorderAuthBtn = styled.View`
+    border: 2px;
+    borderColor: ${primary};
+    padding: 8px;
+    width: 100%;
+    height: 50px;
+    borderRadius: 8px;
+    justifyContent: center;
+
+`;
+export const AuthButtonText = styled.Text`
+    color: ${onBordingText};
+    textAlign: center;
+    
 `;
