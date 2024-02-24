@@ -1,20 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import MainNavigation from './navigators/MainNavigation';
+import "react-native-gesture-handler";
+// import React, {useState} from 'react';
+
+import 'react-native-gesture-handler';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Gold Privilege Mobile app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // <SafeAreaView>
+     
+    // </SafeAreaView>
+    <MainNavigation/>
+    
+
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
