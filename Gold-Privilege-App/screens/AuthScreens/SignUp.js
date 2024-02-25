@@ -28,6 +28,7 @@ import {
   AuthTitle,
   AuthInnerContainer,
   AuthSubTitle,
+  InputLabelText,
 } from "../../styles/Style";
 
 // Destructure constants from the Colors object
@@ -64,15 +65,21 @@ const SignUp = ({ navigation }) => {
           <AuthSubTitle>START FOR FREE</AuthSubTitle>
           <AuthTitle>Create an account </AuthTitle>
           <StyledFormArea>
+          <InputLabelText>Email</InputLabelText>
             <StyledTextInput
-              placeholder="Enter email"
-              placeholderTextColor={inputPlaceholder}
               value={data.email}
               onChangeText={(text) => setData({...data, email: text})}
             />
+            <InputLabelText>Phone Number</InputLabelText>
+            <StyledTextInput
+              value={data.email}
+              keyboardType="numeric"
+              onChangeText={(text) => setData({...data, phoneNumber: text})}
+            />
+            <InputLabelText>Password</InputLabelText>
             <MyTextInput
-              placeholder="Password"
-              placeholderTextColor={inputPlaceholder}
+              // placeholder="Password"
+              // placeholderTextColor={inputPlaceholder}
               value={data.password}
               secureTextEntry={hidePassword}
               togglePasswordVisibility={() => setHidePassword(!hidePassword)}
@@ -82,7 +89,7 @@ const SignUp = ({ navigation }) => {
             {/* ==========Button========= */}
             {!loading ? (
               <StyledButton onPress={handleSignin}>
-                <ButtonText>LOG IN</ButtonText>
+                <ButtonText>SIGN IN</ButtonText>
               </StyledButton>
             ) : (
               <StyledButton disabled={true}>

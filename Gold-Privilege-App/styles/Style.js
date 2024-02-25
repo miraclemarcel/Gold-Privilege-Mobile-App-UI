@@ -32,12 +32,14 @@ export const Colors = {
     inputPlaceholder: "#8B9CC8",
     success: "#3CDF21",
     danger: "#FF0000",
-    inputBorder: "#B9B6B6"
+    inputBorder: "#B9B6B6",
+    darkColor: "#3f3d56",
+    labelColor: "#6f6e80"
 }
 
 const {primary, primaryHover, backgroundColor, homeHeaderBg, 
     cardsBg, cardsBorder, white, black, inputBg, 
-    inputBorderFocus, inputPlaceholder, success, danger, darkBlue, inputBorder,  onBordingText, whiteColor} = Colors;
+    inputBorderFocus, inputPlaceholder, success, labelColor, danger, darkBlue, darkColor, inputBorder,  onBordingText, whiteColor} = Colors;
     
 
 // =====GENERAL STYLES===========
@@ -66,7 +68,7 @@ export const AuthHeadingTextContainer = styled.View`
 `;
 export const AuthTitle = styled.Text`
     fontSize: 27px;
-    color: ${cardsBg};
+    color: ${darkColor};
     fontWeight: 500;
 `;
 export const AuthSubTitle = styled.Text`
@@ -112,7 +114,10 @@ export const StyledTextInput = styled.TextInput`
   marginVertical: 3px;
   marginBottom: 10px;
   color: ${inputPlaceholder};
-
+`;
+export const InputLabelText = styled.Text`
+    fontSize: 18px;
+    color: ${labelColor};
 `;
 export const ButtonText = styled.Text`
     color: ${whiteColor};
