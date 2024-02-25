@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { View, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator, TouchableOpacity, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Octicons } from "@expo/vector-icons";
 
@@ -30,6 +30,7 @@ import {
   FormSelection,
   FormTab,
   FormTabText,
+  InputLabelText,
 } from "../../styles/Style";
 
 // Destructure constants from the Colors object
@@ -40,6 +41,7 @@ const Login = ({ navigation }) => {
   const [hidePassword, setHidePassword] = useState(true);
   const [data, setData] = useState({ email: '', password: '', phoneNumber: ''});
   const [loading, setLoading] = useState(false); // Define loading state
+  const [activeTab, setActiveTab] = useState("email"); // State to track active tab
 
   const handleSignin = async () => {
     setLoading(true); 
@@ -65,20 +67,42 @@ const Login = ({ navigation }) => {
         <AuthInnerContainer>
           <AuthTitle>Sign In</AuthTitle>
           <FormSelection>
-            <FormTab>
-              <FormTabText>Email</FormTabText>
-            </FormTab>
-            <FormTab>
-              <FormTabText>Phone Number</FormTabText>
-            </FormTab>
+            <TouchableOpacity onPress={() => setActiveTab("email")} style={activeTab === "email" ? styles.activeTab : null}>
+              <FormTab >
+              <FormTabText style={activeTab === "email" ? styles.activeTabText : null}>Email</FormTabText>
+              </FormTab>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setActiveTab("phoneNumber")} style={activeTab === "phoneNumber" ? styles.activeTab : null}>
+              <FormTab >
+                <FormTabText style={activeTab === "phoneNumber" ? styles.activeTabText : null}>Phone Number</FormTabText>
+              </FormTab>
+            </TouchableOpacity>
           </FormSelection>
           <StyledFormArea>
-            <StyledTextInput
-              placeholder="Enter email"
-              placeholderTextColor={inputPlaceholder}
-              value={data.email}
-              onChangeText={(text) => setData({...data, email: text})}
-            />
+            {activeTab === "email" && (
+              <>
+                <InputLabelText>Email</InputLabelText>
+                <StyledTextInput
+                  placeholder="Enter email"
+                  placeholderTextColor={inputPlaceholder}
+                  value={data.email}
+                  onChangeText={(text) => setData({...data, email: text})}
+                />
+              </>
+            )}
+            {activeTab === "phoneNumber" && (
+              <>
+                <InputLabelText>Phone Number</InputLabelText>
+                <StyledTextInput
+                  placeholder="Enter phone number"
+                  placeholderTextColor={inputPlaceholder}
+                  value={data.phoneNumber}
+                  keyboardType="numeric"
+                  onChangeText={(text) => setData({...data, phoneNumber: text})}
+                />
+              </>
+            )}
+            <InputLabelText>Password</InputLabelText>
             <MyTextInput
               placeholder="Password"
               placeholderTextColor={inputPlaceholder}
@@ -132,5 +156,16 @@ const MyTextInput = ({ icon, togglePasswordVisibility, ...props }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  activeTab: {
+    borderBottomColor: primary,
+    borderBottomWidth: 2,
+  },
+  activeTabText: {
+    color: primary,
+  },
+});
+
 
 export default Login;

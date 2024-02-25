@@ -264,6 +264,7 @@ export const AuthImage = styled.Image`
 export const FormSelection = styled.View`
     flexDirection: row;
     gap: 10px;
+    marginTop: 15px;
 `;
 export const FormTab = styled.View`
 `;
