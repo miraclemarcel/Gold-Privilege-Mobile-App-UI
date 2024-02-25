@@ -123,7 +123,7 @@ export const StyledButton = styled.TouchableOpacity`
     padding: 15px;
     background: ${primary};
     justify-content: center;
-    border-radius: 15px;
+    border-radius: 8px;
     width: 100%;
     margin-vertical: 50px;
     height: 60px;
@@ -255,4 +255,14 @@ export const AuthImageContainer = styled.View`
 export const AuthImage = styled.Image`
     width: 100%;
     height: 180px;
+`;
+export const FormSelection = styled.View`
+    flexDirection: row;
+    gap: 10px;
+`;
+export const FormTab = styled.View`
+`;
+export const FormTabText = styled.Text`
+    fontSize: 19px;
+    color: ${cardsBg};
 `;

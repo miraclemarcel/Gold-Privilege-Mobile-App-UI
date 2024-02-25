@@ -27,6 +27,9 @@ import {
   AuthHeadingTextRight,
   AuthTitle,
   AuthInnerContainer,
+  FormSelection,
+  FormTab,
+  FormTabText,
 } from "../../styles/Style";
 
 // Destructure constants from the Colors object
@@ -61,11 +64,20 @@ const Login = ({ navigation }) => {
         </AuthHeaderContainer>
         <AuthInnerContainer>
           <AuthTitle>Sign In</AuthTitle>
+          <FormSelection>
+            <FormTab>
+              <FormTabText>Email</FormTabText>
+            </FormTab>
+            <FormTab>
+              <FormTabText>Phone Number</FormTabText>
+            </FormTab>
+          </FormSelection>
           <StyledFormArea>
             <StyledTextInput
               placeholder="Enter email"
               placeholderTextColor={inputPlaceholder}
               value={data.email}
+              onChangeText={(text) => setData({...data, email: text})}
             />
             <MyTextInput
               placeholder="Password"
@@ -73,6 +85,7 @@ const Login = ({ navigation }) => {
               value={data.password}
               secureTextEntry={hidePassword}
               togglePasswordVisibility={() => setHidePassword(!hidePassword)}
+              onChangeText={(text) => setData({...data, password: text})}
             />
 
             {/* ==========Button========= */}

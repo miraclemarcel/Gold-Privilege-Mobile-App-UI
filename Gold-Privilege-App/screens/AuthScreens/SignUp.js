@@ -68,6 +68,7 @@ const SignUp = ({ navigation }) => {
               placeholder="Enter email"
               placeholderTextColor={inputPlaceholder}
               value={data.email}
+              onChangeText={(text) => setData({...data, email: text})}
             />
             <MyTextInput
               placeholder="Password"
@@ -75,6 +76,7 @@ const SignUp = ({ navigation }) => {
               value={data.password}
               secureTextEntry={hidePassword}
               togglePasswordVisibility={() => setHidePassword(!hidePassword)}
+              onChangeText={(text) => setData({...data, password: text})}
             />
 
             {/* ==========Button========= */}
