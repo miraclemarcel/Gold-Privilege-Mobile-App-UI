@@ -130,11 +130,15 @@ export const StyledButton = styled.TouchableOpacity`
     justify-content: center;
     border-radius: 8px;
     width: 100%;
-    margin-vertical: 50px;
+    marginTop: 30px;
     height: 60px;
 `;
 export const ToSignupPageBox = styled.View`
-    justify-content: center;
+    flex-direction: row;
+    padding: 10px;
+`;
+export const ToSignupPageBoxSignUp = styled.View`
+    justifyContent: center;
     alignItems: center;
     flex-direction: row;
     padding: 10px;
@@ -142,7 +146,7 @@ export const ToSignupPageBox = styled.View`
 export const ToSignupPageText = styled.Text`
     justify-content: center;
     alignItems: center;
-    color: ${whiteColor};
+    color: ${labelColor};
     fontSize: 15px;
 `;
 export const TextLink = styled.TouchableOpacity`
@@ -271,4 +275,11 @@ export const FormTab = styled.View`
 export const FormTabText = styled.Text`
     fontSize: 19px;
     color: ${cardsBg};
+`;
+export const CtaTextContainer = styled.TouchableOpacity`
+    
+`;
+export const CtaText = styled.Text`
+    fontSize: 17px;
+    color: ${labelColor}
 `;

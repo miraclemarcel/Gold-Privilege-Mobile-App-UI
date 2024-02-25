@@ -92,7 +92,7 @@ const Welcome = ({navigation}) => {
   return (
     // <SafeAreaView style={ {flex: 1, backgroundColor: Colors.cardsBg}}>
     <View>
-      <StatusBar backgroundColor={Colors.primary}/>
+      <StatusBar backgroundColor={Colors.primary} barStyle="light" />
 
           <FlatList
             onMomentumScrollEnd={updateCurrentSlideIndex}

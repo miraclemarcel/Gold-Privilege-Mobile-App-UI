@@ -31,6 +31,8 @@ import {
   FormTab,
   FormTabText,
   InputLabelText,
+  CtaTextContainer,
+  CtaText,
 } from "../../styles/Style";
 
 // Destructure constants from the Colors object
@@ -113,6 +115,9 @@ const Login = ({ navigation }) => {
             />
 
             {/* ==========Button========= */}
+            <CtaTextContainer onPress={() => navigation.navigate("ResetOptions")}>
+              <CtaText>Forgot password?</CtaText>
+            </CtaTextContainer>
             {!loading ? (
               <StyledButton onPress={handleSignin}>
                 <ButtonText>LOG IN</ButtonText>
@@ -130,9 +135,7 @@ const Login = ({ navigation }) => {
                 <TextLinkContent>Signup</TextLinkContent>
               </TextLink>
             </ToSignupPageBox>
-            <TextLink onPress={() => navigation.navigate("ResetOptions")}>
-              <TextLinkContent>Reset Password</TextLinkContent>
-            </TextLink>
+            
           </StyledFormArea>
         </AuthInnerContainer>
       </AuthContainer>

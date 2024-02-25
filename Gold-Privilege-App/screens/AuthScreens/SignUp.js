@@ -30,6 +30,7 @@ import {
   AuthInnerContainer,
   AuthSubTitle,
   InputLabelText,
+  ToSignupPageBoxSignUp,
 } from "../../styles/Style";
 
 // Destructure constants from the Colors object
@@ -138,29 +139,25 @@ const SignUp = ({ navigation }) => {
               {/* ==========Button========= */}
               {!loading ? (
                 <StyledButton onPress={handleSignin}>
-                  <ButtonText>SIGN IN</ButtonText>
+                  <ButtonText>SIGN UP</ButtonText>
                 </StyledButton>
               ) : (
                 <StyledButton disabled={true}>
                   <ActivityIndicator size="large" color={inputPlaceholder} />
                 </StyledButton>
               )}
-              <ToSignupPageBox>
+              <ToSignupPageBoxSignUp>
                 <ToSignupPageText>
                   Don't have an account already?
                 </ToSignupPageText>
-                <TextLink onPress={() => navigation.navigate("SignUp")}>
-                  <TextLinkContent>Signup</TextLinkContent>
+                <TextLink onPress={() => navigation.navigate("Login")}>
+                  <TextLinkContent>Login</TextLinkContent>
                 </TextLink>
-              </ToSignupPageBox>
-              <TextLink onPress={() => navigation.navigate("ResetOptions")}>
-                <TextLinkContent>Reset Password</TextLinkContent>
-              </TextLink>
+              </ToSignupPageBoxSignUp>
             </StyledFormArea>
           </AuthInnerContainer>
           </ScrollView>
         </AuthContainer>
-   
     </SafeAreaView>
   );
 };
