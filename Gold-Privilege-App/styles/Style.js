@@ -25,6 +25,7 @@ export const Colors = {
     darkBlue: "#071e56",
     cardsBg: "#17203D",
     cardsBorder: "#2E3852",
+    whiteColor: "#ffffff",
     onBordingText: "#ffffff",
     black: "#000000",
     inputBg: "rgba(19, 80, 232, 0.3)",
@@ -50,7 +51,7 @@ export const OnboardContent = styled.View`
 `;
 export const OnboardTextContent = styled.View`
     position: absolute;
-    bottom: 180px;
+    bottom: 200px;
     padding: 20px;
     width: 100%;
 `;
@@ -96,5 +97,17 @@ export const BorderAuthBtn = styled.View`
 export const AuthButtonText = styled.Text`
     color: ${onBordingText};
     textAlign: center;
-    
+`;
+export const Indicator = styled.View`
+    flexDirection: row;
+    justifyContent: center;
+    marginTop: 20px;
+`;
+
+export const IndicatorDots = styled.View`
+    height: 10px;
+    width: 10px;
+    backgroundColor: ${onBordingText};
+    marginHorizontal: 3px;
+    borderRadius: 50px;
 `;
