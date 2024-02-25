@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, Text, FlatList, Dimensions, Image, TouchableWithoutFeedback, TouchableOpacity, StyleSheet} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from "expo-status-bar";
@@ -50,6 +50,8 @@ const WelcomeSlides = [
 
 const Welcome = ({navigation}) => {
   const [currrentSlideIndex, setCurrentSlideIndex] = React.useState(0);
+
+
   
   const GetStartedfooter = () => {
     return (
@@ -64,12 +66,16 @@ const Welcome = ({navigation}) => {
           )}
       </Indicator>
        <OnboardingButtonContainer>
-           <FullAuthBtn>
-               <AuthButtonText>Get Started</AuthButtonText>
-           </FullAuthBtn>
-           <BorderAuthBtn>
-               <AuthButtonText>Login</AuthButtonText>
-           </BorderAuthBtn>
+          <TouchableOpacity activeOpacity={0.9} onPress={() => navigation.navigate("SignUp")} >
+            <FullAuthBtn>
+                <AuthButtonText>Get Started</AuthButtonText>
+            </FullAuthBtn>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.9} onPress={() => navigation.navigate("Login")} >
+            <BorderAuthBtn>
+                <AuthButtonText>Login</AuthButtonText>
+            </BorderAuthBtn>
+          </TouchableOpacity>
        </OnboardingButtonContainer>
   </OnboardContent>
     );
@@ -82,8 +88,10 @@ const Welcome = ({navigation}) => {
     setCurrentSlideIndex(currentIndex);
 
   }
+
   return (
-    <SafeAreaView style={ {flex: 1, backgroundColor: Colors.cardsBg}}>
+    // <SafeAreaView style={ {flex: 1, backgroundColor: Colors.cardsBg}}>
+    <View>
       <StatusBar backgroundColor={Colors.primary}/>
 
           <FlatList
@@ -95,7 +103,8 @@ const Welcome = ({navigation}) => {
             renderItem={({ item }) => <Slide item={item} />}
           />
           <GetStartedfooter/>
-    </SafeAreaView>
+      </View>
+    // </SafeAreaView>
   )
 }
 
