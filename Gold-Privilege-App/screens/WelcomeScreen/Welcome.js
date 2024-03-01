@@ -24,22 +24,22 @@ const {width, height} = Dimensions.get('window')
 const WelcomeSlides = [
 {
   id: 1,
-  welcomeImage: require('../../assets/images/welcom1.jpg'),
-  title: "Lorem Ipsum is simply dummy text of the page 1",
-  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  welcomeImage: require('../../assets/images/slide-1.png'),
+  title: "A World of Privileges at your fingertips",
+  description: "A World of Privileges at your fingertips."
 },
 {
   id: 2,
-  welcomeImage: require('../../assets/images/welcom2.jpg'),
-  title: "Lorem Ipsum is simply dummy text of the page 2",
-   description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  welcomeImage: require('../../assets/images/slide-2.png'),
+  title: "Premium Services At Great Discounts",
+   description: "A World of Privileges at your fingertips"
 
 },
 {
   id: 3,
-  welcomeImage: require('../../assets/images/welcom3.jpg'),
-  title: "Lorem Ipsum is simply dummy text of the page 3",
-   description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  welcomeImage: require('../../assets/images/slide-3.png'),
+  title: "Privileges that give you a satisfactory feeling",
+   description: "Gold privileges always leave you with a smile"
 
 },
 ]

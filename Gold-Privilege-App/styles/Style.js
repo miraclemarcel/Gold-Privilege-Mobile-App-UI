@@ -256,7 +256,7 @@ export const IndicatorDots = styled.View`
     borderRadius: 50px;
 `;
 
-// =========Login section===========
+// =========Login & SignUp section===========
 
 export const AuthImageContainer = styled.View`
     width: 100%;
@@ -282,4 +282,25 @@ export const CtaTextContainer = styled.TouchableOpacity`
 export const CtaText = styled.Text`
     fontSize: 17px;
     color: ${labelColor}
+`;
+export const FirstAndLast = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+`;
+export const NameInputContainer = styled.View`
+    flexDirection: column;
+    width: 49%;
+`;
+export const FirstAndLastInput = styled.TextInput`
+    padding: 15px;
+    paddingLeft: 25px;
+    paddingRight: 15px;
+    borderRadius: 8px;
+    border: 1px;
+    borderColor: ${inputBorder};
+    fontSize: 16px;
+    height: 50px;
+    marginVertical: 3px;
+    marginBottom: 10px;
+    color: ${inputPlaceholder};
 `;

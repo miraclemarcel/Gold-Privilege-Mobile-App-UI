@@ -31,6 +31,9 @@ import {
   AuthSubTitle,
   InputLabelText,
   ToSignupPageBoxSignUp,
+  FirstAndLast,
+  FirstAndLastInput,
+  NameInputContainer,
 } from "../../styles/Style";
 
 // Destructure constants from the Colors object
@@ -40,7 +43,7 @@ const { inputPlaceholder, backgroundColor, primary } = Colors;
 const SignUp = ({ navigation }) => {
   const [hidePassword, setHidePassword] = useState(true);
   const [hideConfirmPassword, setConfirmHidePassword] = useState(true);
-  const [data, setData] = useState({ email: '', password: '', phoneNumber: '', dateOfBirth: '', confirmPassword: ''});
+  const [data, setData] = useState({ firstName: '', lastName: '',  email: '',  phoneNumber: '', dateOfBirth: '', password: '', confirmPassword: ''});
   const [loading, setLoading] = useState(false); // Define loading state
   const [show, setShow] = useState(false);
   const [date, setDate] = useState(new Date(2000, 0, 1));
@@ -59,11 +62,11 @@ const SignUp = ({ navigation }) => {
     setShow(true);
   }
 
-  const handleSignin = async () => {
+  const handleSignUp = async () => {
     setLoading(true); 
     setTimeout(() => {
       setLoading(false); // Set loading to false when the login process completes
-      navigation.navigate('MainContent');
+      navigation.navigate('SignUpOtp');
     }, 2000); // Change 2000 to the time it takes to complete the login process
   }
 
@@ -96,6 +99,25 @@ const SignUp = ({ navigation }) => {
               )}
 
             <StyledFormArea>
+              <FirstAndLast>
+                <NameInputContainer>
+                  <InputLabelText>First name</InputLabelText>
+                  <FirstAndLastInput 
+                    value={data.firstName}
+                    keyboardType="default"
+                    onChangeText={(text) => setData({...data, firstName: text})}
+                  />
+                </NameInputContainer>
+                <NameInputContainer>
+                  <InputLabelText>Last name</InputLabelText>
+                  <FirstAndLastInput 
+                    value={data.lastName}
+                    keyboardType="default"
+                    onChangeText={(text) => setData({...data, lastName: text})}
+                  />
+                </NameInputContainer>
+              
+              </FirstAndLast>
             <InputLabelText>Email</InputLabelText>
               <StyledTextInput
                 value={data.email}
@@ -138,7 +160,7 @@ const SignUp = ({ navigation }) => {
 
               {/* ==========Button========= */}
               {!loading ? (
-                <StyledButton onPress={handleSignin}>
+                <StyledButton onPress={handleSignUp}>
                   <ButtonText>SIGN UP</ButtonText>
                 </StyledButton>
               ) : (
