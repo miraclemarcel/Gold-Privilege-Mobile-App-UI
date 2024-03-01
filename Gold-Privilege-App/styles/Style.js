@@ -52,6 +52,12 @@ export const StyledContainer = styled.View`
 export const AuthContainer = styled.View`
     flex: 1;
 `;
+export const AuthPageTitleText = styled.Text`
+    fontSize: 20px;
+    color: ${primary};
+    fontWeight: 600;
+    textAlign: center;
+`;
 export const AuthInnerContainer = styled.View`
     flex: 1;
     padding: 20px;
@@ -304,3 +310,88 @@ export const FirstAndLastInput = styled.TextInput`
     marginBottom: 10px;
     color: ${inputPlaceholder};
 `;
+
+// ===SignUp Otp ===========
+export const  SignUpVerification = styled.View`
+    flexDirection: column;
+    gap: 20px;
+    alignItems: center;
+`;
+export const SignUpOtpText = styled.Text`
+    fontSize: 15px;
+    marginTop: 20px;
+`;
+export const SignUPOtpImageConatainer = styled.View`
+    alignItems: center;
+`;
+export const SignUPOtpImage = styled.Image`
+    width: 250px;
+    height: 250px;
+`;
+export const OtpButtonBottom = styled.View`
+    flexDirection: column;
+    gap: 10px;
+    alignItems: center;
+`;
+export const ResendBox = styled.View`
+    marginTop: 15px;
+    alignItems: center;
+`;
+export const OtpVerficationCountdown = styled.Text`
+    fontSize: 13px;
+    color: ${labelColor};
+`;
+export const ResendOtpTextBtn = styled.TouchableOpacity`
+
+`;
+export const ResendOtpText = styled.Text`
+    fontSize: 15px;
+    color: ${primary};
+`;
+
+// ======congrats pop up=============
+
+export const CongratsContainer = styled.View`
+    flex: 1;
+    alignItems: center;
+    justifyContent: center;
+`;
+export const CongratsTop = styled.View`
+    flexDirection: column;
+    gap: 10px;
+`;
+export const CongratsImageContainer = styled.View`
+    alignItems: center;
+`;
+export const CongratsImage = styled.Image`
+    width: 300px;
+    height: 270px;
+`;
+export const CongratsText = styled.Text`
+    fontSize: 30px;
+    color: ${primary};
+    fontWeight: 600;
+    textAlign: center;
+`;
+export const CongratsTextBody = styled.Text`
+    fontSize: 17px;
+    textAlign: center;
+`;
+export const GoldText = styled.Text`
+    fontWeight: 600;
+`;
+export const CongratsBtn = styled.TouchableOpacity`
+`;
+export const CongratsBtnText = styled.Text`
+    fontSize: 15px;
+    color: ${primary};
+`;
+export const CongratsBottom = styled.View`
+    flexDirection: column;
+    gap: 40px;
+    marginTop: 30px;
+    alignItems: center;
+`;
+
+
+// ===========HOME SCREENS===============
