@@ -51,6 +51,7 @@ export const StyledContainer = styled.View`
 `;
 export const AuthContainer = styled.View`
     flex: 1;
+    backgroundColor: ${whiteColor};
 `;
 export const AuthPageTitleText = styled.Text`
     fontSize: 20px;
@@ -71,6 +72,9 @@ export const AuthHeadingTextContainer = styled.View`
     bottom: 20px;
     padding: 20px;
     left: 0;
+`;
+export const MainScreenContainer = styled.View`
+    backgroundColor: ${whiteColor};
 `;
 export const AuthTitle = styled.Text`
     fontSize: 27px;
@@ -130,6 +134,23 @@ export const ButtonText = styled.Text`
     font-size: 16px;
     textAlign: center;
 `;
+export const SearchContainer = styled.View`
+    width: 100%;
+    paddingTop: 20px;
+`;
+export const SearchBar = styled.TextInput`
+    padding: 10px;
+    paddingLeft: 25px;
+    paddingRight: 15px;
+    borderRadius: 12px;
+    border: 1px;
+    borderColor: ${inputBorder};
+    fontSize: 16px;
+    height: 40px;
+    marginVertical: 3px;
+    marginBottom: 10px;
+    color: ${inputPlaceholder};
+`;
 export const StyledButton = styled.TouchableOpacity`
     padding: 15px;
     background: ${primary};
@@ -171,7 +192,6 @@ export const ResetPasswordText = styled.Text`
     fontSize: 15px;
     color: ${primary};
     fontWeight: 600;
-    background: 
 `;
 export const RightIcon = styled.TouchableOpacity`
     position: absolute;
@@ -287,7 +307,7 @@ export const CtaTextContainer = styled.TouchableOpacity`
 `;
 export const CtaText = styled.Text`
     fontSize: 17px;
-    color: ${labelColor}
+    color: ${labelColor};
 `;
 export const FirstAndLast = styled.View`
     flexDirection: row;
@@ -355,6 +375,7 @@ export const CongratsContainer = styled.View`
     flex: 1;
     alignItems: center;
     justifyContent: center;
+    backgroundColor: ${whiteColor};
 `;
 export const CongratsTop = styled.View`
     flexDirection: column;
@@ -394,4 +415,101 @@ export const CongratsBottom = styled.View`
 `;
 
 
-// ===========HOME SCREENS===============
+// ====================HOME SCREEN==========================
+export const HomeHeaderContainer = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+    width: 100%;
+`;
+export const HomeHeaderLeftContainer = styled.View`
+    flexDirection: row;
+    gap: 10px;
+`;
+export const Avatar = styled.Image`
+    height: 50px;
+    width: 50px;
+    borderRadius: 50px;
+`;
+export const NameContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+`;
+export const UsernameText = styled.Text`
+    fontSize: 13px;
+`;
+export const UserIDtext = styled.Text`
+    fontSize: 13px;
+    color: ${primary};
+`;
+
+export const HomeHeaderRightContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+`;
+export const HeaderIcon = styled.View`
+    flexDirection: row;
+    justifyContent: flex-end;
+    gap: 10px;
+`;
+export const PlanText = styled.Text`
+    fontSize: 13px;
+    fontWeight: 600;
+`;
+export const HomeBannerSlide = styled.View`
+    paddingTop: 20px;
+`;
+export const BannerImages = styled.Image`
+    height: 200
+`;
+export const InnerHomeContainer = styled.View`
+    flexDirection: column; 
+    width: 100%;
+`;
+export const YourPiviligesContainer = styled.View`
+    flexDirection: column;
+    marginTop: 20px;
+`;
+export const PrivilegeTextContainer = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+`;
+export const PrivilegeTextLeft = styled.Text`
+    fontSize: 20px;
+`;
+export const PrivilegeTextRightBtn = styled.TouchableOpacity`
+`;
+export const PrivilegeTextRight = styled.Text`
+    fontSize: 17px;
+`;
+
+// ===privilege plan===========
+export const PrivilegesPlanContainer = styled.View`
+    paddingTop: 10px;
+`;
+export const PlanContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+`;
+export const privilegePlanImg = styled.Image`
+    width: 200px;
+    height: 200px;
+`;
+export const PrivilegePlanTitle = styled.Text`
+    fontSize: 24px;
+    fontWeight: bold;
+`;
+export const PrivilegeAccessTextContainer = styled.View`
+    flexDirection: row;
+    gap: 10px;
+`;
+export const PrivilegeAccessText = styled.Text`
+    fontSize: 15px;
+    color: ${inputPlaceholder};
+`;
+export const PrivilegeAccessNumber = styled.Text`
+    fontSize: 15px;
+    fontWeight: bold;
+`;
+export const PrivilegePlanBtn = styled.View`
+    background: ${black};
+`;

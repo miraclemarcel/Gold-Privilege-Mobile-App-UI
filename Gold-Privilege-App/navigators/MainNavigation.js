@@ -15,6 +15,7 @@ import Welcome from "../screens/WelcomeScreen/Welcome";
 import Login from "../screens/AuthScreens/Login";
 import SignUp from "../screens/AuthScreens/SignUp";
 import SignUpOtp from "../screens/AuthScreens/SignUpOtp";
+import Congrats from "../screens/AuthScreens/Congrats";
 
 //Home screen=======
 import Home from "../screens/HomeScreens/Home";
@@ -48,6 +49,7 @@ function AuthStack() {
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="SignUpOtp" component={SignUpOtp} />
+      <Stack.Screen name="Congrats" component={Congrats} />
   
      
     </Stack.Navigator>
@@ -151,7 +153,7 @@ export default function MainNavigation() {
           />
 
           <Stack.Group>
-            <Stack.Screen name="Home" component={Home} />
+            {/* <Stack.Screen name="MainContent" component={Home} /> */}
           </Stack.Group>
 
           {/* { ─── Shop screen──────────────────────────────────────────────} */}

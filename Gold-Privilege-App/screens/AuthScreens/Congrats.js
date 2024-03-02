@@ -15,7 +15,7 @@ import {
 } from '../../styles/Style'
 
 
-export default function Congrats() {
+export default function Congrats({ navigation }) {
   return (
     <StyledContainer>
         <CongratsContainer>
@@ -27,9 +27,9 @@ export default function Congrats() {
             </CongratsTop>
             <CongratsBottom>
                 <CongratsTextBody>You have successfully created your {""}<GoldText>Gold Privilege Account </GoldText> </CongratsTextBody>
-            <CongratsBtn>
+            {/* <CongratsBtn onPress={() => navigation.navigate("Login")}>
                 <CongratsBtnText>Continue to home</CongratsBtnText>
-            </CongratsBtn>
+            </CongratsBtn> */}
             </CongratsBottom>
         </CongratsContainer>
     </StyledContainer>

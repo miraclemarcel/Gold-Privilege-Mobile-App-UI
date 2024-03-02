@@ -135,7 +135,6 @@ const Login = ({ navigation }) => {
                 <TextLinkContent>Signup</TextLinkContent>
               </TextLink>
             </ToSignupPageBox>
-            
           </StyledFormArea>
         </AuthInnerContainer>
       </AuthContainer>

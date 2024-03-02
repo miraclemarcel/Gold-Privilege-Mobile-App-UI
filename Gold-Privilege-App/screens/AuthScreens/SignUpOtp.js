@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { View, TextInput, StyleSheet, Text, ActivityIndicator, Modal } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Congrats from "./Congrats";
@@ -22,7 +22,7 @@ import {
 
 } from "../../styles/Style";
 
-const SignUpOtp = () => {
+const SignUpOtp = ( { navigation} ) => {
   const [loading, setLoading] = useState(false); // Define loading state
   const [otp, setOTP] = useState(["", "", "", ""]); // Array to store OTP digits
   const inputRefs = useRef([]); // Ref for input fields
@@ -65,6 +65,18 @@ const SignUpOtp = () => {
   const handleCloseModal = () => {
     setShowCongrats(false);
   };
+
+  // Redirect to home after 2 seconds
+  useEffect(() => {
+    if (showCongrats) {
+      const timeout = setTimeout(() => {
+        setShowCongrats(false);
+        // Redirect to home
+        navigation.navigate('MainContent');
+      }, 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [showCongrats]);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
