@@ -1,6 +1,7 @@
 import React from 'react'
-import { View, Text, FlatList, Image, Dimensions, ScrollView } from 'react-native'
+import { View, Text, FlatList, Image, Dimensions, ScrollView, ImageBackground } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { Octicons, Ionicons  } from "@expo/vector-icons";
 
 
 import { 
@@ -31,9 +32,24 @@ import {
   PrivilegePlanTitle,
   PrivilegeAccessTextContainer,
   PrivilegeAccessText,
-  PrivilegeAccessNumber
+  PrivilegeAccessNumber,
+  PrivilegePlanBtn,
+  PrivilegePlanBtnText,
+  HotdealsContainer,
+  HotdealsTextContainer,
+  HotdealsTextLeft,
+  HotdealsTextLeftContainer,
+  HotdealsTextRightBtn,
+  HotdealsTextRight,
+  HotDealPlanContainer,
+  HotDealPlanInfo,
+  HotDealPlanInfoRight,
+  HotDealPlanTitle,
+  HotDealPlanStar,
+  HotDealPlanInfoLeft,
+  HotDealPlanInfoRightText
 } from '../../styles/Style'
-import { Ionicons } from '@expo/vector-icons';
+
 import styled from 'styled-components/native';
 
 
@@ -77,10 +93,13 @@ const { width } = Dimensions.get('window');
 
 const Home = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView>
+    <SafeAreaView style={{ flex: 1 }}> 
       <StyledContainer>
         <InnerContainer>
+          <ScrollView
+           showsVerticalScrollIndicator={false}
+           showsHorizontalScrollIndicator={false}
+          >
             <HomeHeaderContainer>
                 <HomeHeaderLeftContainer>
                     <Avatar source={require("../../assets/images/welcom1.jpg")} />
@@ -125,33 +144,72 @@ const Home = () => {
                     <PrivilegeTextRight>View All</PrivilegeTextRight>
                   </PrivilegeTextRightBtn>
                 </PrivilegeTextContainer>
+                <View style={{ flexDirection: 'row' }} >
                 <FlatList
-                  // horizontal
+                  horizontal
                   data={PrivilegesPlan}
+                  umColumns={2} 
                   showsHorizontalScrollIndicator={false}
                   keyExtractor={item => item.id.toString()}
                   renderItem={({ item }) => (
-                   <PrivilegesPlanContainer>
+                   <PrivilegesPlanContainer style={{ width: width / 2 , margin: 10 }}>
                     <PlanContainer>
                       <Image
                           source={item.privilegePlanImage}
-                          style={{ width: 150 , height: 150, borderRadius: 20, marginRight: 5, resizeMode: "cover", borderRadius: 15 }}
+                          style={{ width: 100 , height: 150, borderRadius: 20, resizeMode: "cover", borderRadius: 15 }}
                         />
                         <PrivilegePlanTitle>Hello</PrivilegePlanTitle>
                         <PrivilegeAccessTextContainer>
                           <PrivilegeAccessNumber>(1)</PrivilegeAccessNumber>
-                          <PrivilegeAccessText>Per Month</PrivilegeAccessText>
+                          <PrivilegeAccessText>Per Month..</PrivilegeAccessText>
                         </PrivilegeAccessTextContainer>
+                        <PrivilegePlanBtn>
+                          <PrivilegePlanBtnText>Access</PrivilegePlanBtnText>
+                        </PrivilegePlanBtn>
                     </PlanContainer>
                      
                    </PrivilegesPlanContainer>
                   )}
                 />
+              </View>
               </YourPiviligesContainer>
+              <HotdealsContainer>
+                <HotdealsTextContainer>
+                  <HotdealsTextLeftContainer>
+                    <HotdealsTextLeft>Hot deals</HotdealsTextLeft>
+                    <Image source={require("../../assets/icons/fire-big.png")}/>
+                  </HotdealsTextLeftContainer>
+                  <HotdealsTextRightBtn>
+                    <HotdealsTextRight>View All</HotdealsTextRight>
+                  </HotdealsTextRightBtn>
+                </HotdealsTextContainer>
+                <HotDealPlanContainer>
+                <ImageBackground
+                    source={require('../../assets/images/hotdeal1.png')}
+                    style={{ flex: 1, height: 200, resizeMode: 'cover', justifyContent: 'flex-end', borderRadius: 10}}
+                  >
+                    <HotDealPlanInfo>
+                      <HotDealPlanInfoLeft>
+                        <HotDealPlanTitle>Weekend Getaway</HotDealPlanTitle>
+                        <HotDealPlanStar>
+                          <Ionicons name="star" size={20} color="gold" />
+                          <Ionicons name="star" size={20} color="gold" />
+                          <Ionicons name="star" size={20} color="gold" />
+                          <Ionicons name="star" size={20} color="gold" />
+                          <Ionicons name="star" size={20} color="gold" />
+                        </HotDealPlanStar>
+                      </HotDealPlanInfoLeft>
+                      <HotDealPlanInfoRightText>N20,000</HotDealPlanInfoRightText>
+                    </HotDealPlanInfo>
+                  </ImageBackground>
+                  </HotDealPlanContainer>
+                
+              </HotdealsContainer>
             </InnerHomeContainer>
+          </ScrollView>
         </InnerContainer>
       </StyledContainer>
-      </ScrollView>
+ 
     </SafeAreaView>
   );
 };

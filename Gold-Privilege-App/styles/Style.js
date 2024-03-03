@@ -479,16 +479,20 @@ export const PrivilegeTextLeft = styled.Text`
 export const PrivilegeTextRightBtn = styled.TouchableOpacity`
 `;
 export const PrivilegeTextRight = styled.Text`
-    fontSize: 17px;
+    fontSize: 15px;
+    textDecoration: underline;
 `;
 
 // ===privilege plan===========
 export const PrivilegesPlanContainer = styled.View`
     paddingTop: 10px;
+
 `;
 export const PlanContainer = styled.View`
     flexDirection: column;
     gap: 10px;
+    alignItems: center;
+    justifyContent: space-between;
 `;
 export const privilegePlanImg = styled.Image`
     width: 200px;
@@ -512,4 +516,80 @@ export const PrivilegeAccessNumber = styled.Text`
 `;
 export const PrivilegePlanBtn = styled.View`
     background: ${black};
+    padding: 7px;
+    height: 40px;
+    width: 100px;
+    justifyContent: center;
+    alignItems: center;
+    borderRadius: 6px;
 `;
+export const PrivilegePlanBtnText = styled.Text`
+    color: ${whiteColor};
+`;
+
+// ====HOT DEALS ============
+export const HotdealsContainer = styled.View`
+    paddingTop: 20px;
+    flexDirection: column;
+    gap: 15px;
+`;
+export const HotdealsTextContainer = styled.View`
+    width: 100%;
+    flexDirection: row;
+    justifyContent: space-between
+`;
+export const HotdealsTextLeftContainer = styled.View`
+    flexDirection: row;
+    gap: 5px;
+`;
+export const HotdealsTextLeft = styled.Text`
+    fontSize: 30px;
+    color: ${primary};
+    fontWeight: 700;
+`;
+export const HotdealsTextRightBtn = styled.TouchableOpacity`
+`;
+export const HotdealsTextRight = styled.Text`
+    fontSize: 15px;
+    textDecoration: underline;
+`;
+// =====plan ======
+export const HotDealPlanContainer = styled.View`
+    borderRadius: 20px;
+    overflow: hidden;
+`;
+export const HotDealPlanInfo = styled.View`
+    flexDirection: row;
+    width: 100%;
+    justifyContent: space-between;
+    backgroundColor: rgba(255, 255, 255, 0.5); 
+    backdropFilter: blur(20px); 
+    height: 80px;
+    paddingLeft: 10px;
+    paddingRight: 10px;
+    paddingTop: 5px;
+    paddingBottom: 5px;
+`;
+export const HotDealPlanInfoLeft = styled.View`
+    fontSize: 24px;
+    color: ${whiteColor};
+    fontWeight: 700;
+`;
+export const HotDealPlanInfoRightText = styled.Text`
+    fontSize: 20px;
+    fontWeight: 700;
+    color: ${whiteColor};
+`;
+export const HotDealPlanTitle = styled.Text`
+    fontSize: 20px;
+    color: ${whiteColor};
+`;
+export const HotDealPlanStar = styled.View`
+    flexDirection: row;
+    gap: 5px;
+`;
+// export const HotDealPlanLeftText = styled.Text`
+//     fontSize: 24px;
+//     color: ${whiteColor};
+//     fontWeight: 700;
+// `;
