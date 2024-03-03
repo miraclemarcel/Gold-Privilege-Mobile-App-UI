@@ -20,8 +20,14 @@ import Congrats from "../screens/AuthScreens/Congrats";
 //Home screen=======
 import Home from "../screens/HomeScreens/Home";
 
+// =========Shop screens==================
+import Shop from "../screens/shopScreens/Shop";
 
+// ======== wallet screen==================
+import Wallet from "../screens/WalletScreen/Wallet";
 
+// ============Card screen =============
+import Cards from "../screens/cardScreens/Cards";
 
 
 const Stack = createNativeStackNavigator();
@@ -70,13 +76,13 @@ function TabNavigator() {
       screenOptions={{
         headerShown: false,
         tabBarInactiveTintColor: "#8B9CC8",
-        tabBarActiveTintColor: "#1350E8",
-        tabBarActiveBackgroundColor: "rgba(19, 80, 232, 0.3)",
+        tabBarActiveTintColor: "#e5ad04",
+        // tabBarActiveBackgroundColor: "rgba(19, 80, 232, 0.3)",
         tabBarItemStyle: {
           paddingBottom: 10,
         },
         tabBarStyle: {
-          backgroundColor: "#102249",
+          backgroundColor: "#ECEAEA",
           padding: 10,
           height: 70,
         },
@@ -91,7 +97,16 @@ function TabNavigator() {
           ),
         }}
       />
-      {/* <Tab.Screen
+      <Tab.Screen
+        name="Shop"
+        component={Shop}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="cart-outline" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="Wallet"
         component={Wallet}
         options={{
@@ -99,16 +114,16 @@ function TabNavigator() {
             <Ionicons name="wallet-outline" color={color} size={size} />
           ),
         }}
-      /> */}
-      {/* <Tab.Screen
-        name="Transactions"
-        component={Transactions}
+      />
+      <Tab.Screen
+        name="Cards"
+        component={Cards}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="receipt-outline" color={color} size={size} />
+            <Ionicons name="card-outline" color={color} size={size} />
           ),
         }}
-      /> */}
+      />
       {/* <Tab.Screen
         name="Settings"
         component={Settings}

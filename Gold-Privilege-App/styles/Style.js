@@ -451,6 +451,11 @@ export const HeaderIcon = styled.View`
     justifyContent: flex-end;
     gap: 10px;
 `;
+export const HeaderLeftTextContainer = styled.View`
+    flexDirection: row;
+    gap: 5px;
+    alignItems: center;
+`;
 export const PlanText = styled.Text`
     fontSize: 13px;
     fontWeight: 600;
@@ -485,7 +490,10 @@ export const PrivilegeTextRight = styled.Text`
 
 // ===privilege plan===========
 export const PrivilegesPlanContainer = styled.View`
-    paddingTop: 10px;
+    paddingTop: 20px;
+    flexDirection: row;
+    justifyContent: space-between;
+
 
 `;
 export const PlanContainer = styled.View`
@@ -493,13 +501,15 @@ export const PlanContainer = styled.View`
     gap: 10px;
     alignItems: center;
     justifyContent: space-between;
+    width: 49%;
 `;
-export const privilegePlanImg = styled.Image`
-    width: 200px;
-    height: 200px;
+export const PrivilegePlanImg = styled.Image`
+    width: 150px;
+    height: 130px;
+    borderRadius: 20px;
 `;
 export const PrivilegePlanTitle = styled.Text`
-    fontSize: 24px;
+    fontSize: 13px;
     fontWeight: bold;
 `;
 export const PrivilegeAccessTextContainer = styled.View`
@@ -507,17 +517,17 @@ export const PrivilegeAccessTextContainer = styled.View`
     gap: 10px;
 `;
 export const PrivilegeAccessText = styled.Text`
-    fontSize: 15px;
+    fontSize: 11px;
     color: ${inputPlaceholder};
 `;
 export const PrivilegeAccessNumber = styled.Text`
-    fontSize: 15px;
+    fontSize: 11px;
     fontWeight: bold;
 `;
 export const PrivilegePlanBtn = styled.View`
     background: ${black};
-    padding: 7px;
-    height: 40px;
+    padding: 5px;
+    height: 30px;
     width: 100px;
     justifyContent: center;
     alignItems: center;
@@ -525,6 +535,7 @@ export const PrivilegePlanBtn = styled.View`
 `;
 export const PrivilegePlanBtnText = styled.Text`
     color: ${whiteColor};
+    textAlign: center;
 `;
 
 // ====HOT DEALS ============

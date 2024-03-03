@@ -47,7 +47,9 @@ import {
   HotDealPlanTitle,
   HotDealPlanStar,
   HotDealPlanInfoLeft,
-  HotDealPlanInfoRightText
+  HotDealPlanInfoRightText,
+  PrivilegePlanImg,
+  HeaderLeftTextContainer
 } from '../../styles/Style'
 
 import styled from 'styled-components/native';
@@ -74,14 +76,14 @@ const BannerSlide = [
 const PrivilegesPlan = [
   {
     id: 1,
-    privilegePlanImage: require('../../assets/images/referBanner-2.png'),
+    privilegePlanImage: require('../../assets/images/plan1.png'),
     planTitle: "Aerobics",
     accessQuantity: "1",
     accessButton: "Access"
   },
   {
     id: 2,
-    privilegePlanImage: require('../../assets/images/referBanner-2.png'),
+    privilegePlanImage: require('../../assets/images/plan2.png'),
     planTitle: "Swimming Pool Access",
     accessQuantity: "1",
     accessButton: "Access"
@@ -113,7 +115,10 @@ const Home = () => {
                       <Ionicons name="headset" size={20} color="black" />
                       <Ionicons name="notifications" size={20} color="black" />
                     </HeaderIcon>
-                    <PlanText>Premium Plan</PlanText>
+                    <HeaderLeftTextContainer>
+                      <PlanText>Premium Plan</PlanText>
+                      <Image source={require("../../assets/icons/fire.png")}/>
+                    </HeaderLeftTextContainer>
                 </HomeHeaderRightContainer>
             </HomeHeaderContainer>
             <InnerHomeContainer>
@@ -144,34 +149,24 @@ const Home = () => {
                     <PrivilegeTextRight>View All</PrivilegeTextRight>
                   </PrivilegeTextRightBtn>
                 </PrivilegeTextContainer>
-                <View style={{ flexDirection: 'row' }} >
-                <FlatList
-                  horizontal
-                  data={PrivilegesPlan}
-                  umColumns={2} 
-                  showsHorizontalScrollIndicator={false}
-                  keyExtractor={item => item.id.toString()}
-                  renderItem={({ item }) => (
-                   <PrivilegesPlanContainer style={{ width: width / 2 , margin: 10 }}>
-                    <PlanContainer>
-                      <Image
-                          source={item.privilegePlanImage}
-                          style={{ width: 100 , height: 150, borderRadius: 20, resizeMode: "cover", borderRadius: 15 }}
-                        />
-                        <PrivilegePlanTitle>Hello</PrivilegePlanTitle>
-                        <PrivilegeAccessTextContainer>
-                          <PrivilegeAccessNumber>(1)</PrivilegeAccessNumber>
-                          <PrivilegeAccessText>Per Month..</PrivilegeAccessText>
-                        </PrivilegeAccessTextContainer>
-                        <PrivilegePlanBtn>
-                          <PrivilegePlanBtnText>Access</PrivilegePlanBtnText>
-                        </PrivilegePlanBtn>
-                    </PlanContainer>
-                     
+
+                {/* ===========privilege plan section=============== */}
+                   <PrivilegesPlanContainer>
+                   {PrivilegesPlan.map(plan => (
+                  <PlanContainer key={plan.id}>
+                    <PrivilegePlanImg source={plan.privilegePlanImage} />
+                    <PrivilegePlanTitle>{plan.planTitle}</PrivilegePlanTitle>
+                    <PrivilegeAccessTextContainer>
+                      <PrivilegeAccessNumber>({plan.accessQuantity})</PrivilegeAccessNumber>
+                      <PrivilegeAccessText>Per Month</PrivilegeAccessText>
+                    </PrivilegeAccessTextContainer>
+                    <PrivilegePlanBtn>
+                      <PrivilegePlanBtnText>{plan.accessButton}</PrivilegePlanBtnText>
+                    </PrivilegePlanBtn>
+                  </PlanContainer>
+                ))}
                    </PrivilegesPlanContainer>
-                  )}
-                />
-              </View>
+     
               </YourPiviligesContainer>
               <HotdealsContainer>
                 <HotdealsTextContainer>
