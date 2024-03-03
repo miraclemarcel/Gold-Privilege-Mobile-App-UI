@@ -49,7 +49,8 @@ import {
   HotDealPlanInfoLeft,
   HotDealPlanInfoRightText,
   PrivilegePlanImg,
-  HeaderLeftTextContainer
+  HeaderLeftTextContainer,
+  HotdealsTextLeftTwo
 } from '../../styles/Style'
 
 import styled from 'styled-components/native';
@@ -171,8 +172,11 @@ const Home = () => {
               <HotdealsContainer>
                 <HotdealsTextContainer>
                   <HotdealsTextLeftContainer>
-                    <HotdealsTextLeft>Hot deals</HotdealsTextLeft>
-                    <Image source={require("../../assets/icons/fire-big.png")}/>
+                    <HotdealsTextLeft>Hot</HotdealsTextLeft>
+                    <HotdealsTextLeftTwo>Deals</HotdealsTextLeftTwo>
+                    <Image source={require("../../assets/icons/fire-big.png")} 
+                    style={{height: 30, width: 25 }}
+                    />
                   </HotdealsTextLeftContainer>
                   <HotdealsTextRightBtn>
                     <HotdealsTextRight>View All</HotdealsTextRight>

@@ -101,11 +101,21 @@ export const InnerContainer = styled.View`
     width: 100%;
     alignItems: center;
 `;
+export const PageTitleHeader = styled.View`
+    height: 60px;
+    background: ${whiteColor};
+    pading: 5px;
+    alignItems: center;
+    justifyContent: center;
+    textAlign: center;
+    width: 100%;
+`;
 export const PageTitle = styled.Text`
-    fontSize: 30px;
+    fontSize: 20px;
     textAlign: center;
     fontWeight: bold;
-    color: ${whiteColor};
+    color: ${darkColor};
+    justifyContent: center;
     padding: 16px;
 `;
 export const StyledFormArea = styled.View`
@@ -554,7 +564,11 @@ export const HotdealsTextLeftContainer = styled.View`
     gap: 5px;
 `;
 export const HotdealsTextLeft = styled.Text`
-    fontSize: 30px;
+    fontSize: 25px;
+    fontWeight: 700;
+`;
+export const HotdealsTextLeftTwo = styled.Text`
+    fontSize: 25px;
     color: ${primary};
     fontWeight: 700;
 `;
