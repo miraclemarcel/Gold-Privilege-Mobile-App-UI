@@ -73,7 +73,6 @@ const BannerSlide = [
 
 
 // ========Privileges=============
-
 const PrivilegesPlan = [
   {
     id: 1,
@@ -94,7 +93,7 @@ const PrivilegesPlan = [
 
 const { width } = Dimensions.get('window');
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}> 
       <StyledContainer>
@@ -146,11 +145,10 @@ const Home = () => {
               <YourPiviligesContainer>
                 <PrivilegeTextContainer>
                   <PrivilegeTextLeft>Your Privileges</PrivilegeTextLeft>
-                  <PrivilegeTextRightBtn>
+                  <PrivilegeTextRightBtn onPress={() => navigation.navigate("PrivilegeList")}>
                     <PrivilegeTextRight>View All</PrivilegeTextRight>
                   </PrivilegeTextRightBtn>
                 </PrivilegeTextContainer>
-
                 {/* ===========privilege plan section=============== */}
                    <PrivilegesPlanContainer>
                    {PrivilegesPlan.map(plan => (
@@ -167,7 +165,6 @@ const Home = () => {
                   </PlanContainer>
                 ))}
                    </PrivilegesPlanContainer>
-     
               </YourPiviligesContainer>
               <HotdealsContainer>
                 <HotdealsTextContainer>
@@ -202,7 +199,6 @@ const Home = () => {
                     </HotDealPlanInfo>
                   </ImageBackground>
                   </HotDealPlanContainer>
-                
               </HotdealsContainer>
             </InnerHomeContainer>
           </ScrollView>

@@ -19,15 +19,20 @@ import Congrats from "../screens/AuthScreens/Congrats";
 
 //Home screen=======
 import Home from "../screens/HomeScreens/Home";
+import PrivilegeList from "../screens/HomeScreens/PrivilegeList";
 
 // =========Shop screens==================
 import Shop from "../screens/shopScreens/Shop";
+import ProductDetails from "../screens/shopScreens/ProductDetails";
 
 // ======== wallet screen==================
 import Wallet from "../screens/WalletScreen/Wallet";
 
 // ============Card screen =============
 import Cards from "../screens/cardScreens/Cards";
+
+// ========Profile screen ===============
+import Profile from "../screens/ProfileScreen/Profile";
 
 
 const Stack = createNativeStackNavigator();
@@ -124,15 +129,16 @@ function TabNavigator() {
           ),
         }}
       />
-      {/* <Tab.Screen
-        name="Settings"
-        component={Settings}
+     <Tab.Screen
+        name="Profile"
+        component={Profile}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="settings-outline" color={color} size={size} />
+            <Ionicons name="ellipsis-horizontal" color={color} size={size} />
           ),
+          tabBarLabel: '' // Set tabBarLabel to an empty string to hide the name
         }}
-      /> */}
+      />
     </Tab.Navigator>
   );
 }
@@ -168,7 +174,7 @@ export default function MainNavigation() {
           />
 
           <Stack.Group>
-            {/* <Stack.Screen name="MainContent" component={Home} /> */}
+            <Stack.Screen name="PrivilegeList" component={PrivilegeList} />
           </Stack.Group>
 
           {/* { ─── Shop screen──────────────────────────────────────────────} */}

@@ -101,6 +101,8 @@ export const InnerContainer = styled.View`
     width: 100%;
     alignItems: center;
 `;
+
+
 export const PageTitleHeader = styled.View`
     height: 60px;
     background: ${whiteColor};
@@ -684,6 +686,7 @@ export const DetailsBtn = styled.View`
     width: 100%;
     textAlign: center;
     borderRadius: 5px;
+    marginTop: 12px;
 `;
 export const DetailsBtnText = styled.Text`
     fontSize: 10px;
@@ -705,4 +708,89 @@ export const DescriptionText = styled.Text`
     fontSize: 13px;
     textAlign: center;
 `;
+
+
+
+// =============Profile screen =================
+export const ProfileContainer = styled.View`
+    flex: 1;
+    padding: 20px;
+    backgroundColor: ${primary};
+`;
+export const ProfileInnerContainer = styled.View`
+    flex: 1;
+    width: 100%;
+    alignItems: center;
+`;
+export const ProfileTitleHeader = styled.View`
+    height: 60px;
+    background: ${primary};
+    pading: 5px;
+    alignItems: center;
+    justifyContent: center;
+    textAlign: center;
+    width: 100%;
+`;
+export const ProfileHeaderSection = styled.View`
+    flexDirection: column;
+    gap: 10px;
+    alignItems: center;
+`;
+
+export const UserAvatarContainer = styled.View`
+
+`;
+export const UserAvatar = styled.Image`
+    height: 100px;
+    width: 100px;
+    borderRadius: 50px;
+
+`;
+export const UserName = styled.Text`
+    fontSize: 15px;
+    color: ${black};
+    fontWeight: 700;
+`;
+export const UserID = styled.Text`
+    fontSize: 15px;
+    color: ${whiteColor};
+`;
+export const UserPointBtn = styled.View`
+    background: ${whiteColor};
+    padding: 5px;
+    flexDirection: row;
+    gap: 5px;
+    width: 150px;
+    alignItems: center;
+    justifyContent: center;
+    borderRadius: 30px;
+`;
+export const UserPointText = styled.Text`
+    Background: ${black};
+    padding: 10px;
+`;
+export const ProfileOption = styled.View`
+    marginTop: 20px;
+`;
+export const ProfileOptionContainer = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+    height: 60px;
+    alignItems: center;
+    width: 100%;
+`;
+export const ProfileOptionLeft = styled.View`
+    flexDirection: row;
+    gap: 10px;
+`;
+export const ProfileOptionLeftText = styled.Text`
+    fontSize: 16px;
+    fontWeight: 700;
+    color: ${whiteColor};
+`;
+
+export const ProfileOptionRightIcon = styled.View`
+
+`;
+
 
