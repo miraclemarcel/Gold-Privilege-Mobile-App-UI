@@ -5,7 +5,6 @@ export const ShopProducts = [
         productTitle: "Aerobics",
         actualPrice: "N7000",
         discountedPrice: "N5000",
-        productBtnText: "View Details",
         productDescription: " simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when"
     },
     {
@@ -14,7 +13,6 @@ export const ShopProducts = [
         productTitle: "Aerobics",
         actualPrice: "N7000",
         discountedPrice: "N5000",
-        productBtnText: "View Details",
         productDescription: " simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when"
     },
     {
@@ -23,7 +21,6 @@ export const ShopProducts = [
         productTitle: "Aerobics",
         actualPrice: "N7000",
         discountedPrice: "N5000",
-        productBtnText: "View Details",
         productDescription: " simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when"
 
     },
@@ -33,7 +30,6 @@ export const ShopProducts = [
         productTitle: "Aerobics",
         actualPrice: "N7000",
         discountedPrice: "N5000",
-        productBtnText: "View Details",
         productDescription: " simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when"
 
     },
@@ -43,7 +39,6 @@ export const ShopProducts = [
         productTitle: "Aerobics",
         actualPrice: "N7000",
         discountedPrice: "N5000",
-        productBtnText: "View Details",
         productDescription: " simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when"
 
     },
@@ -53,7 +48,6 @@ export const ShopProducts = [
         productTitle: "Aerobics",
         actualPrice: "N7000",
         discountedPrice: "N5000",
-        productBtnText: "View Details",
         productDescription: " simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when"
 
     },
@@ -63,7 +57,6 @@ export const ShopProducts = [
         productTitle: "Aerobics",
         actualPrice: "N7000",
         discountedPrice: "N5000",
-        productBtnText: "View Details",
         productDescription: " simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when"
 
     },
@@ -73,7 +66,6 @@ export const ShopProducts = [
         productTitle: "Aerobics",
         actualPrice: "N7000",
         discountedPrice: "N5000",
-        productBtnText: "View Details",
         productDescription: " simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when"
 
     }

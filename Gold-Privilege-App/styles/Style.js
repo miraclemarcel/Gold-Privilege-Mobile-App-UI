@@ -618,3 +618,91 @@ export const HotDealPlanStar = styled.View`
 //     color: ${whiteColor};
 //     fontWeight: 700;
 // `;
+
+// =========SHOP SCREEN==============
+export const ShopHeading = styled.View`
+    width: 100%;
+    flexDirection: row;
+    justifyContent: flex-end;
+`;
+export const FilterContainer = styled.View`
+`;
+
+export const ProductContainer = styled.View`
+    alignItems: center;
+    width: 48%; 
+    marginRight: 10px;
+`;
+export const ProductContainerInner = styled.View`
+    width: 100%;
+`;
+export const FlatlistContainer = styled.View`
+    width: 100%;
+`;
+export const ProductImageContainer = styled.View`
+    
+`;
+export const ImageOfProduct = styled.Image`
+    width: 100%;
+    height: 150px;
+    borderRadius: 20px;
+    borderWidth: 2px;
+    borderColor: ${primary};
+`;
+export const ProductContent = styled.View`
+    flexDirection: column;
+    gap: 8px;
+    alignItems: center;
+    marginTop: 10px;
+`;
+export const ProductTitleText = styled.Text`
+    fontSize: 12px;
+    fontWeight: 700;
+    color: ${black};
+`;
+export const PriceContainer = styled.View`
+    flexDirection: row;
+    gap: 5px;
+`;
+export const ActualPriceText = styled.Text`
+    fontSize: 11px;
+    color: ${labelColor};
+    text-decoration-line: line-through;
+
+`;
+export const DiscountPriceText = styled.Text`
+    fontSize: 11px;
+    color: ${black};
+`;
+export const FiveStarContainer = styled.View`
+    flexDirection: row;
+    gap: 3px;
+`;
+export const DetailsBtn = styled.View`
+    background: ${black};
+    padding: 5px;
+    width: 100%;
+    textAlign: center;
+    borderRadius: 5px;
+`;
+export const DetailsBtnText = styled.Text`
+    fontSize: 10px;
+    color: ${whiteColor};
+    textAlign: center;
+`;
+export const DescriptionContainer = styled.View`
+    background: ${primary};
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    borderRadius: 20px;
+    padding: 10px;
+    textAlign: center;
+    justifyContent: center;
+`;
+export const DescriptionText = styled.Text`
+    color: ${whiteColor};
+    fontSize: 13px;
+    textAlign: center;
+`;
+
