@@ -36,6 +36,9 @@ import Profile from "../screens/ProfileScreen/Profile";
 import UpdateProfile from "../screens/ProfileScreen/UpdateProfile";
 import UpgradePlan from "../screens/ProfileScreen/UpgradePlan";
 
+// =======Checkout screens============
+import Checkout from "../screens/CheckoutScreens/Checkout";
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -155,7 +158,7 @@ export default function MainNavigation() {
             headerStyle: {
               backgroundColor: "transparent",
             },
-            headerTintColor: "white",
+            headerTintColor: "black",
             headerTransparent: true,
             headerTitle: "",
             headerLeftContainerStyle: {
@@ -188,6 +191,8 @@ export default function MainNavigation() {
           <Stack.Group>
             <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
             <Stack.Screen name="UpgradePlan" component={UpgradePlan} />
+            <Stack.Screen name="Checkout" component={Checkout} />
+
           </Stack.Group>
 
           {/* { ─── Favourite Screens ──────────────────────────────────────────────} */}

@@ -19,11 +19,13 @@ import {
     StyledContainer, 
     UserPlanContainer, 
     UserPlanTitle,
-    Colors
+    Colors,
+    StyledButton,
+    ButtonText
 } from '../../styles/Style'
 
 
-const UpgradePlan = () => {
+const UpgradePlan = ({navigation}) => {
     const [selectedPlan, setSelectedPlan] = useState(null);
 
     const handlePlanSelect = (planId) => {
@@ -50,6 +52,7 @@ const UpgradePlan = () => {
                 <TouchableOpacity    
                     key={plan.id}
                     onPress={() => handlePlanSelect(plan.id)}
+                    activeOpacity={10}
                 >
                 <UserPlanContainer 
                 style={{
@@ -75,6 +78,9 @@ const UpgradePlan = () => {
                 </UserPlanContainer>
                 </TouchableOpacity>
                 ))}
+                <StyledButton onPress={() => navigation.navigate("Checkout")}>
+                    <ButtonText>Continue</ButtonText>
+                </StyledButton>
             </AllUserPlans>
             </InnerContainer>
         </StyledContainer>

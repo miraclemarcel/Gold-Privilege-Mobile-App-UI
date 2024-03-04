@@ -104,7 +104,7 @@ const Home = ({ navigation }) => {
           >
             <HomeHeaderContainer>
                 <HomeHeaderLeftContainer>
-                    <Avatar source={require("../../assets/images/welcom1.jpg")} />
+                    <Avatar source={require("../../assets/images/Avatar-Img.png")} />
                     <NameContainer>
                       <UsernameText>Miracle Marcel</UsernameText>
                       <UserIDtext>GP24266357</UserIDtext>

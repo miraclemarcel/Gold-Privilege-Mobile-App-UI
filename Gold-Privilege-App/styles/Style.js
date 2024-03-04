@@ -4,6 +4,7 @@ import { View, Text, Image, TextInput, TouchableOpacity, Dimensions, Pressable }
 
 // expo constants 
 import Constants from 'expo-constants';
+import Checkout from '../screens/CheckoutScreens/Checkout';
 
 // styled text input function============
 
@@ -921,4 +922,39 @@ export const ChoosePlanText = styled.Text`
     fontSize: 20px;
     color: ${primary};
     fontWeight: 700;
+`;
+
+
+// =========Checkout==============
+export const UpgradeCheckoutTitle = styled.Text`
+    fontSize: 13px;
+    color: ${black};
+    fontWeight: 500;
+`;
+export const CheckoutContent = styled.View`
+    flexDirection: column;
+    alignItems: center;
+    marginTop: 50px;
+`;
+export const UpgradePlanType = styled.Text`
+    fontSize: 20px;
+    color: ${black};
+    fontWeight: 600;
+`;
+export const UpgradePlanContainer = styled.View`
+    flexDirection: row;
+    gap: 10px;
+`;
+export const UpgradePlanPrice = styled.Text`
+    fontSize: 20px;
+    color: ${black};
+    fontWeight: 700;
+`;
+export const UpgradePlanDuration = styled.Text`
+    fontSize: 20px;
+    color: ${labelColor};
+`;
+export const CheckOutPlanContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
 `;
