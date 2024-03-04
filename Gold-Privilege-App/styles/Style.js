@@ -19,7 +19,7 @@ const windowHeight = Dimensions.get('window').height;
 export const Colors = {
     primary: "#e5ad04",
     primaryHover: "#144FE1",
-    backgroundColor: "#020817",
+    backgroundColor: "#ffffff",
     homeHeaderBg: "#102249",
     darkBlue: "#071e56",
     cardsBg: "#17203D",
@@ -27,7 +27,7 @@ export const Colors = {
     whiteColor: "#ffffff",
     onBordingText: "#ffffff",
     black: "#000000",
-    inputBg: "rgba(19, 80, 232, 0.3)",
+    inputBg: "#FFF7EB",
     inputBorderFocus: "#1350E8",
     inputPlaceholder: "#8B9CC8",
     success: "#3CDF21",
@@ -766,8 +766,7 @@ export const UserPointBtn = styled.View`
     borderRadius: 30px;
 `;
 export const UserPointText = styled.Text`
-    Background: ${black};
-    padding: 10px;
+    fontSize: 15px;
 `;
 export const ProfileOption = styled.View`
     marginTop: 20px;
@@ -790,7 +789,136 @@ export const ProfileOptionLeftText = styled.Text`
 `;
 
 export const ProfileOptionRightIcon = styled.View`
-
+`;
+export const SignOutBtn = styled.View`
+    flexDirection: row;
+    gap: 10px;
+    background: ${whiteColor};
+    padding: 10px;
+    width: 100%;
+    marginTop: 50px;
+    justifyContent: center;
+    borderRadius: 8px;
+`;
+export const SignOutBtnText = styled.Text`
+    color: ${black};
+    fontSize: 15px;
+`;
+export const UpgrePlanContainer = styled.View`
+    width: 100%;
+    borderRadius: 15px;
+    overflow: hidden;
+    marginTop: 40px;
+`;
+export const UpgradeTextContainer = styled.View`
+    flexDirection: column;
+    gap: 5px;
+    alignItems: center;
+    marginBottom: 10px;
+`;
+export const UpgradeTextContainerTwo = styled.View`
+    flexDirection: row;
+    gap: 5px;
 `;
 
+export const UpgradeText = styled.Text`
+    fontSize: 15px;
+    fontWeight: 600;
+    color: ${black};
+    
+`;
+export const UpgradeTextYellow = styled.Text`
+    fontSize: 15px;
+    color: ${primary};
+    fontWeight: 600;
+`;
+export const UpgradeBtn = styled.View`
+    background: ${primary}; 
+    padding: 5px;
+    width: 120px;
+    alignItems: center;
+    borderRadius: 6px;
+`;
+export const UpgradeBtnText = styled.Text`
+    color: ${whiteColor};
+    fontSize: 15px;
+`;
 
+// ========PROFILE DETAILS PAGE ===========
+export const StyledProfileInput = styled.TextInput`
+  padding: 15px;
+  backgroundColor: ${inputBg};
+  paddingLeft: 25px;
+  paddingRight: 15px;
+  borderRadius: 8px;
+  fontSize: 16px;
+  height: 50px;
+  marginVertical: 3px;
+  marginBottom: 10px;
+  color: ${inputPlaceholder};
+`;
+export const ProfileInputLabelText = styled.Text`
+    fontSize: 18px;
+    color: ${black};
+    marginTop: 10px;
+`;
+export const ProfileInputLabelSmall = styled.Text`
+    fontSize: 14px;
+    color: ${black};
+`;
+export const ProfileButtonContainer = styled.View`
+    marginTop: 50px;
+`;
+
+// =====Upgrade plan screen =============
+export const AllUserPlans = styled.View`
+    flexDirection: column;
+    width: 100%;
+    gap: 23px;
+`;
+export const UserPlanContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+    alignItems: center;
+    elevation: 5;
+    width: 100%;
+    padding: 15px;
+    borderRadius: 20px;
+`;
+export const UserPlanTitle = styled.Text`
+    fontSize: 20px;
+    fontWeight: 600;
+`;
+export const PlanLine = styled.View`
+   height: 4px;
+   width: 80px;
+   background: ${black};
+`;
+export const PlanPriceContainer = styled.View`
+   flexDirection: row;
+   gap: 10px;
+`;
+export const PlanPrice = styled.Text`
+    fontWeight: 700;
+    fontSize: 18px;
+    color: ${black};
+`;
+export const PlanDuration = styled.Text`
+    fontSize: 15px;
+    color: ${black};
+`;
+export const PlanFooter = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+    width: 100%;
+    
+`;
+export const PlanFooterText = styled.Text`
+    fontSize: 12px;
+    color: ${black};
+`;
+export const ChoosePlanText = styled.Text`
+    fontSize: 20px;
+    color: ${primary};
+    fontWeight: 700;
+`;

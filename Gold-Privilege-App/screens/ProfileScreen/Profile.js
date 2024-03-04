@@ -1,20 +1,45 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { ImageBackground, ScrollView, Text, View, TouchableOpacity} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 
 import { 
     Colors,
-    PageTitle,
-    PageTitleHeader,
-    ProfileContainer, ProfileHeaderSection, ProfileInnerContainer, ProfileOption, ProfileOptionContainer, ProfileOptionLeft, ProfileOptionLeftText, ProfileOptionRightIcon, ProfileTitleHeader, UserAvatar, UserAvatarContainer, UserID, UserName, UserPointBtn, UserPointText,
+    ProfileContainer, 
+    ProfileHeaderSection, 
+    ProfileInnerContainer, 
+    ProfileOption, 
+    ProfileOptionContainer, 
+    ProfileOptionLeft, 
+    ProfileOptionLeftText, 
+    ProfileOptionRightIcon, 
+    ProfileTitleHeader, 
+    SignOutBtn, 
+    SignOutBtnText, 
+    UpgradeBtn, 
+    UpgradeBtnText, 
+    UpgradeText, 
+    UpgradeTextContainer, 
+    UpgradeTextContainerTwo, 
+    UpgradeTextYellow, 
+    UpgrePlanContainer, 
+    UserAvatar, 
+    UserAvatarContainer, 
+    UserID, 
+    UserName, 
+    UserPointBtn, 
+    UserPointText,
 } from '../../styles/Style'
 import { Ionicons } from '@expo/vector-icons'
 
-const Profile = () => {
+const Profile = ( {navigation} ) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
         <ProfileTitleHeader/>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
+        >
         <ProfileContainer>
             <ProfileInnerContainer>
                 <ProfileHeaderSection>
@@ -29,7 +54,8 @@ const Profile = () => {
                     </UserPointBtn>
                 </ProfileHeaderSection>
               <ProfileOption>
-                <ProfileOptionContainer>
+                <TouchableOpacity onPress={() => navigation.navigate("UpdateProfile")}>
+                    <ProfileOptionContainer>
                         <ProfileOptionLeft>
                             <Ionicons name="person" size={20} color={Colors.whiteColor} />
                             <ProfileOptionLeftText>Profile</ProfileOptionLeftText>
@@ -38,6 +64,7 @@ const Profile = () => {
                             <Ionicons name="chevron-forward" size={20} color={Colors.whiteColor} />
                         </ProfileOptionRightIcon>
                     </ProfileOptionContainer>
+                </TouchableOpacity>
                     <ProfileOptionContainer>
                         <ProfileOptionLeft>
                             <Ionicons name="calendar-outline" size={20} color={Colors.whiteColor} />
@@ -57,12 +84,35 @@ const Profile = () => {
                         </ProfileOptionRightIcon>
                     </ProfileOptionContainer>
               </ProfileOption>
-                {/* <View>
-                    <Text>Profile screen </Text>
-                </View> */}
+              <UpgrePlanContainer>
+                <ImageBackground source={require('../../assets/images/upgrdeImg.png')}
+                style={{ 
+                    height: 120, 
+                    justifyContent: 'center', 
+                    alignItems: 'center'
+                }}
+                >
+                    <UpgradeTextContainer>
+                        <UpgradeText>Upgrade Your</UpgradeText>
+                        <UpgradeTextContainerTwo>
+                            <UpgradeText>Membership</UpgradeText>
+                            <UpgradeTextYellow>Plan</UpgradeTextYellow>
+                        </UpgradeTextContainerTwo>
+                    </UpgradeTextContainer>
+                    <TouchableOpacity onPress={() => navigation.navigate("UpgradePlan")}>
+                        <UpgradeBtn>
+                            <UpgradeBtnText>Upgrade</UpgradeBtnText>
+                        </UpgradeBtn>
+                    </TouchableOpacity>
+                </ImageBackground>
+              </UpgrePlanContainer>
+                <SignOutBtn>
+                    <Ionicons name="log-out-outline" size={20} color={Colors.black} style={{ transform: [{ rotateY: '180deg' }] }} />
+                    <SignOutBtnText>Sign Out</SignOutBtnText>
+                </SignOutBtn>
             </ProfileInnerContainer>
         </ProfileContainer>
-        
+    </ScrollView>
     </SafeAreaView>
    
   )

@@ -33,6 +33,8 @@ import Cards from "../screens/cardScreens/Cards";
 
 // ========Profile screen ===============
 import Profile from "../screens/ProfileScreen/Profile";
+import UpdateProfile from "../screens/ProfileScreen/UpdateProfile";
+import UpgradePlan from "../screens/ProfileScreen/UpgradePlan";
 
 
 const Stack = createNativeStackNavigator();
@@ -183,12 +185,10 @@ export default function MainNavigation() {
           </Stack.Group> */}
 
           {/* { ─── Settings ──────────────────────────────────────────────} */}
-          {/* <Stack.Group>
-            <Stack.Screen
-              name="Settings"
-              component={Settings}
-            />
-          </Stack.Group> */}
+          <Stack.Group>
+            <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
+            <Stack.Screen name="UpgradePlan" component={UpgradePlan} />
+          </Stack.Group>
 
           {/* { ─── Favourite Screens ──────────────────────────────────────────────} */}
           {/* <Stack.Group>
