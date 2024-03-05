@@ -141,7 +141,7 @@ function TabNavigator() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ellipsis-horizontal" color={color} size={size} />
           ),
-          tabBarLabel: '' // Set tabBarLabel to an empty string to hide the name
+          tabBarLabel: '' 
         }}
       />
     </Tab.Navigator>

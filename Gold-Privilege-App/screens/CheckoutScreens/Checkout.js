@@ -1,7 +1,21 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { ButtonText, CheckoutContent, InnerContainer, PageTitle, PageTitleHeader, StyledButton, StyledContainer, UpgradeCheckoutTitle, UpgradePlanContainer, UpgradePlanDuration, UpgradePlanPrice, UpgradePlanType } from '../../styles/Style'
+
+import { 
+    ButtonText, 
+    CheckoutContent, 
+    InnerContainer, 
+    PageTitle, 
+    PageTitleHeader, 
+    StyledButton, 
+    StyledContainer, 
+    UpgradeCheckoutTitle, 
+    UpgradePlanContainer, 
+    UpgradePlanDuration, 
+    UpgradePlanPrice, 
+    UpgradePlanType 
+} from '../../styles/Style'
 
 const Checkout = () => {
   return (
