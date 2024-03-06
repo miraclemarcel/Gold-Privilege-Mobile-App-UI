@@ -25,20 +25,20 @@ const WelcomeSlides = [
 {
   id: 1,
   welcomeImage: require('../../assets/images/slide-1.png'),
-  title: "A World of Privileges at your fingertips",
+  title: "A World of\nPrivileges at\nyour fingertips",
   description: "A World of Privileges at your fingertips."
 },
 {
   id: 2,
   welcomeImage: require('../../assets/images/slide-2.png'),
-  title: "Premium Services At Great Discounts",
+  title: "Premium\nServices At\nGreat Discounts",
    description: "A World of Privileges at your fingertips"
 
 },
 {
   id: 3,
   welcomeImage: require('../../assets/images/slide-3.png'),
-  title: "Privileges that give you a satisfactory feeling",
+  title: "Privileges that give\nyou a satisfactory\nfeeling",
    description: "Gold privileges always leave you with a smile"
 
 },
@@ -61,7 +61,7 @@ const Welcome = ({navigation}) => {
             <View key={index} 
             style={[styles.IndicatorDots,  currrentSlideIndex == index && {
               backgroundColor: Colors.whiteColor,
-              width: 25,
+              width: 10,
             }] } />
           )}
       </Indicator>
@@ -92,7 +92,7 @@ const Welcome = ({navigation}) => {
   return (
     // <SafeAreaView style={ {flex: 1, backgroundColor: Colors.cardsBg}}>
     <View>
-      <StatusBar backgroundColor={Colors.primary} barStyle="light" />
+      <StatusBar translucent backgroundColor="transparent" style="light" />
 
           <FlatList
             onMomentumScrollEnd={updateCurrentSlideIndex}
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   IndicatorDots: {
     height: 10,
     width: 10,
-    backgroundColor: "#fff",
+    backgroundColor: Colors.labelColor,
     marginHorizontal: 3,
     borderRadius: 50,
   }

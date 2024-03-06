@@ -34,6 +34,7 @@ import {
   FirstAndLast,
   FirstAndLastInput,
   NameInputContainer,
+  CalendarRightIcon,
 } from "../../styles/Style";
 
 // Destructure constants from the Colors object
@@ -86,7 +87,7 @@ const SignUp = ({ navigation }) => {
           </AuthHeaderContainer>
           <ScrollView>
           <AuthInnerContainer>
-            <AuthSubTitle>START FOR FREE</AuthSubTitle>
+            {/* <AuthSubTitle>START FOR FREE</AuthSubTitle> */}
             <AuthTitle>Create an account</AuthTitle>
                 {show && (
                 <DateTimePicker
@@ -124,8 +125,9 @@ const SignUp = ({ navigation }) => {
                 onChangeText={(text) => setData({...data, email: text})}
               />
               <InputLabelText>Date of birth</InputLabelText>
-                <StyledTextInput
-                  placeholder="YYYY - MM - DD"
+                <MyTextInput
+                  icon="mail"
+                  placeholder="DD-MM"
                   placeholderTextColor={inputPlaceholder}
                   value={dob ? dob.toDateString() : ''}
                   isDate={true}
@@ -148,7 +150,7 @@ const SignUp = ({ navigation }) => {
                 togglePasswordVisibility={() => setHidePassword(!hidePassword)}
                 onChangeText={(text) => setData({...data, password: text})}
               />
-              <InputLabelText>Confirm assword</InputLabelText>
+              <InputLabelText>Confirm Password</InputLabelText>
               <MyTextInput
                 // placeholder="Password"
                 // placeholderTextColor={inputPlaceholder}
@@ -188,9 +190,16 @@ const MyTextInput = ({ icon, togglePasswordVisibility, isDate, showDatePicker, .
   return (
     <View>
       {isDate ? (
-        <TouchableOpacity onPress={showDatePicker}>
+       <View>
           <StyledTextInput {...props} />
-        </TouchableOpacity>
+            <CalendarRightIcon onPress={showDatePicker}>
+            <Octicons
+              name={props.secureTextEntry ? "eye-closed" : "eye"}
+              size={17}
+              color={inputPlaceholder}
+            />
+          </CalendarRightIcon>
+        </View>
       ) : (
         <StyledTextInput {...props} />
       )}

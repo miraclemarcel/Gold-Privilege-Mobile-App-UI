@@ -78,23 +78,23 @@ export const MainScreenContainer = styled.View`
     backgroundColor: ${whiteColor};
 `;
 export const AuthTitle = styled.Text`
-    fontSize: 27px;
+    fontSize: 25px;
     color: ${darkColor};
-    fontWeight: 500;
+    fontFamily: PoppinsSemiBold;
 `;
 export const AuthSubTitle = styled.Text`
     fontSize: 18px;
     color: ${primary};
 `;
 export const AuthHeadingTextLeft = styled.Text`
-    fontSize: 25px;
+    fontSize: 24px;
     color: ${whiteColor};
-    fontWeight: bold;
+    fontFamily: PoppinsSemiBold;
 `;
 export const AuthHeadingTextRight = styled.Text`
-    fontSize: 25px;
+    fontSize: 24px;
     color: ${primary};
-    fontWeight: bold;
+    fontFamily: PoppinsSemiBold;
 `;
 
 export const InnerContainer = styled.View`
@@ -126,21 +126,24 @@ export const StyledFormArea = styled.View`
     paddingTop: 20px;
 `;
 export const StyledTextInput = styled.TextInput`
-  padding: 15px;
+  padding: 10px;
   paddingLeft: 25px;
   paddingRight: 15px;
   borderRadius: 8px;
   border: 1px;
   borderColor: ${inputBorder};
   fontSize: 16px;
+  fontFamily: PoppinsRegular;
   height: 50px;
   marginVertical: 3px;
   marginBottom: 10px;
   color: ${inputPlaceholder};
 `;
+
 export const InputLabelText = styled.Text`
-    fontSize: 18px;
+    fontSize: 16px;
     color: ${labelColor};
+    fontFamily: PoppinsRegular;
 `;
 export const ButtonText = styled.Text`
     color: ${whiteColor};
@@ -206,6 +209,12 @@ export const ResetPasswordText = styled.Text`
     color: ${primary};
     fontWeight: 600;
 `;
+export const CalendarRightIcon = styled.TouchableOpacity`
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    z-index: 1;
+`;
 export const RightIcon = styled.TouchableOpacity`
     position: absolute;
     top: 20px;
@@ -243,14 +252,16 @@ export const OnboardingTextContainer = styled.View`
  
 `;
 export const OnboardingTextTitle = styled.Text`
-    fontSize: 35px;
-    fontWeight: 600;
+    fontSize: 30px;
+    lineHeight: 45px;
+    fontFamily: MonserratBold;
     color: ${onBordingText};
-    width: 80%;
 `;
 export const OnboardingTextDesc = styled.Text`
-    fontSize: 20px;
+    fontSize: 15px;
     color: ${onBordingText};
+    marginTop: 17px;
+    fontFamily: PoppinsMedium;
 `;
 
 export const OnboardingButtonContainer = styled.View`
