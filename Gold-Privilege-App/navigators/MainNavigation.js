@@ -1,10 +1,12 @@
+import React, { useState} from "react";
+import { Modal, View, Button, Text } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React from "react";
+
 // import { TouchableOpacity } from "react-native";
 
 
@@ -23,7 +25,6 @@ import PrivilegeList from "../screens/HomeScreens/PrivilegeList";
 
 // =========Shop screens==================
 import Shop from "../screens/shopScreens/Shop";
-import ProductDetails from "../screens/shopScreens/ProductDetails";
 
 // ======== wallet screen==================
 import Wallet from "../screens/WalletScreen/Wallet";
@@ -35,6 +36,7 @@ import Cards from "../screens/cardScreens/Cards";
 import Profile from "../screens/ProfileScreen/Profile";
 import UpdateProfile from "../screens/ProfileScreen/UpdateProfile";
 import UpgradePlan from "../screens/ProfileScreen/UpgradePlan";
+import ProfileModal from "../screens/ProfileScreen/ProfileModal";
 
 // =======Checkout screens============
 import Checkout from "../screens/CheckoutScreens/Checkout";
@@ -42,6 +44,9 @@ import Checkout from "../screens/CheckoutScreens/Checkout";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+
+
 
 // Authentication stack
 function AuthStack() {
@@ -74,9 +79,18 @@ function AuthStack() {
 
 
 
+
 // Bottom Tab Navigator
 function TabNavigator() {
+
+  const [isProfileModalVisible, setProfileModalVisible] = useState(false);
+
+  const toggleProfileModal = () => {
+    setProfileModalVisible(!isProfileModalVisible);
+  };
+
   return (
+    <>
     <Tab.Navigator
       options={{
         style: {
@@ -135,18 +149,38 @@ function TabNavigator() {
         }}
       />
      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ellipsis-horizontal" color={color} size={size} />
-          ),
-          tabBarLabel: '' 
-        }}
-      />
+          name="Profile"
+          component={Profile}
+          options={({ navigation }) => ({
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons
+                name={isProfileModalVisible ? "arrow-back" : "ellipsis-horizontal"}
+                color={color}
+                size={size}
+                onPress={() => {
+                  if (isProfileModalVisible) {
+                    navigation.goBack(); 
+                  } else {
+                    toggleProfileModal(); // Opens the profile modal
+                  }
+                }}
+              />
+            ),
+            tabBarLabel: ""
+          })}
+        />
     </Tab.Navigator>
+
+    <ProfileModal
+        isOpen={isProfileModalVisible}
+        onClose={toggleProfileModal}
+      />
+
+    </>
   );
 }
+
+
 
 // Main navigation
 export default function MainNavigation() {
@@ -167,16 +201,8 @@ export default function MainNavigation() {
           }}
           initialRouteName="AuthStack"
         >
-          <Stack.Screen
-            name="AuthStack"
-            component={AuthStack}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MainContent"
-            component={TabNavigator}
-            options={{ headerShown: false }}
-          />
+          <Stack.Screen name="AuthStack" component={AuthStack} options={{ headerShown: false }} />
+          <Stack.Screen name="MainContent" component={TabNavigator} options={{ headerShown: false }} />
 
           <Stack.Group>
             <Stack.Screen name="PrivilegeList" component={PrivilegeList} />

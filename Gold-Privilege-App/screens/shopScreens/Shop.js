@@ -3,6 +3,7 @@ import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ShopProducts } from "./ShopData";
 import { Ionicons } from '@expo/vector-icons';
+import ProductDetails from './ProductDetails';
 
 
 import { 
@@ -31,12 +32,23 @@ import {
 
 
 const Shop = () => {
-
+  const [selectedProduct, setSelectedProduct] = useState(null); // State to hold the selected product details
+  const [isProductModalVisible, setProductModalVisible] = useState(false); // State to manage the visibility of the modal
   const [showDescription, setShowDescription] = useState(false); // State to manage description visibility
 
   const toggleDescription = () => {
     setShowDescription(!showDescription);
   };
+
+  const openProductModal = (product) => {
+    setSelectedProduct(product);
+    setProductModalVisible(true);
+  };
+
+    // Function to close the modal
+    const closeProductModal = () => {
+      setProductModalVisible(false);
+    };
 
 
   const renderItem = ({ item }) => (
@@ -66,9 +78,14 @@ const Shop = () => {
             <ActualPriceText>{item.actualPrice}</ActualPriceText>
           </PriceContainer>
       </ProductContent>
-        <DetailsBtn>
-          <DetailsBtnText>View Details</DetailsBtnText>
-        </DetailsBtn>
+      <TouchableOpacity 
+      activeOpacity={0.9}
+      onPress={() => openProductModal(item)} 
+      >
+        <DetailsBtn >
+            <DetailsBtnText>View Details</DetailsBtnText>
+          </DetailsBtn>
+        </TouchableOpacity>
       </ProductContainerInner>
     </ProductContainer>
   );
@@ -97,6 +114,13 @@ const Shop = () => {
           </FlatlistContainer>
         </InnerContainer>
       </StyledContainer>
+
+      {/* =========Product details modal============ */}
+      <ProductDetails
+        isVisible={isProductModalVisible}
+        onClose={closeProductModal}
+        product={selectedProduct}
+      />
     </SafeAreaView>
   );
 };

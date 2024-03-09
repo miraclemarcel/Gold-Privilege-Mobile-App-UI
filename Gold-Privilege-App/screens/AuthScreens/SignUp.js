@@ -52,12 +52,22 @@ const SignUp = ({ navigation }) => {
   // ====actual date of birth of the user to be sent===
   const [dob, setDob] = useState();
 
+
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShow(false);
     setDate(currentDate);
-    setDob(currentDate);
+    // Check if selectedDate is defined
+    if (selectedDate) {
+      // Extract month and day from the selected date
+      const selectedMonth = currentDate.toLocaleString('default', { month: 'long' });
+      const selectedDay = currentDate.getDate();
+      // Set the date of birth in the format "Month Day"
+      setDob(`${selectedMonth} ${selectedDay}`);
+    }
   }
+
+  
 
   const showDatePicker = () => {
     setShow(true);
@@ -68,8 +78,9 @@ const SignUp = ({ navigation }) => {
     setTimeout(() => {
       setLoading(false); // Set loading to false when the login process completes
       navigation.navigate('SignUpOtp');
-    }, 2000); // Change 2000 to the time it takes to complete the login process
+    }, 2000); 
   }
+
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -91,12 +102,13 @@ const SignUp = ({ navigation }) => {
             <AuthTitle>Create an account</AuthTitle>
                 {show && (
                 <DateTimePicker
-                  testID="dateTimePicker"
-                  value={date}
-                  mode={date}
-                  is24Hour={true}
-                  onChange={onChange}
-                />
+                testID="dateTimePicker"
+                value={date}
+                display="spinner"
+                mode="date"
+                is24Hour={true}
+                onChange={onChange}
+              />
               )}
 
             <StyledFormArea>
@@ -125,13 +137,13 @@ const SignUp = ({ navigation }) => {
                 onChangeText={(text) => setData({...data, email: text})}
               />
               <InputLabelText>Date of birth</InputLabelText>
-                <MyTextInput
+              <MyTextInput
                   icon="mail"
                   placeholder="DD-MM"
                   placeholderTextColor={inputPlaceholder}
-                  value={dob ? dob.toDateString() : ''}
                   isDate={true}
                   showDatePicker={showDatePicker}
+                  selectedDate={dob} 
                   editable={false}
                 />
                 
@@ -186,27 +198,32 @@ const SignUp = ({ navigation }) => {
   );
 };
 
-const MyTextInput = ({ icon, togglePasswordVisibility, isDate, showDatePicker, ...props }) => {
+// Inside your MyTextInput component
+
+
+// Inside your MyTextInput component
+
+const MyTextInput = ({ icon, togglePasswordVisibility, isDate, showDatePicker, selectedDate, secureTextEntry, ...props }) => {
   return (
     <View>
-      {isDate ? (
-       <View>
-          <StyledTextInput {...props} />
-            <CalendarRightIcon onPress={showDatePicker}>
+     {isDate ? (
+       <View >
+          <StyledTextInput {...props} value={selectedDate} />
+          <CalendarRightIcon onPress={showDatePicker}>
             <Octicons
-              name={props.secureTextEntry ? "eye-closed" : "eye"}
+              name="calendar"
               size={17}
               color={inputPlaceholder}
             />
           </CalendarRightIcon>
         </View>
       ) : (
-        <StyledTextInput {...props} />
+        <StyledTextInput {...props} secureTextEntry={secureTextEntry} />
       )}
-      {props.value.length > 0 && (
+      {!isDate && (
         <RightIcon onPress={togglePasswordVisibility}>
           <Octicons
-            name={props.secureTextEntry ? "eye-closed" : "eye"}
+            name={secureTextEntry ? "eye-closed" : "eye"}
             size={17}
             color={inputPlaceholder}
           />
@@ -215,6 +232,38 @@ const MyTextInput = ({ icon, togglePasswordVisibility, isDate, showDatePicker, .
     </View>
   );
 };
+
+
+// const MyTextInput = ({ icon, togglePasswordVisibility, isDate, showDatePicker, selectedDate, ...props }) => {
+//   return (
+//     <View>
+//      {isDate ? (
+//        <View >
+//           <StyledTextInput {...props} value={selectedDate} />
+//           <CalendarRightIcon onPress={showDatePicker}>
+//             <Octicons
+//               name="calendar"
+//               size={17}
+//               color={inputPlaceholder}
+//             />
+//           </CalendarRightIcon>
+//         </View>
+//       ) : (
+//         <StyledTextInput {...props} />
+//       )}
+//       {props.secureTextEntry && (
+//         <RightIcon onPress={togglePasswordVisibility}>
+//           <Octicons
+//             name={props.secureTextEntry ? "eye-closed" : "eye"}
+//             size={17}
+//             color={inputPlaceholder}
+//           />
+//         </RightIcon>
+//       )}
+//     </View>
+//   );
+// };
+
 
 
 export default SignUp;

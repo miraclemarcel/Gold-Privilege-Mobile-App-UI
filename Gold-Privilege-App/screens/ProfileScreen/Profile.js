@@ -46,7 +46,7 @@ const Profile = ( {navigation} ) => {
                     <UserAvatarContainer>
                         <UserAvatar source={require("../../assets/images/Avatar-Img.png")}/>
                     </UserAvatarContainer>
-                    <UserName>Miracle Marcel</UserName>
+                    <UserName>Miracle Marcel......</UserName>
                     <UserID>GP24266357</UserID>
                     <UserPointBtn>
                         <Ionicons name="trophy-outline" size={20} color={Colors.primary} />

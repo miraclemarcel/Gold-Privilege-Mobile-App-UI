@@ -652,6 +652,7 @@ export const ProductContainerInner = styled.View`
 `;
 export const FlatlistContainer = styled.View`
     width: 100%;
+    paddingBottom: 30px;
 `;
 export const ProductImageContainer = styled.View`
     
@@ -968,4 +969,19 @@ export const UpgradePlanDuration = styled.Text`
 export const CheckOutPlanContainer = styled.View`
     flexDirection: column;
     gap: 10px;
+`;
+
+
+// =============CARD SCREEN =================
+
+export const CardsTabContainer = styled.View`
+    flexDirection: row;
+    gap: 10px;
+`;
+export const CardsTab = styled.TouchableOpacity`
+    
+`;
+export const CardsTabText = styled.Text`
+    fontSize: 12px;
+    color: ${darkColor};
 `;
