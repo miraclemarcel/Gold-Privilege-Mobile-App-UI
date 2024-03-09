@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Profile from './Profile';
 
-const ProfileModal = ({ isOpen, onClose }) => {
+const ProfileModal = ({ isOpen, onClose  }) => {
   return (
     <Modal
       animationType="slide"

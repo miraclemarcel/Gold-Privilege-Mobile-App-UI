@@ -151,6 +151,21 @@ function TabNavigator() {
      <Tab.Screen
           name="Profile"
           component={Profile}
+          options={() => ({
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons
+                name="ellipsis-horizontal"
+                color={color}
+                size={size}
+                onPress={() => { toggleProfileModal(); } }
+              />
+            ),
+            tabBarLabel: ""
+          })}
+        />
+     {/* <Tab.Screen
+          name="Profile"
+          component={Profile}
           options={({ navigation }) => ({
             tabBarIcon: ({ color, size }) => (
               <Ionicons
@@ -168,7 +183,7 @@ function TabNavigator() {
             ),
             tabBarLabel: ""
           })}
-        />
+        /> */}
     </Tab.Navigator>
 
     <ProfileModal

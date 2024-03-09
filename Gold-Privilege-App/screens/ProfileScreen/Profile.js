@@ -1,5 +1,6 @@
 import React from 'react'
 import { ImageBackground, ScrollView, Text, View, TouchableOpacity} from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 
@@ -32,7 +33,10 @@ import {
 } from '../../styles/Style'
 import { Ionicons } from '@expo/vector-icons'
 
-const Profile = ( {navigation} ) => {
+const Profile = () => {
+    const navigation = useNavigation();
+
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
         <ProfileTitleHeader/>

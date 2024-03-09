@@ -19,6 +19,7 @@ const windowHeight = Dimensions.get('window').height;
 
 export const Colors = {
     primary: "#e5ad04",
+    primaryVariant: "rgba(229, 173, 1, 0.3)",
     primaryHover: "#144FE1",
     backgroundColor: "#ffffff",
     homeHeaderBg: "#102249",
@@ -35,10 +36,13 @@ export const Colors = {
     danger: "#FF0000",
     inputBorder: "#B9B6B6",
     darkColor: "#3f3d56",
-    labelColor: "#6f6e80"
+    labelColor: "#6f6e80",
+    physicalCardColor: "#fbb554", 
+    virtualCardColor: "#716028", 
+    virtualCardBtnColor: "#8E6B02", 
 }
 
-const {primary, primaryHover, backgroundColor, homeHeaderBg, 
+const {primary, physicalCardColor, virtualCardColor, virtualCardBtnColor, primaryVariant, primaryHover, backgroundColor, homeHeaderBg, 
     cardsBg, cardsBorder, white, black, inputBg, 
     inputBorderFocus, inputPlaceholder, success, labelColor, danger, darkBlue, darkColor, inputBorder,  onBordingText, whiteColor} = Colors;
     
@@ -978,10 +982,194 @@ export const CardsTabContainer = styled.View`
     flexDirection: row;
     gap: 10px;
 `;
-export const CardsTab = styled.TouchableOpacity`
-    
+export const CardsTab = styled.View`
+    paddingBottom: 7px;
 `;
 export const CardsTabText = styled.Text`
-    fontSize: 12px;
+    fontSize: 17px;
     color: ${darkColor};
+    fontFamily: PoppinsMedium;
 `;
+
+
+// ======CARDS ===========
+export const CardContainer = styled.View`
+    flexDirection: column;
+    gap: 60px;
+    width: 100%;
+`;
+export const PhysicalCardButton = styled.View`
+    width: 100%;
+    alignItems: center;
+    background: ${primary};
+    height: 50px;
+    justifyContent: center;
+    borderRadius: 7px;
+`;
+export const CardButtonText = styled.Text`
+    fontSize: 14px;
+    color: ${whiteColor};
+    fontFamily: PoppinsMedium;
+    textAlign: center;
+`;
+export const PhysicalCardContainer = styled.View`
+    background: ${physicalCardColor};
+    width: 100%;
+    height: 200px;
+    borderRadius: 20px;
+    padding: 15px;
+    marginTop: 60px;
+`;
+export const CardInner = styled.View`
+    flexDirection: column;
+    justifyContent: space-between; 
+    flex: 1; 
+`;
+export const TopCard = styled.View`
+`;
+export const GoldPriviTextRight = styled.Text`
+    fontSize: 15px;
+    textAlign: right;
+    fontFamily: PoppinsMedium;
+    letterSpacing: 2px;
+`; 
+
+export const MiddleCard = styled.View`
+    paddingTop: 20px;
+`;
+export const BottomCard = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+    alignItems: flex-end;
+`;
+export const BottomCardLeft = styled.View`
+    flexDirection: column;
+    gap: 10px;
+`;
+export const CardUsername = styled.Text`
+    fontSize: 15px;
+    fontFamily: PoppinsMedium;
+`;
+export const CardMembershipID = styled.Text`
+    fontSize: 13px;
+    fontFamily: PoppinsMedium;
+`;
+export const BottomCardRight = styled.View`
+  
+`;
+
+// ============virtual card compnents============
+export const VirtualCardContainer = styled.View`
+    background: ${virtualCardColor};
+    marginTop: 60px;
+    width: 100%;
+    height: 200px;
+    borderRadius: 20px;
+    padding: 15px;
+`;
+export const VirtualCardButton = styled.View`
+    width: 100%;
+    alignItems: center;
+    background: ${virtualCardBtnColor};
+    height: 50px;
+    justifyContent: center;
+    borderRadius: 7px;
+`;
+
+export const GoldPriviTextRightWhite = styled.Text`
+    color: ${whiteColor};
+    fontSize: 15px;
+    textAlign: right;
+    fontFamily: PoppinsMedium;
+    letterSpacing: 2px;
+`; 
+
+export const CardUsernameWhite = styled.Text`
+    fontSize: 15px;
+    fontFamily: PoppinsMedium;
+    color: ${whiteColor};
+`;
+export const CardMembershipIDYellow = styled.Text`
+    fontSize: 13px;
+    fontFamily: PoppinsMedium;
+    color: ${primary};
+`;
+
+
+
+// =============CARD MODAL ===============
+
+export const CardModalConatainer = styled.View`
+    flex: 1;
+    justifyContent: flex-end;
+    alignItems: center;
+    background: rgba(0, 0, 0, 0.5);
+`;
+export const CardModalInner = styled.View`
+    background: ${backgroundColor};
+    padding: 20px;
+    height: 35%;
+    borderTopLeftRadius: 50px;
+    borderTopRightRadius: 50px;
+    alignItems: center;
+    width: 100%;
+    flexDirection: column;
+    justifyContent: space-between;
+`;
+export const CardNoticeIcon = styled.View`
+    background: ${primaryVariant};
+    height: 60px;
+    width: 60px;
+    borderRadius: 50px;
+    alignItems: center;
+    justifyContent: center;
+`;
+export const CardBtnContainer = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+    width: 100%;
+`;
+export const CardModalQuestion = styled.Text`
+    fontSize: 14px;
+    color: ${black};
+    fontFamily: PoppinsRegular;
+    textAlign: center;
+    width: 90%;
+`;
+export const CardModalBtnCancel = styled.View`
+    height: 50px;
+    padding: 6px;
+    justifyContent: center;
+    alignItems: center;
+    width: 150px;
+    borderRadius: 7px;
+`;
+export const CardModalBtnBlock = styled.View`
+    height: 50px;
+    background: ${primary};
+    padding: 6px;
+    justifyContent: center;
+    alignItems: center;
+    width: 150px;
+    borderRadius: 7px;
+`;
+export const CancelText = styled.Text`
+    color: ${primary};
+    fontSize: 14px;
+    fontFamily: PoppinsRegular;
+`;
+export const BlockText = styled.Text`
+    color: ${whiteColor};
+    fontSize: 14px;
+    fontFamily: PoppinsRegular;
+`;
+
+
+
+
+
+
+
+
+
+
