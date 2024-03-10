@@ -1,8 +1,10 @@
 import React from 'react';
 import { Modal, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Profile from './Profile';
+import { Colors } from '../../styles/Style';
+import { useNavigation } from '@react-navigation/native';
 
-const ProfileModal = ({ isOpen, onClose  }) => {
+const ProfileModal = ({ isOpen, onClose }) => {
   return (
     <Modal
       animationType="slide"
@@ -13,6 +15,9 @@ const ProfileModal = ({ isOpen, onClose  }) => {
       <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <Profile />
+            {/* <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Text style={styles.closeButton}>Close</Text>
+            </TouchableOpacity> */}
         </View>
       </View>
     </Modal>
@@ -24,10 +29,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: Colors.primary,
   },
   modalContent: {
     flex: 1,
+  },
+  closeButton: {
+    color: 'white',
+    fontSize: 18,
+    marginTop: 20,
+    textAlign: 'center',
   }
 });
 

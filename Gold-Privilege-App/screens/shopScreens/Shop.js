@@ -8,6 +8,7 @@ import ProductDetails from './ProductDetails';
 
 import { 
   ActualPriceText,
+  Colors,
   DescriptionContainer,
   DescriptionText,
   DetailsBtn,
@@ -26,6 +27,9 @@ import {
   ProductContent, 
   ProductImageContainer, 
   ProductTitleText, 
+  SearchBar, 
+  SearchContainer, 
+  SearchContainerShop, 
   ShopHeading, 
   StyledContainer 
 } from '../../styles/Style';
@@ -99,9 +103,12 @@ const Shop = () => {
         <InnerContainer>
           <FlatlistContainer>
           <ShopHeading>
-            <FilterContainer>
-              <Ionicons name="funnel-outline" size={24} color="black" />
-            </FilterContainer>
+            <SearchContainerShop>
+              <SearchBar
+              placeholder='search'
+              placeholderTextColor={Colors.inputPlaceholder}
+              />
+            </SearchContainerShop>
           </ShopHeading>
             <FlatList
               showsVerticalScrollIndicator={false}

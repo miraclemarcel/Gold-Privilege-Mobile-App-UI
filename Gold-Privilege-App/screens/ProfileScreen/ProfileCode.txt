@@ -6,7 +6,6 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { 
     Colors,
-    PageTitleHeader,
     ProfileContainer, 
     ProfileHeaderSection, 
     ProfileInnerContainer, 
@@ -35,12 +34,17 @@ import {
 } from '../../styles/Style'
 import { Ionicons } from '@expo/vector-icons'
 
-const Profile = ({ navigation }) => {
+const Profile = () => {
+    const navigation = useNavigation();
 
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <PageTitleHeader/>
+        {/* <ProfileTitleContainer>
+            <TouchableOpacity activeOpacity={0.8} onPress={navigation.goBack()} > 
+                <Ionicons name='arrow-back' size={24} color={Colors.whiteColor}/>
+            </TouchableOpacity>
+        </ProfileTitleContainer> */}
         <ScrollView
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}

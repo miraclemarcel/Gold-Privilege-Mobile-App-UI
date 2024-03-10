@@ -158,6 +158,11 @@ export const SearchContainer = styled.View`
     width: 100%;
     paddingTop: 20px;
 `;
+export const SearchContainerShop = styled.View`
+    width: 100%;
+    paddingTop: 20px;
+    marginBottom: 20px;
+`;
 export const SearchBar = styled.TextInput`
     padding: 10px;
     paddingLeft: 25px;
@@ -656,7 +661,7 @@ export const ProductContainerInner = styled.View`
 `;
 export const FlatlistContainer = styled.View`
     width: 100%;
-    paddingBottom: 30px;
+    paddingBottom: 100px;
 `;
 export const ProductImageContainer = styled.View`
     
@@ -726,7 +731,54 @@ export const DescriptionText = styled.Text`
     textAlign: center;
 `;
 
+// ==============WALLET SCREEN ==============
 
+export const WalletContainer = styled.View`
+    flexDirection: column;
+    gap: 20px;
+    width: 100%;
+    justifyContent: space-between;
+`;
+export const WalletBox = styled.View`
+    background: ${primary};
+    marginTop: 20px;
+    height: 140px;
+    borderRadius: 10px;
+    padding: 20px;
+`;
+export const WalletTitle = styled.Text`
+    fontSize: 15px;
+    color: ${whiteColor};
+`;
+export const WalletPrice = styled.Text`
+    fontSize: 35px;
+    color: ${whiteColor};
+    fontFamily: PoppinsSemiBold;
+`;
+export const WalletPriceContainer = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+    alignItems: center;
+`;
+export const IconContainer = styled.View`
+    
+`;
+export const WalletBtnContainer = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+`;
+export const AddCardBtn = styled.View`
+    padding: 6px;
+    background: ${primary};
+`;
+export const AddFundBtn = styled.View`
+    padding: 6px;
+    border: 1px;
+    borderColor: ${primary};
+`;
+export const AddCardBtnText = styled.Text`
+    color: ${whiteColor};
+`;
 
 // =============Profile screen =================
 export const ProfileContainer = styled.View`
@@ -742,10 +794,16 @@ export const ProfileInnerContainer = styled.View`
 export const ProfileTitleHeader = styled.View`
     height: 60px;
     background: ${primary};
-    pading: 5px;
+    padding: 5px;
     alignItems: center;
     justifyContent: center;
     textAlign: center;
+    width: 100%;
+`;
+export const ProfileTitleContainer = styled.View`
+    height: 60px;
+    background: ${primary};
+    padding: 20px;
     width: 100%;
 `;
 export const ProfileHeaderSection = styled.View`
@@ -766,7 +824,7 @@ export const UserAvatar = styled.Image`
 export const UserName = styled.Text`
     fontSize: 15px;
     color: ${black};
-    fontWeight: 700;
+    fontFamily: PoppinsMedium;
 `;
 export const UserID = styled.Text`
     fontSize: 15px;
@@ -807,7 +865,7 @@ export const ProfileOptionLeftText = styled.Text`
 
 export const ProfileOptionRightIcon = styled.View`
 `;
-export const SignOutBtn = styled.View`
+export const SignOutBtn = styled.TouchableOpacity`
     flexDirection: row;
     gap: 10px;
     background: ${whiteColor};
@@ -815,11 +873,13 @@ export const SignOutBtn = styled.View`
     width: 100%;
     marginTop: 50px;
     justifyContent: center;
+    alignItems: center;
     borderRadius: 8px;
 `;
 export const SignOutBtnText = styled.Text`
     color: ${black};
     fontSize: 15px;
+    alignItems: center;
 `;
 export const UpgrePlanContainer = styled.View`
     width: 100%;

@@ -4,7 +4,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // import { createDrawerNavigator } from "@react-navigation/drawer";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // import { TouchableOpacity } from "react-native";
@@ -77,17 +77,35 @@ function AuthStack() {
   );
 }
 
+function ProfileStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+    </Stack.Navigator>
+  );
+}
+
 
 
 
 // Bottom Tab Navigator
 function TabNavigator() {
-
   const [isProfileModalVisible, setProfileModalVisible] = useState(false);
 
   const toggleProfileModal = () => {
     setProfileModalVisible(!isProfileModalVisible);
   };
+
+  const navigation = useNavigation();
+  const [isProfileScreen, setIsProfileScreen] = useState(false);
+
+  navigation.addListener("state", (e) => {
+    if (e.data.state.routes[e.data.state.index].name === "Profile") {
+      setIsProfileScreen(true);
+    } else {
+      setIsProfileScreen(false);
+    }
+  });
 
   return (
     <>
@@ -148,10 +166,21 @@ function TabNavigator() {
           ),
         }}
       />
-     <Tab.Screen
+      <Tab.Screen
+        name="ProfileStack"
+        component={ProfileStack}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ellipsis-horizontal" color={color} size={size} />
+          ),
+          tabBarLabel: ""
+        }}
+      />
+     {/* <Tab.Screen
           name="Profile"
           component={Profile}
-          options={() => ({
+          options={(navigation) => ({
             tabBarIcon: ({ color, size }) => (
               <Ionicons
                 name="ellipsis-horizontal"
@@ -162,7 +191,7 @@ function TabNavigator() {
             ),
             tabBarLabel: ""
           })}
-        />
+        /> */}
      {/* <Tab.Screen
           name="Profile"
           component={Profile}
@@ -218,6 +247,25 @@ export default function MainNavigation() {
         >
           <Stack.Screen name="AuthStack" component={AuthStack} options={{ headerShown: false }} />
           <Stack.Screen name="MainContent" component={TabNavigator} options={{ headerShown: false }} />
+          {/* <Stack.Screen
+            name="Profile"
+            component={Profile}
+            options={({ navigation, route }) => ({
+              headerShown: true,
+              headerTitle: '',
+              headerRight: () => (
+                <Ionicons.Button
+                  name="ellipsis-horizontal"
+                  size={24}
+                  color="black"
+                  backgroundColor="transparent"
+                  onPress={() => navigation.navigate('ProfileStack')}
+                />
+              ),
+              tabBarVisible: route.state ? route.state.index > 0 ? false : true : null, // Hide tab bar for Profile screen
+            })}
+          /> */}
+         
 
           <Stack.Group>
             <Stack.Screen name="PrivilegeList" component={PrivilegeList} />
