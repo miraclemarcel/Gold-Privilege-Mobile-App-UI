@@ -28,6 +28,7 @@ import {
     UpgrePlanContainer, 
     UserAvatar, 
     UserAvatarContainer, 
+    UserAvatarIcon, 
     UserID, 
     UserName, 
     UserPointBtn, 
@@ -50,6 +51,9 @@ const Profile = ({ navigation }) => {
                 <ProfileHeaderSection>
                     <UserAvatarContainer>
                         <UserAvatar source={require("../../assets/images/Avatar-Img.png")}/>
+                        <UserAvatarIcon onPress={() => navigation.navigate('AvatarUpload')} activeOpacity={0.5}>
+                        <Ionicons name='happy-outline' size={24} color={Colors.whiteColor} />
+                        </UserAvatarIcon>
                     </UserAvatarContainer>
                     <UserName>Miracle Marcel</UserName>
                     <UserID>GP24266357</UserID>
@@ -59,8 +63,7 @@ const Profile = ({ navigation }) => {
                     </UserPointBtn>
                 </ProfileHeaderSection>
               <ProfileOption>
-                <TouchableOpacity onPress={() => navigation.navigate("UpdateProfile")}>
-                    <ProfileOptionContainer>
+                    <ProfileOptionContainer activeOpacity={0.8} onPress={() => navigation.navigate("UpdateProfile")}>
                         <ProfileOptionLeft>
                             <Ionicons name="person" size={20} color={Colors.whiteColor} />
                             <ProfileOptionLeftText>Profile</ProfileOptionLeftText>
@@ -69,8 +72,7 @@ const Profile = ({ navigation }) => {
                             <Ionicons name="chevron-forward" size={20} color={Colors.whiteColor} />
                         </ProfileOptionRightIcon>
                     </ProfileOptionContainer>
-                </TouchableOpacity>
-                    <ProfileOptionContainer>
+                    <ProfileOptionContainer activeOpacity={0.8} onPress={() => navigation.navigate("MyPlan")}>
                         <ProfileOptionLeft>
                             <Ionicons name="calendar-outline" size={20} color={Colors.whiteColor} />
                             <ProfileOptionLeftText>Plan</ProfileOptionLeftText>
@@ -79,7 +81,7 @@ const Profile = ({ navigation }) => {
                             <Ionicons name="chevron-forward" size={20} color={Colors.whiteColor} />
                         </ProfileOptionRightIcon>
                     </ProfileOptionContainer>
-                    <ProfileOptionContainer>
+                    <ProfileOptionContainer activeOpacity={0.8} >
                         <ProfileOptionLeft>
                             <Ionicons name="settings-outline" size={20} color={Colors.whiteColor} />
                             <ProfileOptionLeftText>Settings</ProfileOptionLeftText>

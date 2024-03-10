@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { View, ActivityIndicator, TouchableOpacity, ScrollView } from "react-native";
+import { View, ActivityIndicator, TouchableOpacity, ScrollView, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Octicons } from "@expo/vector-icons";
+import { Ionicons, Octicons } from "@expo/vector-icons";
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 // Import styles and constants from another file
@@ -48,6 +48,8 @@ const SignUp = ({ navigation }) => {
   const [loading, setLoading] = useState(false); // Define loading state
   const [show, setShow] = useState(false);
   const [date, setDate] = useState(new Date(2000, 0, 1));
+  const [agreed, setAgreed] = useState(false); // State to manage agreement checkbox
+
 
   // ====actual date of birth of the user to be sent===
   const [dob, setDob] = useState();
@@ -171,10 +173,29 @@ const SignUp = ({ navigation }) => {
                 togglePasswordVisibility={() => setConfirmHidePassword(!hideConfirmPassword)}
                 onChangeText={(text) => setData({...data, confirmPassword: text})}
               />
-
+              {/* <View style={{ marginTop: 15}}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
+                  <Ionicons name="checkmark-circle" size={24} color={Colors.primary} />
+                  <Text style={{ fontFamily: 'PoppinsRegular', fontSize: 12 }}>I have read and agree to the Terms of Service. 
+                    <Text style={{ fontFamily: 'PoppinsRegular', color: Colors.primary, fontSize: 12}}> Gold Privilege's Terms</Text>
+                    </Text>
+                </View>
+              </View> */}
+              <View style={{ marginTop: 15}}>
+              
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
+                  <TouchableOpacity onPress={() => setAgreed(!agreed)} activeOpacity={0.6}>
+                    <Ionicons name={agreed ? "checkbox" : "checkbox-outline"} size={24} color={Colors.primary} />
+                  </TouchableOpacity>
+                    <Text style={{ fontFamily: 'PoppinsRegular', fontSize: 12 }}>I have read and agree to the Terms of Service. 
+                      <Text style={{ fontFamily: 'PoppinsRegular', color: Colors.primary, fontSize: 12}}> Gold Privilege's Terms</Text>
+                    </Text>
+                  </View>
+               
+              </View>
               {/* ==========Button========= */}
               {!loading ? (
-                <StyledButton onPress={handleSignUp}>
+                <StyledButton onPress={handleSignUp} activeOpacity={0.9}>
                   <ButtonText>SIGN UP</ButtonText>
                 </StyledButton>
               ) : (

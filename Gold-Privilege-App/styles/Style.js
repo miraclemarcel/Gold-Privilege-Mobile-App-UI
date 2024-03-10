@@ -18,7 +18,8 @@ const windowHeight = Dimensions.get('window').height;
 //  -------- colors--------
 
 export const Colors = {
-    primary: "#e5ad04",
+    primary: "#e5ad04", 
+    prrofileBg: "#E6A540", 
     primaryVariant: "rgba(229, 173, 1, 0.3)",
     primaryHover: "#144FE1",
     backgroundColor: "#ffffff",
@@ -42,7 +43,7 @@ export const Colors = {
     virtualCardBtnColor: "#8E6B02", 
 }
 
-const {primary, physicalCardColor, virtualCardColor, virtualCardBtnColor, primaryVariant, primaryHover, backgroundColor, homeHeaderBg, 
+const {primary, prrofileBg, physicalCardColor, virtualCardColor, virtualCardBtnColor, primaryVariant, primaryHover, backgroundColor, homeHeaderBg, 
     cardsBg, cardsBorder, white, black, inputBg, 
     inputBorderFocus, inputPlaceholder, success, labelColor, danger, darkBlue, darkColor, inputBorder,  onBordingText, whiteColor} = Colors;
     
@@ -120,7 +121,7 @@ export const PageTitleHeader = styled.View`
 export const PageTitle = styled.Text`
     fontSize: 20px;
     textAlign: center;
-    fontWeight: bold;
+    fontFamily: PoppinsSemiBold;
     color: ${darkColor};
     justifyContent: center;
     padding: 16px;
@@ -385,6 +386,7 @@ export const OtpButtonBottom = styled.View`
     flexDirection: column;
     gap: 10px;
     alignItems: center;
+    width: 100%;
 `;
 export const ResendBox = styled.View`
     marginTop: 15px;
@@ -737,21 +739,23 @@ export const WalletContainer = styled.View`
     flexDirection: column;
     gap: 20px;
     width: 100%;
-    justifyContent: space-between;
 `;
 export const WalletBox = styled.View`
     background: ${primary};
     marginTop: 20px;
+    flexDirection: column;
+    justifyContent: space-between;
     height: 140px;
     borderRadius: 10px;
     padding: 20px;
 `;
 export const WalletTitle = styled.Text`
-    fontSize: 15px;
+    fontSize: 11px;
     color: ${whiteColor};
+    fontFamily: PoppinsMedium;
 `;
 export const WalletPrice = styled.Text`
-    fontSize: 35px;
+    fontSize: 38px;
     color: ${whiteColor};
     fontFamily: PoppinsSemiBold;
 `;
@@ -767,24 +771,72 @@ export const WalletBtnContainer = styled.View`
     flexDirection: row;
     justifyContent: space-between;
 `;
-export const AddCardBtn = styled.View`
+export const AddCardBtn = styled.TouchableOpacity`
     padding: 6px;
     background: ${primary};
+    height: 50px;
+    alignItems: center;
+    justifyContent: center;
+    borderRadius: 10px;
+    width: 49%;
+    flexDirection: row;
+    gap: 6px;
 `;
-export const AddFundBtn = styled.View`
+export const AddFundBtn = styled.TouchableOpacity`
     padding: 6px;
     border: 1px;
     borderColor: ${primary};
+    height: 50px;
+    alignItems: center;
+    justifyContent: center;
+    width: 49%;
+    borderRadius: 10px;
+    flexDirection: row;
+    gap: 6px;
 `;
 export const AddCardBtnText = styled.Text`
     color: ${whiteColor};
+`;
+export const AddMoneyBtnText = styled.Text`
+    color: ${primary};
+`;
+
+
+// ====Wllet activity section ===================
+
+export const WalletActivityContainer = styled.View`
+    paddingTop: 20px;
+`;
+
+export const ActivityHeader = styled.View`
+    flexDirection: row;
+    width: 100%;
+    justifyContent: space-between;
+`;
+export const ActivityHeadTitle = styled.Text`
+    fontSize: 14px;
+    fontFamily: PoppinsSemiBold;
+`;
+export const ActivityHeadTitleRight = styled.Text`
+    fontSize: 14px;
+    fontFamily: PoppinsSemiBold;
+    textDecorationLine: underline;
+`;
+export const WalletNoticeContainer = styled.View`
+    marginTop: 50px;
+    alignItems: center;
+`;
+export const WalletNotice = styled.Text`
+    fontSize: 12px;
+    fontFamily: PoppinsMedium;
+    color: ${labelColor};
 `;
 
 // =============Profile screen =================
 export const ProfileContainer = styled.View`
     flex: 1;
     padding: 20px;
-    backgroundColor: ${primary};
+    backgroundColor: ${prrofileBg};
 `;
 export const ProfileInnerContainer = styled.View`
     flex: 1;
@@ -819,7 +871,17 @@ export const UserAvatar = styled.Image`
     height: 100px;
     width: 100px;
     borderRadius: 50px;
-
+`;
+export const UserAvatarIcon = styled.TouchableOpacity`
+    height: 30px;
+    width: 30px;
+    borderRadius: 50px;
+    display: absolute;
+    right: -70px;
+    top: -25px;
+    background: ${primary};
+    alignItems: center;
+    justifyContent: center;
 `;
 export const UserName = styled.Text`
     fontSize: 15px;
@@ -846,7 +908,7 @@ export const UserPointText = styled.Text`
 export const ProfileOption = styled.View`
     marginTop: 20px;
 `;
-export const ProfileOptionContainer = styled.View`
+export const ProfileOptionContainer = styled.TouchableOpacity`
     flexDirection: row;
     justifyContent: space-between;
     height: 60px;
@@ -920,7 +982,88 @@ export const UpgradeBtnText = styled.Text`
     color: ${whiteColor};
     fontSize: 15px;
 `;
+// =============AVATA UPLOAD PAGE ============
+export const AvatarUploadContainer = styled.View`
+    flex: 1;
+    backgroundColor: ${whiteColor};
+`;
+export const AvatarUploadDisplay = styled.ImageBackground`
+    height: 430px;
+    width: 100%;
+    alignItems: center;
+    justifyContent: flex-end;
+`;
 
+export const AvatarNameContainer = styled.Text`
+    paddingBottom: 30px;
+`;
+export const AvatarName = styled.Text`
+    fontSize: 14px;
+    fontFamily: PoppinsMedium;
+`;
+export const AvatarBottomContainer = styled.View`
+    flexDirection: column;
+    padding: 20px;
+    gap: 70px;
+    marginBottom: 40px;
+`;
+
+export const AvatartListContainer = styled.View`
+    flexDirection: row;
+    flexWrap: wrap;
+    justifyContent: center;
+    display: absolute;
+    top: -40px;
+`;
+
+export const ChooseAvatarBox = styled.TouchableOpacity`
+    marginBottom: 30px;
+    width: 60px;
+    height: 60px;
+    marginRight: 10px;
+`;
+
+export const ChooseAvatarImageContainer = styled.View`
+    width: 64px;
+    height: 64px;
+    border: 4px solid ${whiteColor}; 
+    borderRadius: 8px; 
+    overflow: hidden; 
+`;
+
+export const ChooseAvatarImage = styled.Image`
+    width: 100%;
+    height: 100%;
+`;
+
+export const ChooseAvatarName = styled.Text`
+    fontSize: 8px;
+`;
+export const AvartarBtnContainer = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+`;
+export const UploadBtnBtn = styled.TouchableOpacity`
+    width: 69%;
+    height: 50px;
+    background: ${primary};
+    alignItems: center;
+    justifyContent: center;
+    borderRadius: 10px;
+    gap: 6px;
+`;
+export const ShareBtn = styled.TouchableOpacity`
+    width: 30%;
+    height: 50px;
+    width: 30%;
+    height: 50px;
+    border: 1px;
+    borderColor: ${primary};
+    alignItems: center;
+    justifyContent: center;
+    borderRadius: 10px;
+    gap: 6px;
+`;
 // ========PROFILE DETAILS PAGE ===========
 export const StyledProfileInput = styled.TextInput`
   padding: 15px;
@@ -1034,6 +1177,127 @@ export const CheckOutPlanContainer = styled.View`
     flexDirection: column;
     gap: 10px;
 `;
+
+// ==============================MY PLAN PAGE ================
+export const MyPlanContainer = styled.View`
+    flex: 1;
+    width: 100%;
+`;
+export const PlanHeaderContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+`;
+export const ActivePlanBtn = styled.View`
+    padding: 10px;
+    background: ${primaryVariant};
+    width: 100px;
+    justifyContent: center;
+    alignItems: center;
+    borderRadius: 6px;
+`;
+export const ActivePlanBtnText = styled.Text`
+    fontSize: 8px;
+    fontFamily: PoppinsMedium;
+    color: ${primary};
+    borderRadius: 5px;
+`;
+export const MyPlanTitle = styled.Text`
+    fontSize: 17px;
+    fontFamily: PoppinsSemiBold;
+    color: ${black}
+`;
+export const ActivePriceContainer = styled.View`
+    flexDirection: row;
+    gap: 3px;
+    alignItems: center;
+`;
+export const ActivePlanDuration = styled.Text`
+    fontSize: 20px;
+    color: ${labelColor};
+`;
+export const ActivePlanPrice = styled.Text`
+    fontSize: 23px;
+    fontFamily: PoppinsBold;
+    color: ${black}
+`;
+export const StatusContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+`;
+export const StatusText = styled.Text`
+    fontSize: 10px;
+    fontFamily: PoppinsRegular;
+    color: ${black}
+`;
+export const StatusBtn = styled.View`
+    background: ${success};
+    padding: 10px;
+    width: 100px;
+    justifyContent: center;
+    alignItems: center;
+    borderRadius: 6px;
+`;
+export const StatusBtnText = styled.Text`
+    fontSize: 10px;
+    color: ${whiteColor};
+`;
+export const CtaBtnContainer = styled.View`
+    flexDirection: column;
+    gap: 15px;
+    marginTop: 30px;
+`;
+export const ActiveUpgradeBtnText = styled.Text`
+    fontSize: 15px;
+    color: ${whiteColor};
+`;
+export const ActiveUpgradeBtn = styled.TouchableOpacity`
+    background: ${primary};
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    justifyContent: center;
+    alignItems: center;
+    borderRadius: 10px;
+`;
+export const ActiveCancelBtn = styled.TouchableOpacity`
+    border: 1px;
+    borderColor: ${black};
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    justifyContent: center;
+    alignItems: center;
+    borderRadius: 10px;
+`;
+export const ActiveCancelBtnText = styled.Text`
+    fontSize: 15px;
+    color: ${black};
+`;
+
+export const PlanBenefitsContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+    marginTop: 40px;
+`;
+export const BenefitTitle = styled.Text`
+    fontSize: 15px;
+    fontFamily: PoppinsMedium;
+`;
+export const PlanBenefitsContent = styled.View`
+
+`;
+export const PlanBenefits = styled.Text`
+    fontSize: 15px;
+
+`;
+
+export const MyPlanFooter = styled.View`
+    flexDirection: column;
+    gap: 5px;
+    marginTop: 30px;
+    marginBottom: 30px;
+`;
+
 
 
 // =============CARD SCREEN =================
@@ -1168,7 +1432,7 @@ export const CardModalConatainer = styled.View`
 export const CardModalInner = styled.View`
     background: ${backgroundColor};
     padding: 20px;
-    height: 35%;
+    height: 40%;
     borderTopLeftRadius: 50px;
     borderTopRightRadius: 50px;
     alignItems: center;

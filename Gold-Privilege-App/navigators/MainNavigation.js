@@ -18,6 +18,9 @@ import Login from "../screens/AuthScreens/Login";
 import SignUp from "../screens/AuthScreens/SignUp";
 import SignUpOtp from "../screens/AuthScreens/SignUpOtp";
 import Congrats from "../screens/AuthScreens/Congrats";
+import ForgotPassword from "../screens/AuthScreens/ForgotPassword";
+import ResetPasswordOTP from "../screens/AuthScreens/ResetPasswordOTP";
+import ResetPassword from "../screens/AuthScreens/ResetPassword";
 
 //Home screen=======
 import Home from "../screens/HomeScreens/Home";
@@ -37,9 +40,14 @@ import Profile from "../screens/ProfileScreen/Profile";
 import UpdateProfile from "../screens/ProfileScreen/UpdateProfile";
 import UpgradePlan from "../screens/ProfileScreen/UpgradePlan";
 import ProfileModal from "../screens/ProfileScreen/ProfileModal";
+import AvatarUpload from "../screens/ProfileScreen/AvatarUpload";
+
+// =========My plans screens========
+import MyPlan from "../screens/Plans/MyPlan";
 
 // =======Checkout screens============
 import Checkout from "../screens/CheckoutScreens/Checkout";
+import { Colors } from "../styles/Style";
 
 
 const Stack = createNativeStackNavigator();
@@ -56,7 +64,7 @@ function AuthStack() {
         headerStyle: {
           backgroundColor: "transparent",
         },
-        headerTintColor: "white",
+        headerTintColor: Colors.black,
         headerTransparent: true,
         headerTitle: "",
         headerLeftContainerStyle: {
@@ -71,6 +79,9 @@ function AuthStack() {
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="SignUpOtp" component={SignUpOtp} />
       <Stack.Screen name="Congrats" component={Congrats} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      <Stack.Screen name="ResetPasswordOTP" component={ResetPasswordOTP} />
+      <Stack.Screen name="ResetPassword" component={ResetPassword} />
   
      
     </Stack.Navigator>
@@ -278,9 +289,11 @@ export default function MainNavigation() {
 
           {/* { ─── Settings ──────────────────────────────────────────────} */}
           <Stack.Group>
+            <Stack.Screen name="AvatarUpload" component={AvatarUpload} />
             <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
             <Stack.Screen name="UpgradePlan" component={UpgradePlan} />
             <Stack.Screen name="Checkout" component={Checkout} />
+            <Stack.Screen name="MyPlan" component={MyPlan} />
 
           </Stack.Group>
 

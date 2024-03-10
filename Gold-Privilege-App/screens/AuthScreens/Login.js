@@ -115,11 +115,11 @@ const Login = ({ navigation }) => {
             />
 
             {/* ==========Button========= */}
-            <CtaTextContainer onPress={() => navigation.navigate("ResetOptions")}>
+            <CtaTextContainer onPress={() => navigation.navigate("ForgotPassword")}>
               <CtaText>Forgot password?</CtaText>
             </CtaTextContainer>
             {!loading ? (
-              <StyledButton onPress={handleSignin}>
+              <StyledButton onPress={handleSignin} activeOpacity={0.9}>
                 <ButtonText>LOG IN</ButtonText>
               </StyledButton>
             ) : (
