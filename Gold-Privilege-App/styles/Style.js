@@ -112,7 +112,7 @@ export const InnerContainer = styled.View`
 
 export const PageTitleHeader = styled.View`
     height: 60px;
-    background: ${whiteColor};
+    background: ${prrofileBg};
     pading: 5px;
     alignItems: center;
     justifyContent: center;

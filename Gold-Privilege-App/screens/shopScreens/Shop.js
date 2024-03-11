@@ -14,7 +14,6 @@ import {
   DetailsBtn,
   DetailsBtnText,
   DiscountPriceText,
-  FilterContainer, 
   FiveStarContainer, 
   FlatlistContainer, 
   ImageOfProduct, 

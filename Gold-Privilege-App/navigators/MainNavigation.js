@@ -90,8 +90,13 @@ function AuthStack() {
 
 function ProfileStack() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+    <Stack.Navigator
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarVisible: route.state ? route.state.index === undefined : true,
+      })}
+    >
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
 }
