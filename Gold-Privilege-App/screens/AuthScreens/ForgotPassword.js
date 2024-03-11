@@ -60,7 +60,7 @@ const ForgotPassword = ({ navigation }) => {
                 <View style={{ alignItems: 'center', justifyContent: 'center', flexDirection: "row" }}>
                   <Text style={{ fontFamily: 'PoppinsMedium', }}>   Don't have an account?</Text>
                   <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-                        <Text style={{ fontFamily: 'PoppinsMedium', color: Colors.primary }}> Sign In</Text>
+                        <Text style={{ fontFamily: 'PoppinsMedium', color: Colors.primary }}> Sign Up</Text>
                     </TouchableOpacity>
                 </View>
                

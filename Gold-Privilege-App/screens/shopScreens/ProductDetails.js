@@ -1,5 +1,6 @@
 import React from 'react';
-import { Modal, View, Text, Button, Image, StyleSheet } from 'react-native';
+import { Modal, View, Text, Button, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { ButtonText, Colors } from '../../styles/Style';
 
 // ProductModal component
 const ProductDetails = ({ isVisible, onClose, product }) => {
@@ -17,10 +18,21 @@ const ProductDetails = ({ isVisible, onClose, product }) => {
           </View>
          <View style={styles.productDeatilsContent}>
             <Text style={styles.productTitle}>{product ? product.productTitle : ''}</Text>
-            <Text style={styles.productDescription}>{product ? product.productDescription : ''}</Text>
-            <Text style={styles.discountedPrice}>{product ? product.discountedPrice : ''}</Text>
+            <View style={styles.descriptionContainer}>
+              <Text style={styles.productDescription}>{product ? product.productDescription : ''}</Text>
+            </View>
+            <View style={{flexDirection: 'row', gap: 5, marginTop: 20, marginBottom: 20}}>
+              <Text style={styles.discountedPrice}>{product ? product.discountedPrice : ''}</Text>
+              <Text style={styles.actualPrice}>{product ? product.actualPrice : ''}</Text>
+            </View>
+          
+            <TouchableOpacity onPress={onClose} activeOpacity={0.9}>
+                <View style={styles.purchaseBtn}>
+                  <ButtonText>Buy Now</ButtonText>
+                </View>
+            </TouchableOpacity>
          </View>
-          <Button title="Close" onPress={onClose} />
+        
         </View>
       </View>
     </Modal>
@@ -41,12 +53,15 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 30, 
     borderTopRightRadius: 30,
     alignItems: 'center',
-    height: '90%',
+    height: '90%', 
     overflow: 'hidden',
   },
   // productDeatilsHeader: {
   //   width: 600,
   // },
+  productDeatilsContent: {
+    padding: 20,
+  },
   productImage: {
     // width: '100%',
     height: 300,
@@ -60,12 +75,35 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 5
   },
+  descriptionContainer: {
+    marginTop: 20,
+    paddingTop: 40,
+    paddingBottom: 40,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderTopColor: Colors.labelColor,
+    borderBottomColor: Colors.labelColor,
+  },
   productDescription: {
     marginBottom: 10
   },
   discountedPrice: {
-    fontWeight: 'bold',
-    marginBottom: 10
+    fontSize: 20,
+    fontFamily: 'PoppinsMedium',
+    color: Colors.black,
+
+  },
+  actualPrice: {
+    fontSize: 20,
+    fontFamily: 'PoppinsRegular',
+    textDecorationLine: 'line-through',
+    color: Colors.labelColor,
+  },
+  purchaseBtn: {
+    backgroundColor: Colors.black,
+    padding: 10,
+    height: 50,
+    borderRadius: 15,
   }
 });
 

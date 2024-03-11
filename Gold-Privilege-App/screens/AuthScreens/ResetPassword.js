@@ -50,13 +50,18 @@ const ResetPassword = ({ navigation }) => {
             </View>
         <OtpButtonBottom>
           
-          <StyledButton onPress={handleVerify} disabled={loading}>
+          <StyledButton>
+            
+              <ButtonText>Change my password</ButtonText>
+            </StyledButton>
+        
+          {/* <StyledButton onPress={handleVerify} disabled={loading}>
             {loading ? (
               <ActivityIndicator size="small" color={Colors.white} />
             ) : (
               <ButtonText>Change my password</ButtonText>
-            )}
-          </StyledButton>
+            )} */}
+          {/* </StyledButton> */}
         </OtpButtonBottom>
       </StyledContainer>
     </SafeAreaView>

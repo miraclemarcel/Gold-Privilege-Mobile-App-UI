@@ -34,6 +34,7 @@ export const Colors = {
     inputBorderFocus: "#1350E8",
     inputPlaceholder: "#8B9CC8",
     success: "#3CDF21",
+    successVarient: "rgba(60, 223, 33, 0.1)",
     danger: "#FF0000",
     inputBorder: "#B9B6B6",
     darkColor: "#3f3d56",
@@ -45,7 +46,7 @@ export const Colors = {
 
 const {primary, prrofileBg, physicalCardColor, virtualCardColor, virtualCardBtnColor, primaryVariant, primaryHover, backgroundColor, homeHeaderBg, 
     cardsBg, cardsBorder, white, black, inputBg, 
-    inputBorderFocus, inputPlaceholder, success, labelColor, danger, darkBlue, darkColor, inputBorder,  onBordingText, whiteColor} = Colors;
+    inputBorderFocus, inputPlaceholder, success, successVarient, labelColor, danger, darkBlue, darkColor, inputBorder,  onBordingText, whiteColor} = Colors;
     
 
 // =====GENERAL STYLES===========
@@ -643,6 +644,16 @@ export const HotDealPlanStar = styled.View`
 //     color: ${whiteColor};
 //     fontWeight: 700;
 // `;
+// ============PRIVILEGES PAGE==================
+export const PrivilegeHeading = styled.View`
+    width: 100%;
+    flexDirection: column;
+    gap: 10px;
+`;
+export const PrivilegeHeadingTxt = styled.Text`
+    fontSize: 15px;
+    color: ${black};
+`;
 
 // =========SHOP SCREEN==============
 export const ShopHeading = styled.View`
@@ -657,13 +668,13 @@ export const ProductContainer = styled.View`
     alignItems: center;
     width: 48%; 
     marginRight: 10px;
+    paddingBottom: 15px;
 `;
 export const ProductContainerInner = styled.View`
     width: 100%;
 `;
 export const FlatlistContainer = styled.View`
     width: 100%;
-    paddingBottom: 100px;
 `;
 export const ProductImageContainer = styled.View`
     
@@ -1230,8 +1241,8 @@ export const StatusText = styled.Text`
     color: ${black}
 `;
 export const StatusBtn = styled.View`
-    background: ${success};
-    padding: 10px;
+    background: ${successVarient};
+    padding: 5px;
     width: 100px;
     justifyContent: center;
     alignItems: center;
@@ -1239,7 +1250,7 @@ export const StatusBtn = styled.View`
 `;
 export const StatusBtnText = styled.Text`
     fontSize: 10px;
-    color: ${whiteColor};
+    color: ${success};
 `;
 export const CtaBtnContainer = styled.View`
     flexDirection: column;
