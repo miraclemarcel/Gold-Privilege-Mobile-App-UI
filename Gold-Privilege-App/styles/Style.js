@@ -110,9 +110,18 @@ export const InnerContainer = styled.View`
 `;
 
 
-export const PageTitleHeader = styled.View`
+export const ProfilTitleHeader = styled.View`
     height: 60px;
     background: ${prrofileBg};
+    pading: 5px;
+    alignItems: center;
+    justifyContent: center;
+    textAlign: center;
+    width: 100%;
+`;
+export const PageTitleHeader = styled.View`
+    height: 60px;
+    background: ${whiteColor};
     pading: 5px;
     alignItems: center;
     justifyContent: center;
@@ -666,9 +675,10 @@ export const FilterContainer = styled.View`
 
 export const ProductContainer = styled.View`
     alignItems: center;
-    width: 48%; 
-    marginRight: 10px;
+    width: 47%; 
+    marginRight: 12px;
     paddingBottom: 15px;
+    justifyContent: space-between;
 `;
 export const ProductContainerInner = styled.View`
     width: 100%;

@@ -7,6 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { 
     Colors,
     PageTitleHeader,
+    ProfilTitleHeader,
     ProfileContainer, 
     ProfileHeaderSection, 
     ProfileInnerContainer, 
@@ -41,7 +42,7 @@ const Profile = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <PageTitleHeader/>
+      <ProfilTitleHeader/>
         <ScrollView
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}

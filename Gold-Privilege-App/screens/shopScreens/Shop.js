@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, Image, FlatList, TouchableOpacity, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ShopProducts } from "./ShopData";
 import { Ionicons } from '@expo/vector-icons';
@@ -96,28 +96,30 @@ const Shop = () => {
       <PageTitleHeader>
         <PageTitle>Shop</PageTitle>
       </PageTitleHeader>
-      <StyledContainer>
-        <InnerContainer>
-          <FlatlistContainer>
-            <ShopHeading>
-              <SearchContainerShop>
-                <SearchBar
-                  placeholder="search"
-                  placeholderTextColor={Colors.inputPlaceholder}
+        <StyledContainer>
+          <InnerContainer>
+              <FlatlistContainer>
+                <FlatList
+                  showsVerticalScrollIndicator={false}
+                  data={ShopProducts}
+                  renderItem={renderItem}
+                  keyExtractor={(item) => item.id.toString()}
+                  numColumns={2}
+                  contentContainerStyle={{ justifyContent: "space-between", paddingBottom: 20 }}
+                  ListHeaderComponent={() => (
+                    <ShopHeading>
+                      <SearchContainerShop>
+                        <SearchBar
+                          placeholder="search"
+                          placeholderTextColor={Colors.inputPlaceholder}
+                        />
+                      </SearchContainerShop>
+                    </ShopHeading>
+                  )}
                 />
-              </SearchContainerShop>
-            </ShopHeading>
-            <FlatList
-              showsVerticalScrollIndicator={false}
-              data={ShopProducts}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.id.toString()}
-              numColumns={2}
-              contentContainerStyle={{ justifyContent: "space-between", gap: 15 }}
-            />
-          </FlatlistContainer>
-        </InnerContainer>
-      </StyledContainer>
+              </FlatlistContainer>
+          </InnerContainer>
+        </StyledContainer>
 
       {/* =========Product details modal============ */}
       <ProductDetails

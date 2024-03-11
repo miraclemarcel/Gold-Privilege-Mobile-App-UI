@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, View, Text, Button, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { Modal, View, Text, Button, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { ButtonText, Colors } from '../../styles/Style';
 
 // ProductModal component
@@ -16,23 +16,26 @@ const ProductDetails = ({ isVisible, onClose, product }) => {
           <View style={styles.productDeatilsHeader}>
             <Image source={product ? product.productImage : null} style={styles.productImage} onError={(error) => console.log('Error loading image:', error)} />
           </View>
-         <View style={styles.productDeatilsContent}>
-            <Text style={styles.productTitle}>{product ? product.productTitle : ''}</Text>
-            <View style={styles.descriptionContainer}>
-              <Text style={styles.productDescription}>{product ? product.productDescription : ''}</Text>
-            </View>
-            <View style={{flexDirection: 'row', gap: 5, marginTop: 20, marginBottom: 20}}>
-              <Text style={styles.discountedPrice}>{product ? product.discountedPrice : ''}</Text>
-              <Text style={styles.actualPrice}>{product ? product.actualPrice : ''}</Text>
-            </View>
-          
-            <TouchableOpacity onPress={onClose} activeOpacity={0.9}>
-                <View style={styles.purchaseBtn}>
-                  <ButtonText>Buy Now</ButtonText>
+          <ScrollView 
+          showsVerticalScrollIndicator={false}
+          >  
+            <View style={styles.productDeatilsContent}>
+                <Text style={styles.productTitle}>{product ? product.productTitle : ''}</Text>
+                <View style={styles.descriptionContainer}>
+                  <Text style={styles.productDescription}>{product ? product.productDescription : ''}</Text>
                 </View>
-            </TouchableOpacity>
-         </View>
-        
+                <View style={{flexDirection: 'row', gap: 5, marginTop: 20, marginBottom: 20}}>
+                  <Text style={styles.discountedPrice}>{product ? product.discountedPrice : ''}</Text>
+                  <Text style={styles.actualPrice}>{product ? product.actualPrice : ''}</Text>
+                </View>
+              
+                <TouchableOpacity onPress={onClose} activeOpacity={0.9}>
+                    <View style={styles.purchaseBtn}>
+                      <ButtonText>Buy Now</ButtonText>
+                    </View>
+                </TouchableOpacity>
+            </View>
+          </ScrollView>
         </View>
       </View>
     </Modal>
@@ -63,12 +66,11 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   productImage: {
-    // width: '100%',
     height: 300,
     marginBottom: 10,
     borderTopLeftRadius: 30, 
     borderTopRightRadius: 30,
-    resizeMode: 'contain',
+    resizeMode: 'cover',
   },
   productTitle: {
     fontSize: 18,
@@ -104,6 +106,8 @@ const styles = StyleSheet.create({
     padding: 10,
     height: 50,
     borderRadius: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });
 

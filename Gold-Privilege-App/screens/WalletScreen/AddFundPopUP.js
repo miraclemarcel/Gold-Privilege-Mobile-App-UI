@@ -17,10 +17,15 @@ export const AddFundPopUP = ({ visible, onClose, onSubmit }) => {
 
   return (
     <Modal
-      animationType="slide"
-      transparent={true}
-      visible={visible}
-      onRequestClose={onClose}>
+    animationType="slide"
+    transparent={true}
+    visible={visible}
+    onRequestClose={onClose}
+    statusBarTranslucent={true}
+      
+      >
+
+        
       <View style={styles.modalContainer}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
@@ -37,7 +42,7 @@ export const AddFundPopUP = ({ visible, onClose, onSubmit }) => {
                 onChangeText={handleInput}
                 value={amount}
                 // placeholder="Enter amount"
-                keyboardType="numeric"
+                keyboardType="default"
                 />
             </View>
             <TouchableOpacity style={styles.submitButton} onPress={handleSubmit} activeOpacity={0.9}>
