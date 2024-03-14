@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, FlatList, Image, Dimensions, ScrollView, ImageBackground } from 'react-native'
+import { View, Text, FlatList, Image, Dimensions, ScrollView, ImageBackground, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Octicons, Ionicons  } from "@expo/vector-icons";
 
@@ -113,7 +113,12 @@ const Home = ({ navigation }) => {
                 <HomeHeaderRightContainer>
                     <HeaderIcon>
                       <Ionicons name="headset" size={20} color="black" />
-                      <Ionicons name="notifications" size={20} color="black" />
+                      <TouchableOpacity 
+                      activeOpacity={0.5} 
+                      onPress={() => navigation.navigate('Notification')}
+                      >
+                        <Ionicons name="notifications" size={20} color="black" />
+                      </TouchableOpacity>
                     </HeaderIcon>
                     <HeaderLeftTextContainer>
                       <PlanText>Premium Plan</PlanText>

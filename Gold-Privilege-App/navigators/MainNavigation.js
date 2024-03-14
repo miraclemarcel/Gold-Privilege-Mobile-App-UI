@@ -49,6 +49,10 @@ import MyPlan from "../screens/Plans/MyPlan";
 import Checkout from "../screens/CheckoutScreens/Checkout";
 import { Colors } from "../styles/Style";
 
+// =========Notification screen =====================
+import Notification from "../screens/NotificationScreen/Notification";
+import NotificationDetails from "../screens/NotificationScreen/NotificationDetails";
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -263,28 +267,12 @@ export default function MainNavigation() {
         >
           <Stack.Screen name="AuthStack" component={AuthStack} options={{ headerShown: false }} />
           <Stack.Screen name="MainContent" component={TabNavigator} options={{ headerShown: false }} />
-          {/* <Stack.Screen
-            name="Profile"
-            component={Profile}
-            options={({ navigation, route }) => ({
-              headerShown: true,
-              headerTitle: '',
-              headerRight: () => (
-                <Ionicons.Button
-                  name="ellipsis-horizontal"
-                  size={24}
-                  color="black"
-                  backgroundColor="transparent"
-                  onPress={() => navigation.navigate('ProfileStack')}
-                />
-              ),
-              tabBarVisible: route.state ? route.state.index > 0 ? false : true : null, // Hide tab bar for Profile screen
-            })}
-          /> */}
-         
 
           <Stack.Group>
             <Stack.Screen name="PrivilegeList" component={PrivilegeList} />
+            <Stack.Screen name="Notification" component={Notification} />
+            <Stack.Screen name="NotificationDetails" component={NotificationDetails} />
+
           </Stack.Group>
 
           {/* { ─── Shop screen──────────────────────────────────────────────} */}
