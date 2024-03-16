@@ -42,6 +42,7 @@ import UpdateProfile from "../screens/ProfileScreen/UpdateProfile";
 import UpgradePlan from "../screens/ProfileScreen/UpgradePlan";
 import ProfileModal from "../screens/ProfileScreen/ProfileModal";
 import AvatarUpload from "../screens/ProfileScreen/AvatarUpload";
+import Settings from "../screens/SettingsScreen/Settings";
 
 // ===========customer support =====================
 import Support from "../screens/SupportScreen/Support";
@@ -56,6 +57,7 @@ import { Colors } from "../styles/Style";
 // =========Notification screen =====================
 import Notification from "../screens/NotificationScreen/Notification";
 import NotificationDetails from "../screens/NotificationScreen/NotificationDetails";
+
 
 
 const Stack = createNativeStackNavigator();
@@ -293,6 +295,7 @@ export default function MainNavigation() {
             <Stack.Screen name="Checkout" component={Checkout} />
             <Stack.Screen name="MyPlan" component={MyPlan} />
             <Stack.Screen name="Support" component={Support} />
+            <Stack.Screen name="Settings" component={Settings} />
 
           </Stack.Group>
 

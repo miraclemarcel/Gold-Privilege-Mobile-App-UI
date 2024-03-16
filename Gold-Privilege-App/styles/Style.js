@@ -505,12 +505,35 @@ export const PlanText = styled.Text`
     fontSize: 13px;
     fontWeight: 600;
 `;
+// ========Banner slide==========
 export const HomeBannerSlide = styled.View`
     paddingTop: 20px;
+`;
+export const BnnerContentContainer = styled.View`
+    position: absolute;
+    bottom: 20px;
+    zIndex: 2;
+    paddingLeft: 25px;
+    flexDirection: column;
+    gap: 15px;
+`;
+export const BannerTitleText = styled.Text`
+    fontSize: 20px;
+    color: ${darkColor};
+    fontFamily: PoppinsSemiBold;
+`;
+export const BannerBtn = styled.TouchableOpacity`
+    background: ${primary};
+    padding: 7px;
+    alignItems: center;
+    justifyContent: center;
+    borderRadius: 8px;
 `;
 export const BannerImages = styled.Image`
     height: 200
 `;
+
+// ========end of banner slide==========
 export const InnerHomeContainer = styled.View`
     flexDirection: column; 
     width: 100%;
@@ -536,11 +559,45 @@ export const PrivilegeTextRight = styled.Text`
 
 // =================REFERRALS PAGES=============
 export const ReferralsImagesContainer = styled.View`
-    width: 300px;
-    background: ${danger};
-    height: 300px;
+    flexDirection: column;
+    marginTop: 40px;
+    gap: 20px;
+    alignItems: center;
+    justifyContent: center;
 `;
-
+export const TopThreeImages = styled.View`
+  
+`;
+export const ReferralHeadContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+    alignItems: center;
+`;
+export const ReferralTittle = styled.Text`
+    fontSize: 20px;
+    color: ${black};
+    fontFamily: "PoppinsSemiBold"
+`;
+export const ReferralBodyText = styled.Text`
+    fontSize: 15px;
+    fontFamily: "PoppinsRegular";
+    textAlign: center;
+    color: ${black};
+`;
+export const ReferralCopyContainer = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+`;
+export const CopyInput = styled.TextInput`
+    background: ${inputBg};
+    color: ${black};
+    height: 50px;
+    width: 70%;
+`;
+export const LinkShareContainer = styled.View`
+    flexDirection: row;
+    gap: 10px;
+`;
 
 
 

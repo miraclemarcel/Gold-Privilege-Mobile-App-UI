@@ -91,7 +91,7 @@ const Profile = ({ navigation }) => {
                             <Ionicons name="chevron-forward" size={20} color={Colors.whiteColor} />
                         </ProfileOptionRightIcon>
                     </ProfileOptionContainer>
-                    <ProfileOptionContainer activeOpacity={0.8} >
+                    <ProfileOptionContainer activeOpacity={0.8} onPress={() => navigation.navigate("Settings")} >
                         <ProfileOptionLeft>
                             <Ionicons name="settings-outline" size={20} color={Colors.whiteColor} />
                             <ProfileOptionLeftText>Settings</ProfileOptionLeftText>

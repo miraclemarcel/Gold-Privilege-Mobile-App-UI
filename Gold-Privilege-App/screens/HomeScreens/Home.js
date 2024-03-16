@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, FlatList, Image, Dimensions, ScrollView, ImageBackground, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Octicons, Ionicons  } from "@expo/vector-icons";
-
+import { Ionicons  } from "@expo/vector-icons";
+import { AccessModal } from '../ReferralsScreen/AccesModal';
 
 import { 
   Colors,
@@ -50,26 +50,16 @@ import {
   HotDealPlanInfoRightText,
   PrivilegePlanImg,
   HeaderLeftTextContainer,
-  HotdealsTextLeftTwo
+  HotdealsTextLeftTwo,
+  BnnerContentContainer,
+  BannerBtn,
+  BannerTitleText
 } from '../../styles/Style'
 
 import styled from 'styled-components/native';
 
 
-const BannerSlide = [
-  {
-    id: 1,
-    bannerImage: require('../../assets/images/referBanner-2.png'),
-  },
-  {
-    id: 2,
-    bannerImage: require('../../assets/images/referBanner-1.png'),
-  },
-  {
-    id: 3,
-    bannerImage: require('../../assets/images/referBanner-1.png'),
-  }
-];
+
 
 
 // ========Privileges=============
@@ -94,6 +84,50 @@ const PrivilegesPlan = [
 const { width } = Dimensions.get('window');
 
 const Home = ({ navigation }) => {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalVisible(false);
+  };
+
+  const BannerSlide = [
+    {
+      id: 1,
+      key: 'banner1',
+      bannerImage: require('../../assets/images/privilege-banner-img.png'),
+      onPress: () => navigation.navigate('PrivilegeList'), // Navigate to PrivilegePage
+      bannerTitle: "Enjoy Endless\nOpportunities",
+      bannerBtnText: "View Pivileges",
+    },
+    {
+      id: 2,
+      key: 'banner2',
+      bannerImage: require('../../assets/images/refer-img.png'),
+      onPress: () => handleOpenModal(true), // Navigate to ReferPage
+      bannerTitle: "Refer A Friend",
+      bannerTitle2: "Get A Reward ",
+      bannerBtnText: "Get Started",
+    },
+  ];
+
+
+   // Function to repeat the banners infinitely
+   const getInfiniteBanners = () => {
+    let infiniteBanners = [];
+    let key = 0;
+    for (let i = 0; i < 10; i++) { // Repeat the banners 10 times (adjust as needed)
+      BannerSlide.forEach(banner => {
+        infiniteBanners.push({ ...banner, key: key++ });
+      });
+    }
+    return infiniteBanners;
+  };
+
+
   return (
     <SafeAreaView style={{ flex: 1 }}> 
       <StyledContainer>
@@ -133,20 +167,42 @@ const Home = ({ navigation }) => {
                   placeholderTextColor={Colors.inputPlaceholder}
                   />
                 </SearchContainer>
-              <HomeBannerSlide>
-              <FlatList
-                horizontal
-                data={BannerSlide}
-                showsHorizontalScrollIndicator={false}
-                keyExtractor={item => item.id.toString()}
-                renderItem={({ item }) => (
-                  <Image
-                    source={item.bannerImage}
-                    style={{ width , height: 150, marginRight: 5, resizeMode: "cover", borderRadius: 15 }}
+                <FlatList
+                  horizontal ={true}
+                  data={getInfiniteBanners()} // Use the function to repeat banners infinitely
+                  showsHorizontalScrollIndicator={false}
+                  keyExtractor={(item) => item.key.toString()}
+                  renderItem={({ item }) => (
+                  <HomeBannerSlide>
+                  <BnnerContentContainer>
+                      <View>
+                        <BannerTitleText>{item.bannerTitle}</BannerTitleText>
+                      </View>
+                      <BannerBtn onPress={item.onPress} activeOpacity={0.7}>
+                        <Text style={{fontFamily: 'PoppinsMedium'}}>{item.bannerBtnText}</Text>
+                      </BannerBtn>
+                  </BnnerContentContainer>
+                    {/* Banner */}
+                    <ImageBackground 
+                    source={item.bannerImage} 
+                    style={{
+                      width: width - 40, // Adjust width to create space between banners
+                      height: 150, 
+                      resizeMode: "cover", 
+                      borderRadius: 10, // Add border radius
+                      marginRight: 10, // Add margin to create space between banners
+                      overflow: "hidden", // Add overflow hidden to respect border radius
+                    }}
                   />
+                    
+                  </HomeBannerSlide>
                 )}
-              />
-              </HomeBannerSlide>
+            ListFooterComponent={<View style={{ width: 20 }} />} // Add empty view as footer for spacing
+            initialNumToRender={2} // Render initial number of items
+            maxToRenderPerBatch={2} // Render maximum number of items per batch
+            windowSize={2} // Number of items to render at once
+            removeClippedSubviews={true} // Remove items from DOM when they are out of the screen
+          />
               <YourPiviligesContainer>
                 <PrivilegeTextContainer>
                   <PrivilegeTextLeft>Your Privileges</PrivilegeTextLeft>
@@ -209,7 +265,13 @@ const Home = ({ navigation }) => {
           </ScrollView>
         </InnerContainer>
       </StyledContainer>
- 
+    {/* ============MODAL POP UP========= */}
+      {/* <AccessModal visible={isModalVisible} onClose={() => setIsModalVisible(false)} /> */}
+      <AccessModal 
+        visible={modalVisible} 
+        onRequestClose={handleCloseModal}
+        navigation={navigation}
+      />
     </SafeAreaView>
   );
 };

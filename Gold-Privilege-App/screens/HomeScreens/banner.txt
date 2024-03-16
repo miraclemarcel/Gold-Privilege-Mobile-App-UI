@@ -1,0 +1,14 @@
+       {/* <HomeBannerSlide>
+              <FlatList
+                horizontal
+                data={BannerSlide}
+                showsHorizontalScrollIndicator={false}
+                keyExtractor={item => item.id.toString()}
+                renderItem={({ item }) => (
+                  <Image
+                    source={item.bannerImage}
+                    style={{ width , height: 150, marginRight: 5, resizeMode: "cover", borderRadius: 15 }}
+                  />
+                )}
+              />
+              </HomeBannerSlide> */}
