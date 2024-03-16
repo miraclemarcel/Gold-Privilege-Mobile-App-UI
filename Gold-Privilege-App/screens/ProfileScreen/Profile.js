@@ -76,7 +76,16 @@ const Profile = ({ navigation }) => {
                     <ProfileOptionContainer activeOpacity={0.8} onPress={() => navigation.navigate("MyPlan")}>
                         <ProfileOptionLeft>
                             <Ionicons name="calendar-outline" size={20} color={Colors.whiteColor} />
-                            <ProfileOptionLeftText>Plan</ProfileOptionLeftText>
+                            <ProfileOptionLeftText>My Plan</ProfileOptionLeftText>
+                        </ProfileOptionLeft>
+                        <ProfileOptionRightIcon>
+                            <Ionicons name="chevron-forward" size={20} color={Colors.whiteColor} />
+                        </ProfileOptionRightIcon>
+                    </ProfileOptionContainer>
+                    <ProfileOptionContainer activeOpacity={0.8} onPress={() => navigation.navigate("Support")}>
+                        <ProfileOptionLeft>
+                            <Ionicons name="calendar-outline" size={20} color={Colors.whiteColor} />
+                            <ProfileOptionLeftText>Customer Support</ProfileOptionLeftText>
                         </ProfileOptionLeft>
                         <ProfileOptionRightIcon>
                             <Ionicons name="chevron-forward" size={20} color={Colors.whiteColor} />

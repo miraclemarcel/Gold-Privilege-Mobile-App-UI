@@ -533,6 +533,17 @@ export const PrivilegeTextRight = styled.Text`
     textDecoration: underline;
 `;
 
+
+// =================REFERRALS PAGES=============
+export const ReferralsImagesContainer = styled.View`
+    width: 300px;
+    background: ${danger};
+    height: 300px;
+`;
+
+
+
+
 // ===privilege plan===========
 export const PrivilegesPlanContainer = styled.View`
     paddingTop: 20px;

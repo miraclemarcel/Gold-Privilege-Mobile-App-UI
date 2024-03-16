@@ -150,7 +150,7 @@ const Home = ({ navigation }) => {
               <YourPiviligesContainer>
                 <PrivilegeTextContainer>
                   <PrivilegeTextLeft>Your Privileges</PrivilegeTextLeft>
-                  <PrivilegeTextRightBtn onPress={() => navigation.navigate("PrivilegeList")}>
+                  <PrivilegeTextRightBtn onPress={() => navigation.navigate("Referrals")}>
                     <PrivilegeTextRight>View All</PrivilegeTextRight>
                   </PrivilegeTextRightBtn>
                 </PrivilegeTextContainer>

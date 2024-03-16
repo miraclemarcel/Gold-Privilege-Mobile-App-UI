@@ -25,6 +25,7 @@ import ResetPassword from "../screens/AuthScreens/ResetPassword";
 //Home screen=======
 import Home from "../screens/HomeScreens/Home";
 import PrivilegeList from "../screens/HomeScreens/PrivilegeList";
+import Referrals from "../screens/ReferralsScreen/Referrals";
 
 // =========Shop screens==================
 import Shop from "../screens/shopScreens/Shop";
@@ -41,6 +42,9 @@ import UpdateProfile from "../screens/ProfileScreen/UpdateProfile";
 import UpgradePlan from "../screens/ProfileScreen/UpgradePlan";
 import ProfileModal from "../screens/ProfileScreen/ProfileModal";
 import AvatarUpload from "../screens/ProfileScreen/AvatarUpload";
+
+// ===========customer support =====================
+import Support from "../screens/SupportScreen/Support";
 
 // =========My plans screens========
 import MyPlan from "../screens/Plans/MyPlan";
@@ -270,6 +274,7 @@ export default function MainNavigation() {
 
           <Stack.Group>
             <Stack.Screen name="PrivilegeList" component={PrivilegeList} />
+            <Stack.Screen name="Referrals" component={Referrals} />
             <Stack.Screen name="Notification" component={Notification} />
             <Stack.Screen name="NotificationDetails" component={NotificationDetails} />
 
@@ -287,6 +292,7 @@ export default function MainNavigation() {
             <Stack.Screen name="UpgradePlan" component={UpgradePlan} />
             <Stack.Screen name="Checkout" component={Checkout} />
             <Stack.Screen name="MyPlan" component={MyPlan} />
+            <Stack.Screen name="Support" component={Support} />
 
           </Stack.Group>
 
