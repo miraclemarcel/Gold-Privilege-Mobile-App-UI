@@ -248,6 +248,38 @@ export const StyledTextInputLabel = styled.Text`
     marginTop: 15px;
 `;
 
+// =======alert popup==============
+export const AlertContainer = styled.View`
+    alignItems: center;
+    justifyContent: flex-end;
+    position: absolute;
+    top: 30px;
+    right: -20px;
+    width: 100%;
+    zIndex: 99;
+`;
+export const SuccessAlert = styled.View`
+    background: ${success};
+    padding: 5px;
+    borderRadius: 8px;
+    width: 80%;
+    alignItems: center;
+`;
+export const SuccessAlertText = styled.Text`
+    fontSize: 13px;
+    color: ${whiteColor};
+`;
+export const FailedAlert = styled.View`
+    background: ${danger};
+    padding: 5px;
+    borderRadius: 8px;
+    width: 90%;
+    alignItems: center;
+`;
+export const FailedAlertText = styled.Text`
+    fontSize: 13px;
+    color: ${whiteColor};
+`;
 
 // ========END OF GENERAL STYLES=============
 
@@ -505,6 +537,41 @@ export const PlanText = styled.Text`
     fontSize: 13px;
     fontWeight: 600;
 `;
+// ==========Notification screen =================
+
+export const NotificationsContainer = styled.View`
+    flexDirection: column;
+    gap: 20px;
+    background:${danger};
+`;
+export const NotificationContent = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+    paddingTop: 15px;
+    paddingBottom: 15px;
+    borderBottomWidth: 1px;
+    borderColor: ${labelColor};
+    background: ${primary};
+`;
+export const NotificationContentLeft = styled.View`
+    flexDirection: row;
+    gap: 10px;
+`;
+export const NoticeIcon = styled.View`
+    height: 60px;
+    width: 60px;
+    background: ${primary};
+    borderRadius: 50px;
+`;
+export const NotificationContentCenter = styled.View`
+    
+`;
+export const NotificationContentDescText = styled.Text`
+    fontSize: 13px;
+    color: ${black};
+`;
+
+
 // ========Banner slide==========
 export const HomeBannerSlide = styled.View`
     paddingTop: 20px;
@@ -573,6 +640,15 @@ export const ReferralHeadContainer = styled.View`
     gap: 10px;
     alignItems: center;
 `;
+export const ReferralHeadContainer2 = styled.View`
+    marginTop: 20px;
+    flexDirection: column;
+    gap: 10px;
+    alignItems: center;
+`;
+export const RefCont2Text = styled.Text`
+    fontSize: 16px;
+`;
 export const ReferralTittle = styled.Text`
     fontSize: 20px;
     color: ${black};
@@ -585,18 +661,32 @@ export const ReferralBodyText = styled.Text`
     color: ${black};
 `;
 export const ReferralCopyContainer = styled.View`
+    width: 100%;
     flexDirection: row;
     justifyContent: space-between;
+    alignItems: center;
 `;
 export const CopyInput = styled.TextInput`
-    background: ${inputBg};
+    background: #D9D9D9;
     color: ${black};
     height: 50px;
-    width: 70%;
+    width: 75%;
+    borderRadius: 10px;
+    padding: 8px;
 `;
 export const LinkShareContainer = styled.View`
     flexDirection: row;
     gap: 10px;
+`;
+
+export const ReferralActivityContainer = styled.View`
+    flexDirection: column;
+    gap: 20px;
+`;
+export const RefActivityHeading = styled.Text`
+    fontSize: 20px;
+    color: ${black};
+    fontFamily: PoppinsMedium;
 `;
 
 

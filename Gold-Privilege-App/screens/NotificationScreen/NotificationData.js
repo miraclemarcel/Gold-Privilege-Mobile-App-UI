@@ -1,0 +1,51 @@
+export const NoticeData = [
+    {
+        id: 1,
+        notificationTitle: "Account has been Activated",
+        notificationDesc: "Your Gold-Privilege account is now active. You can noe continue to enjoy our amazing privileges at",
+        notificationDate: "3/17/2024",
+        notificationTime: "9: 13pm",
+    },
+    {
+        id: 2,
+        notificationTitle: "Congratulations",
+        notificationDesc: "You have been rewarded 100points for referring your friend “Esther Imodu” who sgin up recently",
+        notificationDate: "3/17/2024",
+        notificationTime: "10:34am",
+    },
+    {
+        id: 3,
+        notificationTitle: "Your Account Upgrade was successful",
+        notificationDesc: "Your Gold-Privilege account has been successfully upgraded to the premium plan",
+        notificationDate: "3/16/2024",
+        notificationTime: "4:20pm",
+    },
+    {
+        id: 4,
+        notificationTitle: "Shop Ugrade",
+        notificationDesc: "Our shop has been successfully upgraded with new set of privileges at your disposal",
+        notificationDate: "3/16/2024",
+        notificationTime: "9: 13am",
+    },
+    {
+        id: 5,
+        notificationTitle: "Account has been Activated",
+        notificationDesc: "Your Gold-Privilege account is now active. You can noe continue to enjoy our amazing privileges at",
+        notificationDate: "3/13/2024",
+        notificationTime: "9: 45pm",
+    },
+    {
+        id: 6,
+        notificationTitle: "Account has been Activated",
+        notificationDesc: "Your Gold-Privilege account is now active. You can noe continue to enjoy our amazing privileges at",
+        notificationDate: "3/13/2024",
+        notificationTime: "7: 13pm",
+    },
+    {
+        id: 7,
+        notificationTitle: "Account has been Activated",
+        notificationDesc: "Your Gold-Privilege account is now active. You can noe continue to enjoy our amazing privileges at",
+        notificationDate: "3/11/2024",
+        notificationTime: "9: 13pm",
+    },
+]
