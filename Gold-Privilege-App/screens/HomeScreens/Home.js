@@ -146,7 +146,9 @@ const Home = ({ navigation }) => {
                 </HomeHeaderLeftContainer>
                 <HomeHeaderRightContainer>
                     <HeaderIcon>
-                      <Ionicons name="headset" size={20} color="black" />
+                      <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.navigate("Support")}>
+                        <Ionicons name="headset" size={20} color="black" />
+                      </TouchableOpacity>
                       <TouchableOpacity 
                       activeOpacity={0.5} 
                       onPress={() => navigation.navigate('Notification')}

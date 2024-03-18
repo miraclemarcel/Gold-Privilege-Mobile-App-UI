@@ -1,5 +1,12 @@
 export const NoticeData = [
     {
+        id: 8,
+        notificationTitle: "Account has been Activated Today",
+        notificationDesc: "Your Gold-Privilege account is now active. You can noe continue to enjoy our amazing privileges at",
+        notificationDate: "3/18/2024",
+        notificationTime: "12: 13am",
+    },
+    {
         id: 1,
         notificationTitle: "Account has been Activated",
         notificationDesc: "Your Gold-Privilege account is now active. You can noe continue to enjoy our amazing privileges at",

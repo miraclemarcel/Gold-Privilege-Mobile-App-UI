@@ -537,38 +537,175 @@ export const PlanText = styled.Text`
     fontSize: 13px;
     fontWeight: 600;
 `;
+// =========Support Screen==============
+export const AllSupportContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+`;
+export const SupportOptions = styled.TouchableOpacity`
+    flexDirection: row;
+    justifyContent: space-between;
+    paddingTop: 10px;
+    paddingBottom: 10px;
+    borderBottomWidth: 1px;
+    borderColor: ${inputPlaceholder};
+    width: 100%;
+`;
+export const SupportLeft = styled.View`
+    flexDirection: row;
+    gap: 10px;
+`;
+
+export const SupportIcon = styled.View`
+
+`;
+export const SupportOption = styled.Text`
+    fontSize: 15px;
+    fontFamily: PoppinsMedium;
+    color: ${darkColor};
+`;
+export const SupportRightIcon = styled.View`
+
+`;
+
+// ====Support alert ==============
+// ========Whatsappp and Email elert PopuP ==========
+export const AlertPopUpSupportOverlay = styled.View`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justifyContent: center;
+    align-items: center;
+    backgroundColor: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+
+`;
+export const SupportOptContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+    alignItems: center;
+    justifyContent: space-between;
+    width: 70%;
+    height: 130px;
+    backgroundColor: rgba(0, 0, 0, 0.8);
+    padding: 16px;
+    borderRadius: 10px;
+`;
+export const SupportOptText = styled.Text`
+    fontSize: 18px;
+    fontFamily: PoppinsMedium;
+    color: ${whiteColor};
+`;
+export const SupportOptBtnContainer  = styled.View`
+    flexDirection: row;
+    alignItems: center;
+    justifyContent: space-between;
+    width: 100%;
+    borderTopWidth: 1px;
+    borderColor: #545458;
+`;
+
+export const OptCtaBtn = styled.TouchableOpacity`
+    alignItems: center;
+    justifyContent: space-between;
+    paddingTop: 10px;
+`;
+export const OptCtaText = styled.Text`
+    fontSize: 17px;
+    fontFamily: PoppinsMedium;
+    color: #0A84FF;
+`;
+// Call popup============
+export const AlertPopUpCallOverlay = styled.View`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justifyContent: flex-end;
+    align-items: center;
+    backgroundColor: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+
+`;
+export const SupportCallBtnContainer = styled.View`
+    flexDirection: column;
+    gap: 10px;
+    width: 100%;
+    alignItems: center;
+`;
+export const SupportCallBtn = styled.TouchableOpacity`
+    flexDirection: row;
+    alignItems: center;
+    justifyContent: center;
+    gap: 10px;
+    backgroundColor: rgba(0, 0, 0, 0.8);
+    padding: 8px;
+    width: 100%;
+    borderRadius: 8px;
+    justifyContent: center;
+`;
+export const CallText = styled.Text`
+    fontSize: 17px;
+    fontFamily: PoppinsMedium;
+    color: #0A84FF;
+`;
+
 // ==========Notification screen =================
 
 export const NotificationsContainer = styled.View`
     flexDirection: column;
-    gap: 20px;
-    background:${danger};
+    alignItems: center;
+    gap: 10px;
+`;
+export const DateDemarcation = styled.View`
+    background: ${inputBorder};
+    alignItems: center;
+    justifyContent: center;
+    paddingLeft: 20px;
+    paddingRight: 20px;
+    paddingTop: 8px;
+    paddingBottom: 8px;
+    borderRadius: 30px;
 `;
 export const NotificationContent = styled.View`
     flexDirection: row;
     justifyContent: space-between;
-    paddingTop: 15px;
-    paddingBottom: 15px;
+    paddingTop: 20px;
+    paddingBottom: 20px;
     borderBottomWidth: 1px;
     borderColor: ${labelColor};
-    background: ${primary};
+    width: 100%;
 `;
 export const NotificationContentLeft = styled.View`
     flexDirection: row;
     gap: 10px;
+    width: 70%;
 `;
 export const NoticeIcon = styled.View`
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     background: ${primary};
     borderRadius: 50px;
+    justifyContent: center;
+    alignItems: center;
 `;
 export const NotificationContentCenter = styled.View`
-    
+    flexDirection: column;
+    gap: 4px;
+`;
+export const NotificationContentTitleText = styled.Text`
+    fontSize: 15px;
+    color: ${black};
+    fontFamily: PoppinsMedium;
 `;
 export const NotificationContentDescText = styled.Text`
     fontSize: 13px;
     color: ${black};
+    fontFamily: PoppinsRegular;
+`;
+export const NotificationContentTime = styled.Text`
+    fontSize: 13px;
+    color: ${black};
+    fontFamily: PoppinsMedium;
 `;
 
 
