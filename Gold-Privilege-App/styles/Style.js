@@ -129,7 +129,7 @@ export const PageTitleHeader = styled.View`
     width: 100%;
 `;
 export const PageTitle = styled.Text`
-    fontSize: 20px;
+    fontSize: 18px;
     textAlign: center;
     fontFamily: PoppinsSemiBold;
     color: ${darkColor};
@@ -545,6 +545,7 @@ export const AllSupportContainer = styled.View`
 export const SupportOptions = styled.TouchableOpacity`
     flexDirection: row;
     justifyContent: space-between;
+    alignItems: center;
     paddingTop: 10px;
     paddingBottom: 10px;
     borderBottomWidth: 1px;
@@ -1208,7 +1209,7 @@ export const UserID = styled.Text`
     fontSize: 15px;
     color: ${whiteColor};
 `;
-export const UserPointBtn = styled.View`
+export const UserPointBtn = styled.TouchableOpacity`
     background: ${whiteColor};
     padding: 5px;
     flexDirection: row;
@@ -1406,6 +1407,18 @@ export const ProfileButtonContainer = styled.View`
     marginTop: 50px;
 `;
 
+// Settings page ================
+export const NotificationOptionsContainer = styled.TouchableOpacity`
+    flexDirection: column;
+    gap: 10px;
+`;
+export const NotificationOptions = styled.TouchableOpacity`
+    flexDirection: row;
+    justifyContent: space-between;
+    paddingTop: 10px;
+    paddingBottom: 10px;
+    width: 100%;
+`;
 // =====Upgrade plan screen =============
 export const AllUserPlans = styled.View`
     flexDirection: column;
@@ -1458,7 +1471,63 @@ export const ChoosePlanText = styled.Text`
     color: ${primary};
     fontWeight: 700;
 `;
+// ===========REWARDS PAGE================
+export const RewardsContainer = styled.View`
 
+`;
+export const RewardsContainerTop = styled.View`
+    flexDirection: column;
+    gap: 15px;
+    justifyContent: center;
+    alignItems: center;
+`;
+export const RewardsTopText = styled.Text`
+    fontSize: 13px;
+    color: ${black};
+`;
+export const RewardsCircleContainer = styled.View`
+    alignItems: center;
+    justifyContent: center;
+`;
+export const RewardsCircleBig = styled.View`
+    width: 180px;
+    height: 180px;
+    borderRadius: 180px;
+    alignItems: center;
+    justifyContent: center;
+    background: #8e6b02;
+`;
+export const RewardsCircleSmall = styled.View`
+    width: 150px;
+    height: 150px;
+    borderRadius: 150px;
+    background: #f6e1a5;
+    justifyContent: center;
+    alignItems: center;
+`;
+export const RewardPoints = styled.Text`
+    fontSize: 30px;
+    color: ${black};
+    fontFamily: PoppinsBold;
+`;
+export const RewardPointsText = styled.Text`
+    fontSize: 13px;
+    color: ${black};
+`;
+export const RedeemBtnText = styled.Text`
+    fontSize: 13px;
+    color: ${whiteColor};
+`;
+export const RedeemBtn = styled.TouchableOpacity`
+    width: 160px;
+    height: 50px;
+    justifyContent: center;
+    alignItems: center;
+    background: ${primary};
+    borderRadius: 30px;
+    position: absolute;
+    bottom: -20px;
+`;
 
 // =========Checkout==============
 export const UpgradeCheckoutTitle = styled.Text`

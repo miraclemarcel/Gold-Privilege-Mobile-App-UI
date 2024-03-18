@@ -43,6 +43,10 @@ import UpgradePlan from "../screens/ProfileScreen/UpgradePlan";
 import ProfileModal from "../screens/ProfileScreen/ProfileModal";
 import AvatarUpload from "../screens/ProfileScreen/AvatarUpload";
 import Settings from "../screens/SettingsScreen/Settings";
+import NotificationsSettings from "../screens/SettingsScreen/NotificationsSettings";
+import PrivacySettings from "../screens/SettingsScreen/PrivacySettings";
+import Rewards from "../screens/ProfileScreen/Rewards";
+
 
 // ===========customer support =====================
 import Support from "../screens/SupportScreen/Support";
@@ -296,6 +300,9 @@ export default function MainNavigation() {
             <Stack.Screen name="MyPlan" component={MyPlan} />
             <Stack.Screen name="Support" component={Support} />
             <Stack.Screen name="Settings" component={Settings} />
+            <Stack.Screen name="NotificationsSettings" component={NotificationsSettings} />
+            <Stack.Screen name="PrivacySettings" component={PrivacySettings} />
+            <Stack.Screen name="Rewards" component={Rewards} />
 
           </Stack.Group>
 

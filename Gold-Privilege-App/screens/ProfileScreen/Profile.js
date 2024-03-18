@@ -58,7 +58,7 @@ const Profile = ({ navigation }) => {
                     </UserAvatarContainer>
                     <UserName>Miracle Marcel</UserName>
                     <UserID>GP24266357</UserID>
-                    <UserPointBtn>
+                    <UserPointBtn activeOpacity={0.8} onPress={() => navigation.navigate("Rewards")}>
                         <Ionicons name="trophy-outline" size={20} color={Colors.primary} />
                         <UserPointText>800Pts</UserPointText>
                     </UserPointBtn>

@@ -8,7 +8,7 @@ import { Ionicons, Octicons } from '@expo/vector-icons';
 
 
 
-const Settings = () => {
+const Settings = ({navigation}) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
 
@@ -25,7 +25,7 @@ const Settings = () => {
             <InnerContainer>
             <AllSupportContainer>
                 {/* ===========Notification=========== */}
-                <SupportOptions activeOpacity={0.7}>
+                <SupportOptions activeOpacity={0.7} onPress={() => navigation.navigate("NotificationsSettings")}>
                     <SupportLeft>
                       <SupportIcon>
                         <Ionicons name='notifications' size={24} color={Colors.black}/>
@@ -37,7 +37,7 @@ const Settings = () => {
                     </SupportRightIcon>
                 </SupportOptions>
                 {/* =====Security========= */}
-                <SupportOptions activeOpacity={0.7} >
+                <SupportOptions activeOpacity={0.7} onPress={() => navigation.navigate("PrivacySettings")} >
                     <SupportLeft>
                       <SupportIcon>
                         <Ionicons name='shield' size={24} color={Colors.black}/>
