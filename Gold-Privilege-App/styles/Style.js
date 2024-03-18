@@ -658,7 +658,7 @@ export const NotificationsContainer = styled.View`
     gap: 10px;
 `;
 export const DateDemarcation = styled.View`
-    background: ${inputBorder};
+    background: #ECEAFB;
     alignItems: center;
     justifyContent: center;
     paddingLeft: 20px;
@@ -1473,7 +1473,8 @@ export const ChoosePlanText = styled.Text`
 `;
 // ===========REWARDS PAGE================
 export const RewardsContainer = styled.View`
-
+    flex: 1;
+    gap: 80px;
 `;
 export const RewardsContainerTop = styled.View`
     flexDirection: column;
@@ -1529,6 +1530,20 @@ export const RedeemBtn = styled.TouchableOpacity`
     bottom: -20px;
 `;
 
+export const RedeemContainterBottom = styled.View`
+    flex: 1;
+`;
+export const RedeemTabContainer = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+    width: 100%;
+`;
+export const RedeemTab = styled.TouchableOpacity`
+
+`;
+export const ReedeemTabText = styled.Text`
+    fontSize: 20px;
+`;
 // =========Checkout==============
 export const UpgradeCheckoutTitle = styled.Text`
     fontSize: 13px;

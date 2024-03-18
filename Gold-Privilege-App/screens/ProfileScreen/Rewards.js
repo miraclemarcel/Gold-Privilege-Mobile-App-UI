@@ -10,6 +10,10 @@ import {
     PageTitleHeader, 
     RedeemBtn, 
     RedeemBtnText, 
+    RedeemContainterBottom, 
+    RedeemTab, 
+    RedeemTabContainer, 
+    ReedeemTabText, 
     RewardPoints, 
     RewardPointsText, 
     RewardsCircleBig, 
@@ -25,6 +29,11 @@ import {
 
 
 const Rewards = () => {
+  const [activeTab, setActiveTab] = useState('All');
+
+  const handleTabPress = (tabName) => {
+    setActiveTab(tabName);
+  };
 
 
   return (
@@ -45,11 +54,48 @@ const Rewards = () => {
                         <RewardPointsText>Points</RewardPointsText>
                         </RewardsCircleSmall>
                     </RewardsCircleBig>
-                    <RedeemBtn>
+                    <RedeemBtn activeOpacity={0.9}>
                         <RedeemBtnText>Redeem</RedeemBtnText>
                     </RedeemBtn>
                 </RewardsCircleContainer>
             </RewardsContainerTop>
+            <RedeemContainterBottom>
+              <RedeemTabContainer>
+                <RedeemTab 
+                activeOpacity={0.9}
+                style={{
+                  borderBottomWidth: activeTab === 'All' ? 5 : 0,
+                  borderColor: Colors.primary,
+                  paddingBottom: 8,
+                }}
+                onPress={() => handleTabPress('All')}
+                >
+                <ReedeemTabText style={{ color: activeTab === 'All' ? Colors.primary : Colors.black }}> All </ReedeemTabText>
+                </RedeemTab>
+                <RedeemTab 
+                  activeOpacity={0.9}
+                  style={{
+                    borderBottomWidth: activeTab === 'Earned' ? 5 : 0,
+                    borderColor: Colors.primary,
+                    paddingBottom: 8,
+                  }}
+                  onPress={() => handleTabPress('Earned')}
+                >
+                  <ReedeemTabText style={{ color: activeTab === 'Earned' ? Colors.primary : Colors.black }}>Earned</ReedeemTabText>
+                </RedeemTab>
+                <RedeemTab 
+                  activeOpacity={0.9}
+                  style={{
+                    borderBottomWidth: activeTab === 'Redeemed' ? 5 : 0,
+                    borderColor: Colors.primary,
+                    paddingBottom: 8,
+                  }}
+                  onPress={() => handleTabPress('Redeemed')}
+                  >
+                  <ReedeemTabText style={{ color: activeTab === 'Redeemed' ? Colors.primary : Colors.black }}>Redeemed</ReedeemTabText>
+                </RedeemTab>
+              </RedeemTabContainer>
+            </RedeemContainterBottom>
           </RewardsContainer>
             </InnerContainer>
         </StyledContainer>

@@ -44,7 +44,7 @@ const Notification = () => {
                   <NotificationContent>
                     <NotificationContentLeft>
                       <NoticeIcon>
-                        <Ionicons name='bag' size={24} color={Colors.black}/>
+                        <Ionicons name='information-circle' size={24} color={Colors.black}/>
                       </NoticeIcon>
                       <NotificationContentCenter>
                         <NotificationContentTitleText>{notification.notificationTitle}</NotificationContentTitleText>

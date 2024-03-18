@@ -279,9 +279,22 @@ export default function MainNavigation() {
           <Stack.Screen name="MainContent" component={TabNavigator} options={{ headerShown: false }} />
 
           <Stack.Group>
+          <Stack.Screen
+            name="Notification"
+            component={Notification}
+            options={{
+              headerRight: () => (
+                <Ionicons
+                  name="settings-outline"
+                  size={24}
+                  color="black"
+                  style={{ marginLeft: 10 }}
+                />
+              ),
+            }}
+          />
             <Stack.Screen name="PrivilegeList" component={PrivilegeList} />
             <Stack.Screen name="Referrals" component={Referrals} />
-            <Stack.Screen name="Notification" component={Notification} />
             <Stack.Screen name="NotificationDetails" component={NotificationDetails} />
 
           </Stack.Group>
