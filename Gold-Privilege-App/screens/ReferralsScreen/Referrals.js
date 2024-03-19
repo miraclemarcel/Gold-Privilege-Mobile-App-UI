@@ -24,6 +24,8 @@ import {
   RefCont2Text,
   ReferralActivityContainer,
   RefActivityHeading,
+  RefContTwoText,
+  RefActivityHeadingContainer,
 } from '../../styles/Style';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -59,21 +61,18 @@ const Referrals = () => {
         </PageTitleHeader>
         <StyledContainer>
             <InnerContainer>
-            <ScrollView>
               <ReferralsImagesContainer>
                 <View>
                   <Image source={require('../../assets/images/lady-4.png')} style={{width: 100, height: 100, borderRadius: 100, borderWidth: 5, borderColor: Colors.whiteColor}}/>
                 </View>
                 <TopThreeImages>
-                  {/* left image  */}
                   <View style={{position: 'absolute', top: -150, left: -100, overflow: 'hidden'}}>   
                     <Image source={require('../../assets/images/lady-1.png')} style={{width: 70, height: 70, borderRadius: 50, borderWidth: 5, borderColor: Colors.whiteColor}}/>
                   </View>
-                  {/* Top Middle image */}
+              
                   <View style={{position: 'absolute', top: -170, right: -30, zIndex: 1}}>
                     <Image source={require('../../assets/images/lady-2.png')} style={{width: 70, height: 70, borderRadius: 50, borderWidth: 5, borderColor: Colors.whiteColor}}/>
                   </View>
-                  {/* ======Left image ======= */}
                   <View style={{position: 'absolute', top: -150, right: -90}}>
                     <Image source={require('../../assets/images/lady-3.png')} style={{width: 70, height: 70, borderRadius: 50, borderWidth: 5, borderColor: Colors.whiteColor}}/>
                   </View>
@@ -84,7 +83,7 @@ const Referrals = () => {
                 <ReferralBodyText>Tell your friends about <ReferralBodyText style={{fontFamily: "PoppinsSemiBold", color: Colors.primary}}>Gold Privilege, Earn points</ReferralBodyText> to redeem a <ReferralBodyText style={{fontFamily: "PoppinsSemiBold"}}>privilege</ReferralBodyText> when they sign up.</ReferralBodyText>
               </ReferralHeadContainer>
               <ReferralHeadContainer2>
-                <RefCont2Text>Copy and share your personal referral link </RefCont2Text>
+                <RefContTwoText>Copy and share your personal referral link </RefContTwoText>
               <ReferralCopyContainer>
               <CopyInput
                 editable={false}
@@ -102,13 +101,13 @@ const Referrals = () => {
           </ReferralCopyContainer>
           </ReferralHeadContainer2>
           <ReferralActivityContainer>
+            <RefActivityHeadingContainer>
               <RefActivityHeading>Activity</RefActivityHeading>
-          </ReferralActivityContainer>
+            </RefActivityHeadingContainer>
 
-          </ScrollView>
+          </ReferralActivityContainer>
             </InnerContainer>
-        </StyledContainer>
-       5
+      </StyledContainer>
         {/* =====Allert popup======== */}
         {showAlert && (
         <AlertContainer>
@@ -117,7 +116,6 @@ const Referrals = () => {
           </SuccessAlert>
         </AlertContainer>
       )}
-      
     </SafeAreaView>
   )
 }

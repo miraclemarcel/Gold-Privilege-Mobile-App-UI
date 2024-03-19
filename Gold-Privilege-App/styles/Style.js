@@ -784,6 +784,9 @@ export const ReferralHeadContainer2 = styled.View`
     gap: 10px;
     alignItems: center;
 `;
+export const RefContTwoText = styled.Text`
+    fontSize: 16px;
+`;
 export const RefCont2Text = styled.Text`
     fontSize: 16px;
 `;
@@ -818,13 +821,20 @@ export const LinkShareContainer = styled.View`
 `;
 
 export const ReferralActivityContainer = styled.View`
-    flexDirection: column;
-    gap: 20px;
+    width: 100%;
+    flexDirection: row;
+    justifyContent: flex-start;
+    alignItems: center;
+    marginTop: 20px;
+`;
+export const RefActivityHeadingContainer = styled.Text`
+
 `;
 export const RefActivityHeading = styled.Text`
     fontSize: 20px;
     color: ${black};
     fontFamily: PoppinsMedium;
+    left: 0;
 `;
 
 
