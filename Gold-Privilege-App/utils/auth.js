@@ -19,27 +19,28 @@ api.interceptors.request.use(
 );
 
 export async function createUser(payload) {
-  const response = await api.post(`signUp`, payload);
+  const response = await api.post(`Signup`, payload);
+  console.log(response.data);
   return response.data;
 };
 
-export async function verifyEmailAndNumber(option, data) {
-  if (option === "Email") {
-    const response = await api.post(
-      `signUp?email=${data}`
-    );
-    return response.data;
-  }
+// export async function verifyEmailAndNumber(option, data) {
+//   if (option === "Email") {
+//     const response = await api.post(
+//       `signUp?email=${data}`
+//     );
+//     return response.data;
+//   }
 
-  if (option === "Number") {
-    const response = await api.post(
-      `signUp?Number=${data}`
-    );
-    return response.data;
-  }
-};
+//   if (option === "Number") {
+//     const response = await api.post(
+//       `signUp?Number=${data}`
+//     );
+//     return response.data;
+//   }
+// };
 
-export async function login(payload) {
-  const response = await api.post(`login`, payload);
-  return response.data;
-};
+// export async function login(payload) {
+//   const response = await api.post(`login`, payload);
+//   return response.data;
+// };

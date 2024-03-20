@@ -26,8 +26,20 @@ import {
   RefActivityHeading,
   RefContTwoText,
   RefActivityHeadingContainer,
+  ReferralActivityList,
+  ReferredUsers,
+  ReferredUsersLeft,
+  ReferredUserName,
+  ReferredUserTimeAndDateContainer,
+  ReferredUserTime,
+  ReferredUserDate,
+  ReferredUsersRightBtnWhite,
+  ReferredUsersRightBtnText,
+  ReferredUsersRightBtnPrimary,
+  ReferredUsersRightBtnPrimaryText,
 } from '../../styles/Style';
 import { Ionicons } from '@expo/vector-icons';
+import BonusModal from './BonusModal';
 
 
 const ReferralLink = [
@@ -40,6 +52,7 @@ const ReferralLink = [
 
 const Referrals = () => {
   const [showAlert, setShowAlert] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const copyToClipboard = () => {
     const link = ReferralLink[0].userReferralLink;
@@ -53,6 +66,15 @@ const Referrals = () => {
     const link = ReferralLink[0].userReferralLink;
     // Share the referral link
   };
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+  
   
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -60,21 +82,23 @@ const Referrals = () => {
             <PageTitle>Referrals</PageTitle>
         </PageTitleHeader>
         <StyledContainer>
+          <ScrollView
+          showsVerticalScrollIndicator={false}
+          >
             <InnerContainer>
               <ReferralsImagesContainer>
                 <View>
-                  <Image source={require('../../assets/images/lady-4.png')} style={{width: 100, height: 100, borderRadius: 100, borderWidth: 5, borderColor: Colors.whiteColor}}/>
+                  <Image source={require('../../assets/images/ref-img-1.png')} style={{width: 100, height: 100, borderRadius: 100, borderWidth: 5, borderColor: Colors.whiteColor}}/>
                 </View>
                 <TopThreeImages>
-                  <View style={{position: 'absolute', top: -150, left: -100, overflow: 'hidden'}}>   
-                    <Image source={require('../../assets/images/lady-1.png')} style={{width: 70, height: 70, borderRadius: 50, borderWidth: 5, borderColor: Colors.whiteColor}}/>
-                  </View>
-              
+                  <View style={{position: 'absolute', top: -150, left: -95, overflow: 'hidden'}}>   
+                    <Image source={require('../../assets/images/ref-img-2.png')} style={{width: 70, height: 70, borderRadius: 50, borderWidth: 5, borderColor: Colors.whiteColor}}/>
+                  </View>             
                   <View style={{position: 'absolute', top: -170, right: -30, zIndex: 1}}>
-                    <Image source={require('../../assets/images/lady-2.png')} style={{width: 70, height: 70, borderRadius: 50, borderWidth: 5, borderColor: Colors.whiteColor}}/>
+                    <Image source={require('../../assets/images/ref-img-3.png')} style={{width: 70, height: 70, borderRadius: 50, borderWidth: 5, borderColor: Colors.whiteColor}}/>
                   </View>
                   <View style={{position: 'absolute', top: -150, right: -90}}>
-                    <Image source={require('../../assets/images/lady-3.png')} style={{width: 70, height: 70, borderRadius: 50, borderWidth: 5, borderColor: Colors.whiteColor}}/>
+                    <Image source={require('../../assets/images/ref-img-4.png')} style={{width: 70, height: 70, borderRadius: 50, borderWidth: 5, borderColor: Colors.whiteColor}}/>
                   </View>
               </TopThreeImages>
               </ReferralsImagesContainer>
@@ -104,9 +128,62 @@ const Referrals = () => {
             <RefActivityHeadingContainer>
               <RefActivityHeading>Activity</RefActivityHeading>
             </RefActivityHeadingContainer>
-
+            <ReferralActivityList>
+              <ReferredUsers>
+                <ReferredUsersLeft>
+                  <ReferredUserName>Henry Akinwande</ReferredUserName>
+                  <ReferredUserTimeAndDateContainer>
+                    <ReferredUserDate>Today</ReferredUserDate>
+                    <ReferredUserTime>12:30pm</ReferredUserTime>
+                  </ReferredUserTimeAndDateContainer>
+                </ReferredUsersLeft>
+                <ReferredUsersRightBtnWhite activeOpacity={0.8}>
+                  <ReferredUsersRightBtnText>Invite</ReferredUsersRightBtnText>
+                </ReferredUsersRightBtnWhite>
+              </ReferredUsers>
+              {/* =================Yello button===== */}
+              <ReferredUsers>
+                <ReferredUsersLeft>
+                  <ReferredUserName>John Wilson</ReferredUserName>
+                  <ReferredUserTimeAndDateContainer>
+                    <ReferredUserDate>Today</ReferredUserDate>
+                    <ReferredUserTime>12:30pm</ReferredUserTime>
+                  </ReferredUserTimeAndDateContainer>
+                </ReferredUsersLeft>
+                <ReferredUsersRightBtnPrimary activeOpacity={0.8} onPress={openModal}>
+                  <ReferredUsersRightBtnPrimaryText>Acepted</ReferredUsersRightBtnPrimaryText>
+                </ReferredUsersRightBtnPrimary>
+              </ReferredUsers>
+              {/* =================Yello button===== */}
+              <ReferredUsers>
+                <ReferredUsersLeft>
+                  <ReferredUserName>Esther George</ReferredUserName>
+                  <ReferredUserTimeAndDateContainer>
+                    <ReferredUserDate>Today</ReferredUserDate>
+                    <ReferredUserTime>12:30pm</ReferredUserTime>
+                  </ReferredUserTimeAndDateContainer>
+                </ReferredUsersLeft>
+                <ReferredUsersRightBtnPrimary activeOpacity={0.8} onPress={openModal}>
+                  <ReferredUsersRightBtnPrimaryText>Acepted</ReferredUsersRightBtnPrimaryText>
+                </ReferredUsersRightBtnPrimary>
+              </ReferredUsers>
+              {/* =================White button===== */}
+              <ReferredUsers>
+                <ReferredUsersLeft>
+                  <ReferredUserName>Mark Henry</ReferredUserName>
+                  <ReferredUserTimeAndDateContainer>
+                    <ReferredUserDate>15-03-2024</ReferredUserDate>
+                    <ReferredUserTime>12:30pm</ReferredUserTime>
+                  </ReferredUserTimeAndDateContainer>
+                </ReferredUsersLeft>
+                <ReferredUsersRightBtnWhite activeOpacity={0.8}>
+                  <ReferredUsersRightBtnText>Invite</ReferredUsersRightBtnText>
+                </ReferredUsersRightBtnWhite>
+              </ReferredUsers>
+            </ReferralActivityList>
           </ReferralActivityContainer>
-            </InnerContainer>
+            </InnerContainer>                
+          </ScrollView>
       </StyledContainer>
         {/* =====Allert popup======== */}
         {showAlert && (
@@ -116,6 +193,11 @@ const Referrals = () => {
           </SuccessAlert>
         </AlertContainer>
       )}
+       {/* Modal */}
+       <BonusModal 
+          isVisible={showModal}
+          closeModal={closeModal} />
+
     </SafeAreaView>
   )
 }

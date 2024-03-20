@@ -765,7 +765,7 @@ export const PrivilegeTextRight = styled.Text`
 // =================REFERRALS PAGES=============
 export const ReferralsImagesContainer = styled.View`
     flexDirection: column;
-    marginTop: 40px;
+    marginTop: 50px;
     gap: 20px;
     alignItems: center;
     justifyContent: center;
@@ -822,13 +822,14 @@ export const LinkShareContainer = styled.View`
 
 export const ReferralActivityContainer = styled.View`
     width: 100%;
-    flexDirection: row;
-    justifyContent: flex-start;
     alignItems: center;
-    marginTop: 20px;
+    flexDirection: column;
+    marginTop: 40px;
 `;
 export const RefActivityHeadingContainer = styled.Text`
-
+    flexDirection: row;
+    justifyContent: flex-start;
+    width: 100%;
 `;
 export const RefActivityHeading = styled.Text`
     fontSize: 20px;
@@ -836,7 +837,69 @@ export const RefActivityHeading = styled.Text`
     fontFamily: PoppinsMedium;
     left: 0;
 `;
+export const ReferralActivityList = styled.View`
+    flexDirection: column;
+    gap: 10px;
+    width: 100%;
+    marginTop: 20px;
+`;
+export const ReferredUsers = styled.View`
+    flexDirection: row;
+    justifyContent: space-between;
+`;
+export const ReferredUsersLeft = styled.View`
+    flexDirection: column;
+    gap: 7px;
+`;
+export const ReferredUserName = styled.Text`
+    fontSize: 17px;
+    color: ${black};
+    fontFamily: PoppinsMedium;
+`;
+export const ReferredUserTimeAndDateContainer = styled.View`
+    flexDirection: row;
+    gap: 7px;
+`;
+export const ReferredUserTime = styled.Text`
+    fontSize: 13px;
+    color: ${labelColor};
+    fontFamily: PoppinsMedium;
+`;
+export const ReferredUserDate = styled.Text`
+    fontSize: 13px;
+    color: ${labelColor};
+    fontFamily: PoppinsMedium;
+`;
+export const ReferredUsersRightBtnPrimary = styled.TouchableOpacity`
+    width: 30%;
+    height: 40px;
+    background: ${primary};
+    alignItems: center;
+    justifyContent: center;
+    borderRadius: 10px;
+`;
+export const ReferredUsersRightBtnPrimaryText = styled.Text`
+    fontSize: 13px;
+    color: ${whiteColor};
+    fontFamily: PoppinsMedium;
+`;
 
+export const ReferredUsersRightBtnWhite = styled.TouchableOpacity`
+    width: 30%;
+    height: 40px;
+    background: ${backgroundColor};
+    borderWidth: 1px;
+    borderColor: ${labelColor};
+    alignItems: center;
+    justifyContent: center;
+    borderRadius: 10px;
+
+`;
+export const ReferredUsersRightBtnText = styled.Text`
+    fontSize: 13px;
+    color: ${primary};
+    fontFamily: PoppinsMedium;
+`;
 
 
 // ===privilege plan===========
