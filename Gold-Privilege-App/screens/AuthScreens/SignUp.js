@@ -157,8 +157,6 @@ const SignUp = ({ navigation }) => {
               />
               <InputLabelText>Password</InputLabelText>
               <MyTextInput
-                // placeholder="Password"
-                // placeholderTextColor={inputPlaceholder}
                 value={data.password}
                 secureTextEntry={hidePassword}
                 togglePasswordVisibility={() => setHidePassword(!hidePassword)}
@@ -166,21 +164,11 @@ const SignUp = ({ navigation }) => {
               />
               <InputLabelText>Confirm Password</InputLabelText>
               <MyTextInput
-                // placeholder="Password"
-                // placeholderTextColor={inputPlaceholder}
                 value={data.confirmPassword}
                 secureTextEntry={hideConfirmPassword}
                 togglePasswordVisibility={() => setConfirmHidePassword(!hideConfirmPassword)}
                 onChangeText={(text) => setData({...data, confirmPassword: text})}
               />
-              {/* <View style={{ marginTop: 15}}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
-                  <Ionicons name="checkmark-circle" size={24} color={Colors.primary} />
-                  <Text style={{ fontFamily: 'PoppinsRegular', fontSize: 12 }}>I have read and agree to the Terms of Service. 
-                    <Text style={{ fontFamily: 'PoppinsRegular', color: Colors.primary, fontSize: 12}}> Gold Privilege's Terms</Text>
-                    </Text>
-                </View>
-              </View> */}
               <View style={{ marginTop: 15}}>
               
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
@@ -221,9 +209,6 @@ const SignUp = ({ navigation }) => {
 
 // Inside your MyTextInput component
 
-
-// Inside your MyTextInput component
-
 const MyTextInput = ({ icon, togglePasswordVisibility, isDate, showDatePicker, selectedDate, secureTextEntry, ...props }) => {
   return (
     <View>
@@ -253,37 +238,6 @@ const MyTextInput = ({ icon, togglePasswordVisibility, isDate, showDatePicker, s
     </View>
   );
 };
-
-
-// const MyTextInput = ({ icon, togglePasswordVisibility, isDate, showDatePicker, selectedDate, ...props }) => {
-//   return (
-//     <View>
-//      {isDate ? (
-//        <View >
-//           <StyledTextInput {...props} value={selectedDate} />
-//           <CalendarRightIcon onPress={showDatePicker}>
-//             <Octicons
-//               name="calendar"
-//               size={17}
-//               color={inputPlaceholder}
-//             />
-//           </CalendarRightIcon>
-//         </View>
-//       ) : (
-//         <StyledTextInput {...props} />
-//       )}
-//       {props.secureTextEntry && (
-//         <RightIcon onPress={togglePasswordVisibility}>
-//           <Octicons
-//             name={props.secureTextEntry ? "eye-closed" : "eye"}
-//             size={17}
-//             color={inputPlaceholder}
-//           />
-//         </RightIcon>
-//       )}
-//     </View>
-//   );
-// };
 
 
 

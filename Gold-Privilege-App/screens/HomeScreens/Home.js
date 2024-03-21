@@ -176,12 +176,14 @@ const Home = ({ navigation }) => {
                   keyExtractor={(item) => item.key.toString()}
                   renderItem={({ item }) => (
                   <HomeBannerSlide>
+                
                   <BnnerContentContainer>
                       <View>
-                        <BannerTitleText>{item.bannerTitle}</BannerTitleText>
+                          <BannerTitleText>{item.bannerTitle}</BannerTitleText>
+                          {item.bannerTitle2 && <BannerTitleText style={{ color: Colors.primary }}>{item.bannerTitle2}</BannerTitleText>}
                       </View>
                       <BannerBtn onPress={item.onPress} activeOpacity={0.7}>
-                        <Text style={{fontFamily: 'PoppinsMedium'}}>{item.bannerBtnText}</Text>
+                          <Text style={{fontFamily: 'PoppinsMedium'}}>{item.bannerBtnText}</Text>
                       </BannerBtn>
                   </BnnerContentContainer>
                     {/* Banner */}

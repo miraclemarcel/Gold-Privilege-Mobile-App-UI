@@ -716,11 +716,11 @@ export const HomeBannerSlide = styled.View`
 `;
 export const BnnerContentContainer = styled.View`
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     zIndex: 2;
     paddingLeft: 25px;
     flexDirection: column;
-    gap: 15px;
+    gap: 10px;
 `;
 export const BannerTitleText = styled.Text`
     fontSize: 20px;
