@@ -45,10 +45,10 @@ const SignUp = ({ navigation }) => {
   const [hidePassword, setHidePassword] = useState(true);
   const [hideConfirmPassword, setConfirmHidePassword] = useState(true);
   const [data, setData] = useState({ firstName: '', lastName: '',  email: '',  phoneNumber: '', dateOfBirth: '', password: '', confirmPassword: ''});
-  const [loading, setLoading] = useState(false); // Define loading state
+  const [loading, setLoading] = useState(false); 
   const [show, setShow] = useState(false);
   const [date, setDate] = useState(new Date(2000, 0, 1));
-  const [agreed, setAgreed] = useState(false); // State to manage agreement checkbox
+  const [agreed, setAgreed] = useState(false); 
 
 
   // ====actual date of birth of the user to be sent===
@@ -78,7 +78,7 @@ const SignUp = ({ navigation }) => {
   const handleSignUp = async () => {
     setLoading(true); 
     setTimeout(() => {
-      setLoading(false); // Set loading to false when the login process completes
+      setLoading(false); 
       navigation.navigate('SignUpOtp');
     }, 2000); 
   }
@@ -188,7 +188,7 @@ const SignUp = ({ navigation }) => {
                 </StyledButton>
               ) : (
                 <StyledButton disabled={true}>
-                  <ActivityIndicator size="large" color={inputPlaceholder} />
+                  <ActivityIndicator size={24} color={inputPlaceholder} />
                 </StyledButton>
               )}
               <ToSignupPageBoxSignUp>

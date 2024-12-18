@@ -124,7 +124,7 @@ const Login = ({ navigation }) => {
               </StyledButton>
             ) : (
               <StyledButton disabled={true}>
-                <ActivityIndicator size="large" color={inputPlaceholder} />
+                <ActivityIndicator size={24} color={inputPlaceholder} />
               </StyledButton>
             )}
             <ToSignupPageBox>
